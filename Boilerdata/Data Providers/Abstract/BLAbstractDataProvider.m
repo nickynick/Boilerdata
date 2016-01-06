@@ -75,6 +75,8 @@
 - (void)enqueueDataEvent:(BLDataEvent *)event callbacks:(BLAbstractDataProviderEventCallbacks *)callbacks {
     NSParameterAssert(event != nil);
     
+    _lastQueuedEvent = event;
+    
     [self.eventQueue addObject:event];
     [self.eventCallbacksQueue addObject:callbacks ?: [[BLAbstractDataProviderEventCallbacks alloc] init]];
     

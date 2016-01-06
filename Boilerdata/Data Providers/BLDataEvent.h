@@ -9,15 +9,19 @@
 #import <Foundation/Foundation.h>
 
 @protocol BLDataDiff;
-@protocol BLDataProvider;
+@protocol BLStaticDataProvider;
 
 
 @interface BLDataEvent : NSObject
 
-@property (nonatomic, readonly) id<BLDataDiff> diff;
+@property (nonatomic, readonly) id<BLStaticDataProvider> updatedDataProvider;
 
-@property (nonatomic, readonly) id<BLDataProvider> updatedDataProvider;
+@property (nonatomic, readonly) id<BLDataDiff> dataDiff;
 
 @property (nonatomic, readonly) NSDictionary *context; // optional arbitrary data from model
+
+- (instancetype)initWithUpdatedDataProvider:(id<BLStaticDataProvider>)updatedDataProvider
+                                   dataDiff:(id<BLDataDiff>)dataDiff
+                                    context:(NSDictionary *)context;
 
 @end
