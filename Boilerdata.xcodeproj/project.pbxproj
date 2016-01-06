@@ -1,0 +1,317 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		016E58E31C3B3EA10087E63A /* Boilerdata.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 016E58E21C3B3EA10087E63A /* Boilerdata.h */; };
+		016E58E51C3B3EA10087E63A /* Boilerdata.m in Sources */ = {isa = PBXBuildFile; fileRef = 016E58E41C3B3EA10087E63A /* Boilerdata.m */; };
+		01DC726F1C3C735500D03CA2 /* BLAbstractDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC726E1C3C735500D03CA2 /* BLAbstractDataProvider.m */; };
+		01DC72801C3C96A600D03CA2 /* BLChainDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC727F1C3C96A600D03CA2 /* BLChainDataProvider.m */; };
+		01DC72861C3C9E9000D03CA2 /* BLChainDataEventProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72851C3C9E9000D03CA2 /* BLChainDataEventProcessor.m */; };
+		01F95B341C3B43270005D6F2 /* BLDataEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F95B331C3B43270005D6F2 /* BLDataEvent.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		016E58DD1C3B3EA10087E63A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				016E58E31C3B3EA10087E63A /* Boilerdata.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		016E58DF1C3B3EA10087E63A /* libBoilerdata.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBoilerdata.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		016E58E21C3B3EA10087E63A /* Boilerdata.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Boilerdata.h; sourceTree = "<group>"; };
+		016E58E41C3B3EA10087E63A /* Boilerdata.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Boilerdata.m; sourceTree = "<group>"; };
+		01DC726D1C3C735500D03CA2 /* BLAbstractDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLAbstractDataProvider.h; sourceTree = "<group>"; };
+		01DC726E1C3C735500D03CA2 /* BLAbstractDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLAbstractDataProvider.m; sourceTree = "<group>"; };
+		01DC72701C3C738100D03CA2 /* BLAbstractDataProvider+Subclassing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BLAbstractDataProvider+Subclassing.h"; sourceTree = "<group>"; };
+		01DC727E1C3C96A600D03CA2 /* BLChainDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLChainDataProvider.h; sourceTree = "<group>"; };
+		01DC727F1C3C96A600D03CA2 /* BLChainDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLChainDataProvider.m; sourceTree = "<group>"; };
+		01DC72811C3C96B400D03CA2 /* BLChainDataProvider+Subclassing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BLChainDataProvider+Subclassing.h"; sourceTree = "<group>"; };
+		01DC72841C3C9E9000D03CA2 /* BLChainDataEventProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLChainDataEventProcessor.h; sourceTree = "<group>"; };
+		01DC72851C3C9E9000D03CA2 /* BLChainDataEventProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLChainDataEventProcessor.m; sourceTree = "<group>"; };
+		01F95B2A1C3B3F8F0005D6F2 /* BLDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLDataProvider.h; sourceTree = "<group>"; };
+		01F95B2D1C3B40380005D6F2 /* BLDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLDataItem.h; sourceTree = "<group>"; };
+		01F95B2E1C3B42500005D6F2 /* BLDataObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLDataObserver.h; sourceTree = "<group>"; };
+		01F95B321C3B43270005D6F2 /* BLDataEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLDataEvent.h; sourceTree = "<group>"; };
+		01F95B331C3B43270005D6F2 /* BLDataEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLDataEvent.m; sourceTree = "<group>"; };
+		01F95B351C3B43740005D6F2 /* BLDataDiff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLDataDiff.h; sourceTree = "<group>"; };
+		01F95B361C3B44590005D6F2 /* BLDataEventProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLDataEventProcessor.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		016E58DC1C3B3EA10087E63A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		016E58D61C3B3EA10087E63A = {
+			isa = PBXGroup;
+			children = (
+				016E58E11C3B3EA10087E63A /* Boilerdata */,
+				016E58E01C3B3EA10087E63A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		016E58E01C3B3EA10087E63A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				016E58DF1C3B3EA10087E63A /* libBoilerdata.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		016E58E11C3B3EA10087E63A /* Boilerdata */ = {
+			isa = PBXGroup;
+			children = (
+				01F95B2C1C3B40300005D6F2 /* Data Item */,
+				01F95B291C3B3F480005D6F2 /* Data Providers */,
+				016E58E21C3B3EA10087E63A /* Boilerdata.h */,
+				016E58E41C3B3EA10087E63A /* Boilerdata.m */,
+			);
+			path = Boilerdata;
+			sourceTree = "<group>";
+		};
+		01DC726C1C3C734100D03CA2 /* Abstract */ = {
+			isa = PBXGroup;
+			children = (
+				01DC726D1C3C735500D03CA2 /* BLAbstractDataProvider.h */,
+				01DC726E1C3C735500D03CA2 /* BLAbstractDataProvider.m */,
+				01DC72701C3C738100D03CA2 /* BLAbstractDataProvider+Subclassing.h */,
+				01DC727E1C3C96A600D03CA2 /* BLChainDataProvider.h */,
+				01DC727F1C3C96A600D03CA2 /* BLChainDataProvider.m */,
+				01DC72811C3C96B400D03CA2 /* BLChainDataProvider+Subclassing.h */,
+				01DC72841C3C9E9000D03CA2 /* BLChainDataEventProcessor.h */,
+				01DC72851C3C9E9000D03CA2 /* BLChainDataEventProcessor.m */,
+			);
+			path = Abstract;
+			sourceTree = "<group>";
+		};
+		01F95B291C3B3F480005D6F2 /* Data Providers */ = {
+			isa = PBXGroup;
+			children = (
+				01DC726C1C3C734100D03CA2 /* Abstract */,
+				01F95B2A1C3B3F8F0005D6F2 /* BLDataProvider.h */,
+				01F95B2E1C3B42500005D6F2 /* BLDataObserver.h */,
+				01F95B351C3B43740005D6F2 /* BLDataDiff.h */,
+				01F95B321C3B43270005D6F2 /* BLDataEvent.h */,
+				01F95B331C3B43270005D6F2 /* BLDataEvent.m */,
+				01F95B361C3B44590005D6F2 /* BLDataEventProcessor.h */,
+			);
+			path = "Data Providers";
+			sourceTree = "<group>";
+		};
+		01F95B2C1C3B40300005D6F2 /* Data Item */ = {
+			isa = PBXGroup;
+			children = (
+				01F95B2D1C3B40380005D6F2 /* BLDataItem.h */,
+			);
+			path = "Data Item";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		016E58DE1C3B3EA10087E63A /* Boilerdata */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 016E58E81C3B3EA10087E63A /* Build configuration list for PBXNativeTarget "Boilerdata" */;
+			buildPhases = (
+				016E58DB1C3B3EA10087E63A /* Sources */,
+				016E58DC1C3B3EA10087E63A /* Frameworks */,
+				016E58DD1C3B3EA10087E63A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Boilerdata;
+			productName = Boilerdata;
+			productReference = 016E58DF1C3B3EA10087E63A /* libBoilerdata.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		016E58D71C3B3EA10087E63A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = BL;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = Pixty;
+				TargetAttributes = {
+					016E58DE1C3B3EA10087E63A = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 016E58DA1C3B3EA10087E63A /* Build configuration list for PBXProject "Boilerdata" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 016E58D61C3B3EA10087E63A;
+			productRefGroup = 016E58E01C3B3EA10087E63A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				016E58DE1C3B3EA10087E63A /* Boilerdata */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		016E58DB1C3B3EA10087E63A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01DC72861C3C9E9000D03CA2 /* BLChainDataEventProcessor.m in Sources */,
+				016E58E51C3B3EA10087E63A /* Boilerdata.m in Sources */,
+				01F95B341C3B43270005D6F2 /* BLDataEvent.m in Sources */,
+				01DC72801C3C96A600D03CA2 /* BLChainDataProvider.m in Sources */,
+				01DC726F1C3C735500D03CA2 /* BLAbstractDataProvider.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		016E58E61C3B3EA10087E63A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		016E58E71C3B3EA10087E63A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		016E58E91C3B3EA10087E63A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		016E58EA1C3B3EA10087E63A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		016E58DA1C3B3EA10087E63A /* Build configuration list for PBXProject "Boilerdata" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				016E58E61C3B3EA10087E63A /* Debug */,
+				016E58E71C3B3EA10087E63A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		016E58E81C3B3EA10087E63A /* Build configuration list for PBXNativeTarget "Boilerdata" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				016E58E91C3B3EA10087E63A /* Debug */,
+				016E58EA1C3B3EA10087E63A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 016E58D71C3B3EA10087E63A /* Project object */;
+}
