@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		016E58E31C3B3EA10087E63A /* Boilerdata.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 016E58E21C3B3EA10087E63A /* Boilerdata.h */; };
-		016E58E51C3B3EA10087E63A /* Boilerdata.m in Sources */ = {isa = PBXBuildFile; fileRef = 016E58E41C3B3EA10087E63A /* Boilerdata.m */; };
 		01DC726F1C3C735500D03CA2 /* BLAbstractDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC726E1C3C735500D03CA2 /* BLAbstractDataProvider.m */; };
 		01DC72801C3C96A600D03CA2 /* BLChainDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC727F1C3C96A600D03CA2 /* BLChainDataProvider.m */; };
 		01DC72861C3C9E9000D03CA2 /* BLChainDataEventProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72851C3C9E9000D03CA2 /* BLChainDataEventProcessor.m */; };
@@ -41,7 +40,6 @@
 /* Begin PBXFileReference section */
 		016E58DF1C3B3EA10087E63A /* libBoilerdata.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBoilerdata.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		016E58E21C3B3EA10087E63A /* Boilerdata.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Boilerdata.h; sourceTree = "<group>"; };
-		016E58E41C3B3EA10087E63A /* Boilerdata.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Boilerdata.m; sourceTree = "<group>"; };
 		01DC726D1C3C735500D03CA2 /* BLAbstractDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLAbstractDataProvider.h; sourceTree = "<group>"; };
 		01DC726E1C3C735500D03CA2 /* BLAbstractDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLAbstractDataProvider.m; sourceTree = "<group>"; };
 		01DC72701C3C738100D03CA2 /* BLAbstractDataProvider+Subclassing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BLAbstractDataProvider+Subclassing.h"; sourceTree = "<group>"; };
@@ -117,7 +115,6 @@
 				01DC72B11C3DE8A900D03CA2 /* Goodies */,
 				01DC72AD1C3DE87700D03CA2 /* Internal */,
 				016E58E21C3B3EA10087E63A /* Boilerdata.h */,
-				016E58E41C3B3EA10087E63A /* Boilerdata.m */,
 			);
 			path = Boilerdata;
 			sourceTree = "<group>";
@@ -279,7 +276,6 @@
 				01DC729B1C3D940500D03CA2 /* BLStaticDataProviderProxy.m in Sources */,
 				01DC72861C3C9E9000D03CA2 /* BLChainDataEventProcessor.m in Sources */,
 				01DC72981C3D87DD00D03CA2 /* BLFilterDataProvider.m in Sources */,
-				016E58E51C3B3EA10087E63A /* Boilerdata.m in Sources */,
 				01F95B341C3B43270005D6F2 /* BLDataEvent.m in Sources */,
 				01DC72B01C3DE87700D03CA2 /* NSIndexPath+BLUtils.m in Sources */,
 				01DC72801C3C96A600D03CA2 /* BLChainDataProvider.m in Sources */,
