@@ -1,0 +1,20 @@
+PODS:
+  - ArrayDiff (0.2.4)
+
+DEPENDENCIES:
+  - ArrayDiff (from `https://github.com/nickynick/ArrayDiff.git`, branch `master`)
+
+EXTERNAL SOURCES:
+  ArrayDiff:
+    :branch: master
+    :git: https://github.com/nickynick/ArrayDiff.git
+
+CHECKOUT OPTIONS:
+  ArrayDiff:
+    :commit: 68ab28e772c1c11188932111441d3e28c306bbad
+    :git: https://github.com/nickynick/ArrayDiff.git
+
+SPEC CHECKSUMS:
+  ArrayDiff: c058c4f17abf85d6b6d5d9c51832ee9d51d05f0c
+
+COCOAPODS: 0.39.0
