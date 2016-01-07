@@ -10,6 +10,7 @@
 #import "BLAbstractDataProvider+Subclassing.h"
 #import "BLStaticArrayDataProvider.h"
 #import "BLDataEvent.h"
+#import "BLDataDiffCalculator.h"
 
 @implementation BLArrayDataProvider
 
@@ -18,7 +19,7 @@
     
     BLStaticArrayDataProvider *newDataProvider = [[BLStaticArrayDataProvider alloc] initWithItems:items];
     
-    id<BLDataDiff> dataDiff = nil; // TODO
+    id<BLDataDiff> dataDiff = [BLDataDiffCalculator diffForItemsBefore:oldDataProvider.items itemsAfter:newDataProvider.items];
     
     [self enqueueDataEvent:[[BLDataEvent alloc] initWithUpdatedDataProvider:newDataProvider
                                                                    dataDiff:dataDiff

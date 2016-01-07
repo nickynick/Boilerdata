@@ -17,6 +17,7 @@
 #import "BLDataDiffChange.h"
 #import "BLMutableDataDiff.h"
 #import "BLMutableDataDiffChange.h"
+#import "BLDataDiffCalculator.h"
 
 
 // Data provider protocols

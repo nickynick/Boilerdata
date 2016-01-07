@@ -22,6 +22,10 @@
 		01DC72BB1C3E0DF500D03CA2 /* BLMutableDataDiffChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72BA1C3E0DF500D03CA2 /* BLMutableDataDiffChange.m */; };
 		01DC72C41C3E354500D03CA2 /* BLChainDataEventProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72C11C3E354500D03CA2 /* BLChainDataEventProcessor.m */; };
 		01DC72C51C3E354500D03CA2 /* BLNilDataEventProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72C31C3E354500D03CA2 /* BLNilDataEventProcessor.m */; };
+		01DC72C81C3EEFE900D03CA2 /* BLDataDiffCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72C71C3EEFE900D03CA2 /* BLDataDiffCalculator.m */; };
+		01DC72CB1C3EF2FE00D03CA2 /* BLDataSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72CA1C3EF2FE00D03CA2 /* BLDataSection.m */; };
+		01DC72CF1C3EFFA700D03CA2 /* NNSectionsDiff+BLDataDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72CE1C3EFFA700D03CA2 /* NNSectionsDiff+BLDataDiff.m */; };
+		01DC72D21C3F00A400D03CA2 /* NNArrayDiffChange+BLDataDiffIndexPathChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72D11C3F00A400D03CA2 /* NNArrayDiffChange+BLDataDiffIndexPathChange.m */; };
 		01F95B341C3B43270005D6F2 /* BLDataEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F95B331C3B43270005D6F2 /* BLDataEvent.m */; };
 		C971A6287ACC2CF5BEBD2D16 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D2C76DFF023523F7626A4C /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -75,6 +79,14 @@
 		01DC72C11C3E354500D03CA2 /* BLChainDataEventProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLChainDataEventProcessor.m; sourceTree = "<group>"; };
 		01DC72C21C3E354500D03CA2 /* BLNilDataEventProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLNilDataEventProcessor.h; sourceTree = "<group>"; };
 		01DC72C31C3E354500D03CA2 /* BLNilDataEventProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLNilDataEventProcessor.m; sourceTree = "<group>"; };
+		01DC72C61C3EEFE900D03CA2 /* BLDataDiffCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLDataDiffCalculator.h; sourceTree = "<group>"; };
+		01DC72C71C3EEFE900D03CA2 /* BLDataDiffCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLDataDiffCalculator.m; sourceTree = "<group>"; };
+		01DC72C91C3EF2FE00D03CA2 /* BLDataSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLDataSection.h; sourceTree = "<group>"; };
+		01DC72CA1C3EF2FE00D03CA2 /* BLDataSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLDataSection.m; sourceTree = "<group>"; };
+		01DC72CD1C3EFFA700D03CA2 /* NNSectionsDiff+BLDataDiff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NNSectionsDiff+BLDataDiff.h"; sourceTree = "<group>"; };
+		01DC72CE1C3EFFA700D03CA2 /* NNSectionsDiff+BLDataDiff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NNSectionsDiff+BLDataDiff.m"; sourceTree = "<group>"; };
+		01DC72D01C3F00A400D03CA2 /* NNArrayDiffChange+BLDataDiffIndexPathChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NNArrayDiffChange+BLDataDiffIndexPathChange.h"; sourceTree = "<group>"; };
+		01DC72D11C3F00A400D03CA2 /* NNArrayDiffChange+BLDataDiffIndexPathChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NNArrayDiffChange+BLDataDiffIndexPathChange.m"; sourceTree = "<group>"; };
 		01F95B2A1C3B3F8F0005D6F2 /* BLDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLDataProvider.h; sourceTree = "<group>"; };
 		01F95B2D1C3B40380005D6F2 /* BLDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLDataItem.h; sourceTree = "<group>"; };
 		01F95B2E1C3B42500005D6F2 /* BLDataObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLDataObserver.h; sourceTree = "<group>"; };
@@ -179,6 +191,8 @@
 				01DC72AB1C3DDFFC00D03CA2 /* BLMutableDataDiff.m */,
 				01DC72B91C3E0DF500D03CA2 /* BLMutableDataDiffChange.h */,
 				01DC72BA1C3E0DF500D03CA2 /* BLMutableDataDiffChange.m */,
+				01DC72C61C3EEFE900D03CA2 /* BLDataDiffCalculator.h */,
+				01DC72C71C3EEFE900D03CA2 /* BLDataDiffCalculator.m */,
 			);
 			path = "Data Diff";
 			sourceTree = "<group>";
@@ -186,6 +200,7 @@
 		01DC72AD1C3DE87700D03CA2 /* Internal */ = {
 			isa = PBXGroup;
 			children = (
+				01DC72CC1C3EFF8F00D03CA2 /* ArrayDiff */,
 				01DC72AE1C3DE87700D03CA2 /* NSIndexPath+BLUtils.h */,
 				01DC72AF1C3DE87700D03CA2 /* NSIndexPath+BLUtils.m */,
 			);
@@ -212,6 +227,17 @@
 			path = Processors;
 			sourceTree = "<group>";
 		};
+		01DC72CC1C3EFF8F00D03CA2 /* ArrayDiff */ = {
+			isa = PBXGroup;
+			children = (
+				01DC72CD1C3EFFA700D03CA2 /* NNSectionsDiff+BLDataDiff.h */,
+				01DC72CE1C3EFFA700D03CA2 /* NNSectionsDiff+BLDataDiff.m */,
+				01DC72D01C3F00A400D03CA2 /* NNArrayDiffChange+BLDataDiffIndexPathChange.h */,
+				01DC72D11C3F00A400D03CA2 /* NNArrayDiffChange+BLDataDiffIndexPathChange.m */,
+			);
+			path = ArrayDiff;
+			sourceTree = "<group>";
+		};
 		01F95B291C3B3F480005D6F2 /* Data Providers */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +257,8 @@
 			isa = PBXGroup;
 			children = (
 				01F95B2D1C3B40380005D6F2 /* BLDataItem.h */,
+				01DC72C91C3EF2FE00D03CA2 /* BLDataSection.h */,
+				01DC72CA1C3EF2FE00D03CA2 /* BLDataSection.m */,
 			);
 			path = "Data Item";
 			sourceTree = "<group>";
@@ -355,10 +383,14 @@
 				01DC728A1C3CAEC200D03CA2 /* BLArrayDataProvider.m in Sources */,
 				01DC72BB1C3E0DF500D03CA2 /* BLMutableDataDiffChange.m in Sources */,
 				01DC72A71C3D978300D03CA2 /* BLDataItemFilter.m in Sources */,
+				01DC72CF1C3EFFA700D03CA2 /* NNSectionsDiff+BLDataDiff.m in Sources */,
 				01DC72C51C3E354500D03CA2 /* BLNilDataEventProcessor.m in Sources */,
+				01DC72C81C3EEFE900D03CA2 /* BLDataDiffCalculator.m in Sources */,
+				01DC72D21C3F00A400D03CA2 /* NNArrayDiffChange+BLDataDiffIndexPathChange.m in Sources */,
 				01DC72A11C3D96B100D03CA2 /* BLStaticFilterDataProvider.m in Sources */,
 				01DC72AC1C3DDFFC00D03CA2 /* BLMutableDataDiff.m in Sources */,
 				01DC726F1C3C735500D03CA2 /* BLAbstractDataProvider.m in Sources */,
+				01DC72CB1C3EF2FE00D03CA2 /* BLDataSection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
