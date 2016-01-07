@@ -18,7 +18,6 @@
 @property (nonatomic, readonly) BLDataEvent *lastQueuedEvent;
 
 - (void)enqueueDataEvent:(BLDataEvent *)event;
-
 - (void)enqueueDataEvent:(BLDataEvent *)event callbacks:(BLAbstractDataProviderEventCallbacks *)callbacks;
 
 @end

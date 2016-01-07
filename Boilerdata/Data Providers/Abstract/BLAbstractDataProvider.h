@@ -6,9 +6,8 @@
 //  Copyright © 2016 Pixty. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "BLDataProvider.h"
+#import "BLStaticDataProviderProxy.h"
 
-@interface BLAbstractDataProvider : NSObject <BLDataProvider>
+@interface BLAbstractDataProvider : BLStaticDataProviderProxy <BLDataProvider>
 
 @end

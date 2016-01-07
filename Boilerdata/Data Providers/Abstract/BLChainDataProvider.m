@@ -36,9 +36,9 @@
         return nil;
     }
     
-    BLDataEvent *transformedEvent = [self transformInnerDataEvent:event];
+    BLDataEvent *externalEvent = [self handleInnerDataEvent:event];
     
-    if (transformedEvent == nil) {
+    if (externalEvent == nil) {
         return nil;
     }
     
@@ -49,7 +49,7 @@
         chainProcessor.innerProcessor = processor;
     };
 
-    [self enqueueDataEvent:transformedEvent callbacks:eventCallbacks];
+    [self enqueueDataEvent:externalEvent callbacks:eventCallbacks];
 
     return chainProcessor;
 }
@@ -69,7 +69,7 @@
     _innerDataProvider.observer = self;
 }
 
-- (BLDataEvent *)transformInnerDataEvent:(BLDataEvent *)event {
+- (BLDataEvent *)handleInnerDataEvent:(BLDataEvent *)event {
     return event;
 }
 

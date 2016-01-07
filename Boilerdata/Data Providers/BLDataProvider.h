@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @protocol BLDataItem;
+@protocol BLDataItemId;
 @protocol BLDataObserver;
 
 
@@ -21,12 +22,12 @@
 - (NSInteger)numberOfItemsInSection:(NSInteger)section;
 
 - (id<BLDataItem>)itemAtIndexPath:(NSIndexPath *)indexPath;
-- (NSIndexPath *)indexPathForItemWithId:(id)itemId;
+- (NSIndexPath *)indexPathForItemWithId:(id<BLDataItemId>)itemId;
 
 
 @optional
 
-- (NSString *)titleForSection:(NSInteger)section;
+- (NSString *)titleForSection:(NSInteger)section; // TODO: should be an arbitrary object, not NSString
 
 - (NSArray *)sectionIndexTitles;
 - (NSInteger)sectionForSectionIndexTitleAtIndex:(NSInteger)index;

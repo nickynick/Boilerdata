@@ -8,18 +8,17 @@
 
 #import "BLAbstractDataProvider.h"
 #import "BLAbstractDataProvider+Subclassing.h"
+#import "BLStaticDataProviderProxy+Subclassing.h"
 #import "BLDataEvent.h"
 #import "BLDataEventProcessor.h"
 #import "BLDataObserver.h"
 
 @interface BLAbstractDataProvider ()
 
-@property (nonatomic, strong) id<BLStaticDataProvider> staticDataProvider;
-
 @property (nonatomic, readonly) NSMutableArray<BLDataEvent *> *eventQueue;
 @property (nonatomic, readonly) NSMutableArray<BLAbstractDataProviderEventCallbacks *> *eventCallbacksQueue;
 
-@property (nonatomic, strong) id<BLDataEventProcessor> activeEventProcessor;
+@property (nonatomic, strong) id<BLDataEventProcessor> eventProcessorInProgress;
 
 @end
 
@@ -30,41 +29,6 @@
 
 @synthesize observer = _observer;
 @synthesize locked = _locked;
-
-- (NSInteger)numberOfSections {
-    return [self.staticDataProvider numberOfSections];
-}
-
-- (NSInteger)numberOfItemsInSection:(NSInteger)section {
-    return [self.staticDataProvider numberOfItemsInSection:section];
-}
-
-- (id<BLDataItem>)itemAtIndexPath:(NSIndexPath *)indexPath {
-    return [self.staticDataProvider itemAtIndexPath:indexPath];
-}
-
-- (NSIndexPath *)indexPathForItemWithId:(id)itemId {
-    return [self.staticDataProvider indexPathForItemWithId:itemId];
-}
-
-- (BOOL)respondsToSelector:(SEL)aSelector {
-    return [super respondsToSelector:aSelector] || [self.staticDataProvider respondsToSelector:aSelector];
-}
-
-- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
-    NSMethodSignature *signature = [super methodSignatureForSelector:aSelector];
-    if (!signature) {
-        signature = [(NSObject *)self.staticDataProvider methodSignatureForSelector:aSelector];
-    }
-    return signature;
-}
-
-- (id)forwardingTargetForSelector:(SEL)aSelector {
-    if ([self.staticDataProvider respondsToSelector:aSelector]) {
-        return self.staticDataProvider;
-    }
-    return [super forwardingTargetForSelector:aSelector];
-}
 
 #pragma mark - Protected
 
@@ -103,7 +67,7 @@
 }
 
 - (void)dequeueEventIfPossible {
-    if (self.eventQueue.count == 0 || self.locked || self.activeEventProcessor) {
+    if (self.eventQueue.count == 0 || self.locked || self.eventProcessorInProgress) {
         return;
     }
     
@@ -112,20 +76,20 @@
     [self.eventQueue removeObjectAtIndex:0];
     [self.eventCallbacksQueue removeObjectAtIndex:0];
     
-    self.activeEventProcessor = [self getProcessorForEvent:event];
+    self.eventProcessorInProgress = [self getProcessorForEvent:event];
     
     if (callbacks.willProcessBlock) {
-        callbacks.willProcessBlock(self.activeEventProcessor);
+        callbacks.willProcessBlock(self.eventProcessorInProgress);
     }
     
-    [self.activeEventProcessor applyEventWithDataUpdateBlock:^{
+    [self.eventProcessorInProgress applyEventWithDataUpdateBlock:^{
         // TODO: post notification?
         self.staticDataProvider = event.updatedDataProvider;
         // TODO: post notification?
     } individualItemUpdateBlock:^{
         // TODO
     } completion:^{
-        self.activeEventProcessor = nil;
+        self.eventProcessorInProgress = nil;
         
         if (callbacks.didProcessBlock) {
             callbacks.didProcessBlock();

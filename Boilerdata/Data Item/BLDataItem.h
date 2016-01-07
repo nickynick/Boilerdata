@@ -8,8 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol BLDataItemId <NSObject, NSCopying>
+
+@end
+
+
 @protocol BLDataItem <NSObject>
 
-@property (nonatomic, readonly) id itemId;
+@property (nonatomic, readonly) id<BLDataItemId> itemId;
 
 @end

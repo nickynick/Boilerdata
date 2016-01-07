@@ -15,6 +15,9 @@
 
 @property (nonatomic, strong) id<BLDataProvider> innerDataProvider;
 
-- (BLDataEvent *)transformInnerDataEvent:(BLDataEvent *)event;
+- (BLDataEvent *)handleInnerDataEvent:(BLDataEvent *)event;
 
 @end
+
+
+// TODO: rename inner -> original?

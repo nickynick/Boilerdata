@@ -34,15 +34,15 @@
 }
 
 - (id<BLDataItem>)itemAtIndexPath:(NSIndexPath *)indexPath {
-    return self.items[indexPath.bl_item];
+    return self.items[indexPath.bl_row];
 }
 
-- (NSIndexPath *)indexPathForItemWithId:(id)itemId {
+- (NSIndexPath *)indexPathForItemWithId:(id<BLDataItemId>)itemId {
     __block NSIndexPath *result = nil;
     
     [self.items enumerateObjectsUsingBlock:^(id<BLDataItem> item, NSUInteger idx, BOOL *stop) {
         if ([item.itemId isEqual:itemId]) {
-            result = [NSIndexPath bl_indexPathForItem:idx inSection:0];
+            result = [NSIndexPath bl_indexPathForRow:idx inSection:0];
             *stop = YES;
         }
     }];

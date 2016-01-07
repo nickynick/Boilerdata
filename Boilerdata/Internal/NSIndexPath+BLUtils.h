@@ -11,8 +11,8 @@
 @interface NSIndexPath (BLUtils)
 
 @property (nonatomic, readonly) NSUInteger bl_section;
-@property (nonatomic, readonly) NSUInteger bl_item;
+@property (nonatomic, readonly) NSUInteger bl_row;
 
-+ (instancetype)bl_indexPathForItem:(NSUInteger)item inSection:(NSUInteger)section;
++ (instancetype)bl_indexPathForRow:(NSUInteger)row inSection:(NSUInteger)section;
 
 @end

@@ -14,12 +14,12 @@
     return [self indexAtPosition:0];
 }
 
-- (NSUInteger)bl_item {
+- (NSUInteger)bl_row {
     return [self indexAtPosition:1];
 }
 
-+ (instancetype)bl_indexPathForItem:(NSUInteger)item inSection:(NSUInteger)section {
-    NSUInteger indexes[] = { section, item };
++ (instancetype)bl_indexPathForRow:(NSUInteger)row inSection:(NSUInteger)section {
+    NSUInteger indexes[] = { section, row };
     return [NSIndexPath indexPathWithIndexes:indexes length:2];
 }
 
