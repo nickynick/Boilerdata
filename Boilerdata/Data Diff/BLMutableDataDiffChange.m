@@ -10,17 +10,24 @@
 
 @implementation BLMutableDataDiffChange
 
+- (instancetype)initWithAbstractChange:(id<BLDataDiffChange>)change {
+    self = [super init];
+    if (!self) return nil;
+    
+    _moved = change.moved;
+    _updated = change.updated;
+    
+    return self;
+}
+
 @end
 
 
 @implementation BLMutableDataDiffIndexPathChange
 
 - (instancetype)initWithChange:(id<BLDataDiffIndexPathChange>)change {
-    self = [super init];
+    self = [super initWithAbstractChange:change];
     if (!self) return nil;
-    
-    self.moved = change.moved;
-    self.updated = change.updated;
     
     _before = change.before;
     _after = change.after;
@@ -34,11 +41,8 @@
 @implementation BLMutableDataDiffSectionChange
 
 - (instancetype)initWithChange:(id<BLDataDiffSectionChange>)change {
-    self = [super init];
+    self = [super initWithAbstractChange:change];
     if (!self) return nil;
-    
-    self.moved = change.moved;
-    self.updated = change.updated;
     
     _before = change.before;
     _after = change.after;

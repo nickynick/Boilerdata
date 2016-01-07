@@ -18,6 +18,8 @@ typedef void (^BLDataProviderEnumerationBlock)(id<BLDataItem> item, NSIndexPath 
 
 + (BOOL)dataProviderIsEmpty:(id<BLStaticDataProvider>)dataProvider;
 
++ (NSInteger)dataProviderNumberOfItems:(id<BLStaticDataProvider>)dataProvider;
+
 + (void)dataProvider:(id<BLStaticDataProvider>)dataProvider enumerateItemsWithBlock:(BLDataProviderEnumerationBlock)block;
 
 @end

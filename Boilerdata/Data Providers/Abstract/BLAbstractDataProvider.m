@@ -12,6 +12,7 @@
 #import "BLDataEvent.h"
 #import "BLDataEventProcessor.h"
 #import "BLDataObserver.h"
+#import "BLNilDataEventProcessor.h"
 
 @interface BLAbstractDataProvider ()
 
@@ -103,7 +104,7 @@
     id<BLDataEventProcessor> processor = [self.observer dataProvider:self willUpdateWithEvent:event];
     
     if (!processor) {
-        processor = nil; // TODO: get default processor
+        processor = [BLNilDataEventProcessor sharedInstance];
     }
     
     return processor;

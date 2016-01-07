@@ -14,8 +14,8 @@
 
 @interface BLStaticFilterDataProvider ()
 
-@property (strong, readonly, nonatomic) NSArray *filteredSections; // TODO: type
-@property (strong, readonly, nonatomic) NSMapTable *filteredIndexPathsByItemId; // TODO: type
+@property (strong, readonly, nonatomic) NSArray<NSOrderedSet<NSIndexPath *> *> *filteredSections;
+@property (strong, readonly, nonatomic) NSMapTable<id<BLDataItemId>, NSIndexPath *> *filteredIndexPathsByItemId;
 
 @end
 

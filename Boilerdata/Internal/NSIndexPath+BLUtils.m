@@ -23,4 +23,9 @@
     return [NSIndexPath indexPathWithIndexes:indexes length:2];
 }
 
+- (instancetype)bl_shiftBySectionDelta:(NSInteger)sectionDelta rowDelta:(NSInteger)rowDelta {
+    NSUInteger indexes[] = { [self indexAtPosition:0] + sectionDelta, [self indexAtPosition:1] + rowDelta };
+    return [NSIndexPath indexPathWithIndexes:indexes length:2];
+}
+
 @end

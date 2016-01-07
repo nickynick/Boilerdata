@@ -7,6 +7,8 @@
 //
 
 #import "BLMutableDataDiff.h"
+#import "BLMutableDataDiffChange.h"
+#import "NSIndexPath+BLUtils.h"
 
 @implementation BLMutableDataDiff
 
@@ -43,6 +45,53 @@
     [self.deletedSections addIndexes:dataDiff.deletedSections];
     [self.insertedSections addIndexes:dataDiff.insertedSections];
     [self.changedSections unionSet:dataDiff.changedSections];
+}
+
+- (void)shiftBySectionDelta:(NSInteger)sectionDelta rowDelta:(NSInteger)rowDelta {
+    if (sectionDelta == 0 && rowDelta == 0) {
+        return;
+    }
+    
+    NSMutableSet<NSIndexPath *> *deletedIndexPaths = [NSMutableSet setWithCapacity:self.deletedIndexPaths.count];
+    for (NSIndexPath *indexPath in self.deletedIndexPaths) {
+        [deletedIndexPaths addObject:[indexPath bl_shiftBySectionDelta:sectionDelta rowDelta:rowDelta]];
+    }
+    _deletedIndexPaths = deletedIndexPaths;
+    
+    NSMutableSet<NSIndexPath *> *insertedIndexPaths = [NSMutableSet setWithCapacity:self.insertedIndexPaths.count];
+    for (NSIndexPath *indexPath in self.insertedIndexPaths) {
+        [insertedIndexPaths addObject:[indexPath bl_shiftBySectionDelta:sectionDelta rowDelta:rowDelta]];
+    }
+    _insertedIndexPaths = insertedIndexPaths;
+    
+    NSMutableSet<id<BLDataDiffIndexPathChange>> *changedIndexPaths = [NSMutableSet setWithCapacity:self.changedIndexPaths.count];
+    for (id<BLDataDiffIndexPathChange> change in self.changedIndexPaths) {
+        BLMutableDataDiffIndexPathChange *shiftedChange = [[BLMutableDataDiffIndexPathChange alloc] initWithChange:change];
+        shiftedChange.before = [shiftedChange.before bl_shiftBySectionDelta:sectionDelta rowDelta:rowDelta];
+        shiftedChange.after = [shiftedChange.after bl_shiftBySectionDelta:sectionDelta rowDelta:rowDelta];
+        
+        [changedIndexPaths addObject:shiftedChange];
+    }
+    _changedIndexPaths = changedIndexPaths;
+    
+    
+    if (sectionDelta == 0) {
+        return;
+    }
+    
+    [self.deletedSections shiftIndexesStartingAtIndex:0 by:sectionDelta];
+    
+    [self.insertedSections shiftIndexesStartingAtIndex:0 by:sectionDelta];
+    
+    NSMutableSet<id<BLDataDiffSectionChange>> *changedSections = [NSMutableSet setWithCapacity:self.changedSections.count];
+    for (id<BLDataDiffSectionChange> change in self.changedSections) {
+        BLMutableDataDiffSectionChange *shiftedChange = [[BLMutableDataDiffSectionChange alloc] initWithChange:change];
+        shiftedChange.before += sectionDelta;
+        shiftedChange.after += sectionDelta;
+        
+        [changedSections addObject:shiftedChange];
+    }
+    _changedSections = changedSections;
 }
 
 @end

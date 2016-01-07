@@ -22,6 +22,16 @@
     return YES;
 }
 
++ (NSInteger)dataProviderNumberOfItems:(id<BLStaticDataProvider>)dataProvider {
+    NSInteger count = 0;
+    
+    for (NSInteger section = 0; section < [dataProvider numberOfSections]; ++section) {
+        count += [dataProvider numberOfItemsInSection:section];
+    }
+    
+    return count;
+}
+
 + (void)dataProvider:(id<BLStaticDataProvider>)dataProvider enumerateItemsWithBlock:(BLDataProviderEnumerationBlock)block {
     BOOL stop = NO;
     

@@ -23,6 +23,8 @@
 - (void)addIndexPathsFromDiff:(id<BLDataDiff>)dataDiff;
 - (void)addSectionsFromDiff:(id<BLDataDiff>)dataDiff;
 
-// TODO: shift, union, etc.
+- (void)shiftBySectionDelta:(NSInteger)sectionDelta rowDelta:(NSInteger)rowDelta;
+
+// TODO: union, etc.
 
 @end
