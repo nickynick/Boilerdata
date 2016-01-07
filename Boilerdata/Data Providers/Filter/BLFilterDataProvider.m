@@ -75,7 +75,7 @@
     
     return [[BLDataEvent alloc] initWithUpdatedDataProvider:newDataProvider
                                                    dataDiff:dataDiff
-                                                    context:nil];
+                                                    context:event.context];
 }
 
 #pragma mark - Private
