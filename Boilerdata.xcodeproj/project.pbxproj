@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		016E58E31C3B3EA10087E63A /* Boilerdata.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 016E58E21C3B3EA10087E63A /* Boilerdata.h */; };
+		01A356801C4718BE009969A3 /* BLUITableViewReloaderEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A3567F1C4718BE009969A3 /* BLUITableViewReloaderEngine.m */; };
+		01A356831C4718C8009969A3 /* BLUICollectionViewReloaderEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A356821C4718C8009969A3 /* BLUICollectionViewReloaderEngine.m */; };
+		01A356861C471CAD009969A3 /* BLUITableViewAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A356851C471CAD009969A3 /* BLUITableViewAnimations.m */; };
 		01DC730F1C3F097700D03CA2 /* BLDataDiffCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72D91C3F097700D03CA2 /* BLDataDiffCalculator.m */; };
 		01DC73101C3F097700D03CA2 /* BLMutableDataDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72DC1C3F097700D03CA2 /* BLMutableDataDiff.m */; };
 		01DC73111C3F097700D03CA2 /* BLMutableDataDiffChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72DE1C3F097700D03CA2 /* BLMutableDataDiffChange.m */; };
@@ -27,6 +30,7 @@
 		01DC731F1C3F097700D03CA2 /* NNArrayDiffChange+BLDataDiffIndexPathChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC730A1C3F097700D03CA2 /* NNArrayDiffChange+BLDataDiffIndexPathChange.m */; };
 		01DC73201C3F097700D03CA2 /* NNSectionsDiff+BLDataDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC730C1C3F097700D03CA2 /* NNSectionsDiff+BLDataDiff.m */; };
 		01DC73211C3F097700D03CA2 /* NSIndexPath+BLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC730E1C3F097700D03CA2 /* NSIndexPath+BLUtils.m */; };
+		01DC73341C42E84C00D03CA2 /* BLUIKitViewReloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC73331C42E84C00D03CA2 /* BLUIKitViewReloader.m */; };
 		C971A6287ACC2CF5BEBD2D16 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D2C76DFF023523F7626A4C /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +50,13 @@
 /* Begin PBXFileReference section */
 		016E58DF1C3B3EA10087E63A /* libBoilerdata.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBoilerdata.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		016E58E21C3B3EA10087E63A /* Boilerdata.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Boilerdata.h; sourceTree = "<group>"; };
+		01A356771C471877009969A3 /* BLUIKitViewReloaderEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLUIKitViewReloaderEngine.h; sourceTree = "<group>"; };
+		01A3567E1C4718BE009969A3 /* BLUITableViewReloaderEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLUITableViewReloaderEngine.h; sourceTree = "<group>"; };
+		01A3567F1C4718BE009969A3 /* BLUITableViewReloaderEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLUITableViewReloaderEngine.m; sourceTree = "<group>"; };
+		01A356811C4718C8009969A3 /* BLUICollectionViewReloaderEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLUICollectionViewReloaderEngine.h; sourceTree = "<group>"; };
+		01A356821C4718C8009969A3 /* BLUICollectionViewReloaderEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLUICollectionViewReloaderEngine.m; sourceTree = "<group>"; };
+		01A356841C471CAD009969A3 /* BLUITableViewAnimations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLUITableViewAnimations.h; sourceTree = "<group>"; };
+		01A356851C471CAD009969A3 /* BLUITableViewAnimations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLUITableViewAnimations.m; sourceTree = "<group>"; };
 		01DC72D71C3F097700D03CA2 /* BLDataDiff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLDataDiff.h; sourceTree = "<group>"; };
 		01DC72D81C3F097700D03CA2 /* BLDataDiffCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLDataDiffCalculator.h; sourceTree = "<group>"; };
 		01DC72D91C3F097700D03CA2 /* BLDataDiffCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLDataDiffCalculator.m; sourceTree = "<group>"; };
@@ -93,6 +104,8 @@
 		01DC730C1C3F097700D03CA2 /* NNSectionsDiff+BLDataDiff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NNSectionsDiff+BLDataDiff.m"; sourceTree = "<group>"; };
 		01DC730D1C3F097700D03CA2 /* NSIndexPath+BLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+BLUtils.h"; sourceTree = "<group>"; };
 		01DC730E1C3F097700D03CA2 /* NSIndexPath+BLUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+BLUtils.m"; sourceTree = "<group>"; };
+		01DC73321C42E84C00D03CA2 /* BLUIKitViewReloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLUIKitViewReloader.h; sourceTree = "<group>"; };
+		01DC73331C42E84C00D03CA2 /* BLUIKitViewReloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLUIKitViewReloader.m; sourceTree = "<group>"; };
 		27229336A96FC966E90569F1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		35D2C76DFF023523F7626A4C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8EC2E52A39642AB63DCB70F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +151,18 @@
 			path = Boilerdata;
 			sourceTree = "<group>";
 		};
+		01A356761C471866009969A3 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				01A356771C471877009969A3 /* BLUIKitViewReloaderEngine.h */,
+				01A3567E1C4718BE009969A3 /* BLUITableViewReloaderEngine.h */,
+				01A3567F1C4718BE009969A3 /* BLUITableViewReloaderEngine.m */,
+				01A356811C4718C8009969A3 /* BLUICollectionViewReloaderEngine.h */,
+				01A356821C4718C8009969A3 /* BLUICollectionViewReloaderEngine.m */,
+			);
+			path = Internal;
+			sourceTree = "<group>";
+		};
 		01DC72D31C3F093700D03CA2 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +174,11 @@
 		01DC72D41C3F093700D03CA2 /* Event Processors */ = {
 			isa = PBXGroup;
 			children = (
+				01A356761C471866009969A3 /* Internal */,
+				01DC73321C42E84C00D03CA2 /* BLUIKitViewReloader.h */,
+				01DC73331C42E84C00D03CA2 /* BLUIKitViewReloader.m */,
+				01A356841C471CAD009969A3 /* BLUITableViewAnimations.h */,
+				01A356851C471CAD009969A3 /* BLUITableViewAnimations.m */,
 			);
 			path = "Event Processors";
 			sourceTree = "<group>";
@@ -399,16 +429,20 @@
 				01DC730F1C3F097700D03CA2 /* BLDataDiffCalculator.m in Sources */,
 				01DC731D1C3F097700D03CA2 /* BLStaticFilterDataProvider.m in Sources */,
 				01DC73131C3F097700D03CA2 /* BLAbstractDataProvider.m in Sources */,
+				01A356801C4718BE009969A3 /* BLUITableViewReloaderEngine.m in Sources */,
 				01DC731E1C3F097700D03CA2 /* BLUtils.m in Sources */,
 				01DC731F1C3F097700D03CA2 /* NNArrayDiffChange+BLDataDiffIndexPathChange.m in Sources */,
+				01DC73341C42E84C00D03CA2 /* BLUIKitViewReloader.m in Sources */,
 				01DC731C1C3F097700D03CA2 /* BLFilterDataProvider.m in Sources */,
 				01DC73191C3F097700D03CA2 /* BLStaticArrayDataProvider.m in Sources */,
 				01DC73181C3F097700D03CA2 /* BLArrayDataProvider.m in Sources */,
+				01A356831C4718C8009969A3 /* BLUICollectionViewReloaderEngine.m in Sources */,
 				01DC73111C3F097700D03CA2 /* BLMutableDataDiffChange.m in Sources */,
 				01DC73161C3F097700D03CA2 /* BLChainDataEventProcessor.m in Sources */,
 				01DC73101C3F097700D03CA2 /* BLMutableDataDiff.m in Sources */,
 				01DC73201C3F097700D03CA2 /* NNSectionsDiff+BLDataDiff.m in Sources */,
 				01DC73211C3F097700D03CA2 /* NSIndexPath+BLUtils.m in Sources */,
+				01A356861C471CAD009969A3 /* BLUITableViewAnimations.m in Sources */,
 				01DC73141C3F097700D03CA2 /* BLChainDataProvider.m in Sources */,
 				01DC73121C3F097700D03CA2 /* BLDataSection.m in Sources */,
 				01DC73151C3F097700D03CA2 /* BLStaticDataProviderProxy.m in Sources */,

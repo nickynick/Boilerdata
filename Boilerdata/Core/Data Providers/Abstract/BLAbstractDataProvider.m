@@ -83,12 +83,10 @@
         callbacks.willProcessBlock(self.eventProcessorInProgress);
     }
     
-    [self.eventProcessorInProgress applyEventWithDataUpdateBlock:^{
+    [self.eventProcessorInProgress applyEvent:event withDataUpdateBlock:^{
         // TODO: post notification?
         self.staticDataProvider = event.updatedDataProvider;
         // TODO: post notification?
-    } individualItemUpdateBlock:^{
-        // TODO
     } completion:^{
         self.eventProcessorInProgress = nil;
         

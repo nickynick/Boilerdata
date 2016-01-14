@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class BLDataEvent;
+
+
 @protocol BLDataEventProcessor <NSObject>
 
-- (void)applyEventWithDataUpdateBlock:(void (^)())dataUpdateBlock
-            individualItemUpdateBlock:(void (^)())individualItemUpdateBlock
-                           completion:(void (^)())completion;
+- (void)applyEvent:(BLDataEvent *)event withDataUpdateBlock:(void (^)())dataUpdateBlock completion:(void (^)())completion;
 
 @end

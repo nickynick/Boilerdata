@@ -9,8 +9,11 @@
 #import "BLUtils.h"
 #import "BLDataProvider.h"
 #import "NSIndexPath+BLUtils.h"
+#import "BLDataDiff.h"
 
 @implementation BLUtils
+
+#pragma mark - BLDataProvider stuff
 
 + (BOOL)dataProviderIsEmpty:(id<BLStaticDataProvider>)dataProvider {
     for (NSInteger section = 0; section < [dataProvider numberOfSections]; ++section) {
@@ -47,6 +50,17 @@
             }
         }
     }
+}
+
+#pragma mark - BLDataDiff stuff
+
++ (BOOL)dataDiffIsEmpty:(id<BLDataDiff>)dataDiff {
+    return (dataDiff.insertedIndexPaths.count == 0 &&
+            dataDiff.deletedIndexPaths.count == 0 &&
+            dataDiff.changedIndexPaths.count == 0 &&
+            dataDiff.insertedSections.count == 0 &&
+            dataDiff.deletedSections.count == 0 &&
+            dataDiff.changedSections.count == 0);
 }
 
 @end

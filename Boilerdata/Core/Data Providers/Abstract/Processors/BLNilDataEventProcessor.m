@@ -19,12 +19,8 @@
     return instance;
 }
 
-- (void)applyEventWithDataUpdateBlock:(void (^)())dataUpdateBlock
-            individualItemUpdateBlock:(void (^)())individualItemUpdateBlock
-                           completion:(void (^)())completion
-{
+- (void)applyEvent:(BLDataEvent *)event withDataUpdateBlock:(void (^)())dataUpdateBlock completion:(void (^)())completion {
     dataUpdateBlock();
-    individualItemUpdateBlock();
     completion();
 }
 

@@ -12,8 +12,8 @@
 
 @property (nonatomic, assign) BOOL pending;
 
+@property (nonatomic, strong) BLDataEvent *pendingEvent;
 @property (nonatomic, copy) void (^pendingDataUpdateBlock)();
-@property (nonatomic, copy) void (^pendingIndividualItemUpdateBlock)();
 @property (nonatomic, copy) void (^pendingCompletion)();
 
 @end
@@ -23,18 +23,13 @@
 
 #pragma mark - BLDataEventProcessor
 
-- (void)applyEventWithDataUpdateBlock:(void (^)())dataUpdateBlock
-            individualItemUpdateBlock:(void (^)())individualItemUpdateBlock
-                           completion:(void (^)())completion
-{
+- (void)applyEvent:(BLDataEvent *)event withDataUpdateBlock:(void (^)())dataUpdateBlock completion:(void (^)())completion {
     if (self.innerProcessor) {
-        [self.innerProcessor applyEventWithDataUpdateBlock:dataUpdateBlock
-                                 individualItemUpdateBlock:individualItemUpdateBlock
-                                                completion:completion];
+        [self.innerProcessor applyEvent:event withDataUpdateBlock:dataUpdateBlock completion:completion];
     } else {
         self.pending = YES;
+        self.pendingEvent = event;
         self.pendingDataUpdateBlock = dataUpdateBlock;
-        self.pendingIndividualItemUpdateBlock = individualItemUpdateBlock;
         self.pendingCompletion = completion;
     }
 }
@@ -45,13 +40,11 @@
     _innerProcessor = innerProcessor;
     
     if (self.pending) {
-        [innerProcessor applyEventWithDataUpdateBlock:self.pendingDataUpdateBlock
-                            individualItemUpdateBlock:self.pendingIndividualItemUpdateBlock
-                                           completion:self.pendingCompletion];
+        [innerProcessor applyEvent:self.pendingEvent withDataUpdateBlock:self.pendingDataUpdateBlock completion:self.pendingCompletion];
         
         self.pending = NO;
+        self.pendingEvent = nil;
         self.pendingDataUpdateBlock = nil;
-        self.pendingIndividualItemUpdateBlock = nil;
         self.pendingCompletion = nil;
     }
 }

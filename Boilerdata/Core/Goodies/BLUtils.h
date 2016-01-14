@@ -10,6 +10,7 @@
 
 @protocol BLStaticDataProvider;
 @protocol BLDataItem;
+@protocol BLDataDiff;
 
 typedef void (^BLDataProviderEnumerationBlock)(id<BLDataItem> item, NSIndexPath *indexPath, BOOL *stop);
 
@@ -21,5 +22,8 @@ typedef void (^BLDataProviderEnumerationBlock)(id<BLDataItem> item, NSIndexPath 
 + (NSInteger)dataProviderNumberOfItems:(id<BLStaticDataProvider>)dataProvider;
 
 + (void)dataProvider:(id<BLStaticDataProvider>)dataProvider enumerateItemsWithBlock:(BLDataProviderEnumerationBlock)block;
+
+
++ (BOOL)dataDiffIsEmpty:(id<BLDataDiff>)dataDiff;
 
 @end
