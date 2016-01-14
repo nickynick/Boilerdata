@@ -7,125 +7,128 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04835033DC3A43A2875024CDA4EB4EA4 /* NNCollectionViewReloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1742CB15C2ED107D87008E14BB7C7DE9 /* NNCollectionViewReloader.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		0F1A50018CB635C63F579CF3D8E3E0F7 /* NNDiffCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = A4CE0C33CF6974D000F0CA2447CB5EB7 /* NNDiffCalculator.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1A0A6F648DB53F0AA0357D78D4F86E68 /* NNArrayDiffCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C530E290A67ACCA8F3F609B0804D96 /* NNArrayDiffCalculator.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		1A6656D1B1F14E4A4C20FE03EAC81732 /* NNFetchedResultsControllerDiffAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 153AB31B95E441FBDBE8D267C96EE9E2 /* NNFetchedResultsControllerDiffAdapter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		1DED0AA78A1F2F4BD0566038FDBC3A94 /* NNTableViewDiffReloadAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FAA948F1FAB9CCFBACA7A1F4F2BEC2 /* NNTableViewDiffReloadAnimations.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		24DC80F6CCB1F4FD08E990C1F59542B3 /* NNTableViewReloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F04B396554481F67D75FB9829E2A33 /* NNTableViewReloader.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		25190BE772017A005723F4A189DEB7FD /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 272643F56613CA0D336AE3DBF19DC404 /* Pods-dummy.m */; };
-		2BEAAAC377FF116565F7EFBA3FA134E2 /* UICollectionView+NNSectionsDiff.h in Headers */ = {isa = PBXBuildFile; fileRef = F34CF0AB5FCB55EB3F4EAB4DF05C7863 /* UICollectionView+NNSectionsDiff.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		305674A1B2091DC7F47703D1FC1D813F /* NNSection.h in Headers */ = {isa = PBXBuildFile; fileRef = 302C25822AA3AA79FF6499D9A261F59C /* NNSection.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3CB84CAE8BA8215EDC7E0D55EB6CC1F8 /* NNSectionsDiffTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6F2CF06AAD0DDBA7A9AB008A56FF8C /* NNSectionsDiffTracker.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		3F58F9742802DD3BC0F3633B7450FA11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		413E1872C693C8D9F20148244FB36B71 /* NNFetchedResultsControllerDiffAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0701011AF22A40C105E12C1404AA0D25 /* NNFetchedResultsControllerDiffAdapter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		44ABFC9C7C3F1FF334B019778651E674 /* NNArrayDiffCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B9A8601092293FB5A3C96A4527BF233 /* NNArrayDiffCalculator.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		49F9702D765844225DAB6A55D4B2A687 /* ArrayDiff.h in Headers */ = {isa = PBXBuildFile; fileRef = ADE0EDD63CFBD7F3FD94BB08B67B54A0 /* ArrayDiff.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		64B316E07C9E232EDFCC40FF140A67E3 /* NNDiffReloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B23A27336E58F179D7868DFD4BE6D61 /* NNDiffReloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7B47E6642A4E323E43A99A35CF2F01FD /* NNSectionsDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 8829357A592C8A622463ACF556BE6B1A /* NNSectionsDiff.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		7D92ADEDDB4FBEA412E4B742542B9A9C /* NNArrayDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = E13E63F84DF1F06ECDC58D145B8A59DF /* NNArrayDiff.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		8156A38B56FCAE8693469C61CEF714A7 /* NNArrayDiffChange.h in Headers */ = {isa = PBXBuildFile; fileRef = 133C4EF1CD48182B34E5724094907631 /* NNArrayDiffChange.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		826CB4E784D4377D5C6025D6F85E92EA /* UITableView+NNSectionsDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E632EE10DB0B3492169365CCED92AD6 /* UITableView+NNSectionsDiff.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		8CA9952C8596A296F5DDF4D91BB4E7DB /* NNTableViewDiffReloadAnimations.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D42F544C781378AEEC9968DDC1E439A /* NNTableViewDiffReloadAnimations.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9697BF54A5EA484BFF74832ECC0E3BA4 /* NNDiffReloadOptions.h in Headers */ = {isa = PBXBuildFile; fileRef = 94FE7566B597C550473CFF21D8D37111 /* NNDiffReloadOptions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		97FBCCDA401C3581C38A06FF9078EEAC /* NNSectionsDiffCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F3A3FB2471F109BC2815C3134ECC22 /* NNSectionsDiffCalculator.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		9C3A3AE31B8DB1A8BA3FD8364FD69B81 /* NNDiffReloader.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A24A75877A2D04A6548B2A02606C31 /* NNDiffReloader.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		9D397CE59CE88F4A0A80C0562585CFDF /* NNDiffCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 57422FF2A1D37B0DBEF7DA2C1649FE88 /* NNDiffCalculator.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		B05CE15B6932EA00601B621F33133BD6 /* UITableView+NNSectionsDiff.h in Headers */ = {isa = PBXBuildFile; fileRef = 7598A0E005D1BCCB71AC964DDD3C1DDE /* UITableView+NNSectionsDiff.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B690EE4BDBE2E02D89B87B68A44ED9C5 /* NNDiffChangeType.h in Headers */ = {isa = PBXBuildFile; fileRef = 45DB3306C6C234A74A1713EAD123188F /* NNDiffChangeType.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B9ACD5BFF93D32448FDCC452A5B89803 /* NNSection.m in Sources */ = {isa = PBXBuildFile; fileRef = A646E4DE944A9BAFE127AD301BFE652C /* NNSection.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		BB21D4D7830E6695F481F2A6802CD1C5 /* NNArrayDiffChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 001655BBBA48AC747CBD80B0C8565AE9 /* NNArrayDiffChange.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		BCE39E209052DB6E8C837A279F698C14 /* UICollectionView+NNSectionsDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 254A605BCF704602707C87873FA1654E /* UICollectionView+NNSectionsDiff.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		BE674346DAF99E255B87BAE85C5FDD52 /* NNSectionsDiffChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 5032912E3DB505488505DE99F9CEDAAB /* NNSectionsDiffChange.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		C0CF06A08C0829D87141630A24BA1C3B /* NNDiffReloadOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = B051E78430CB609D84DC4C9E5B8AB24C /* NNDiffReloadOptions.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		C34C0DB25AC68961C84ACA9B3F280F97 /* NNSectionsDiffTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 214254854D32BBC3667A584C90F099F0 /* NNSectionsDiffTracker.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D200E9F8FF81D76EE923A4E47D30D5F0 /* NNSectionsDiffCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = 872E77CBA745EEEEB197812A5B0D185F /* NNSectionsDiffCalculator.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D24656716AF5957E0E83C15B362E8B7D /* NNCollectionViewReloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 920D3AA9F820D05CC1493E27FE3166EB /* NNCollectionViewReloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DBE0D01365833E2491867E298A4E8C31 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		E17A06421D38B590217FE142E2BC0073 /* NNSectionsDiffChange.h in Headers */ = {isa = PBXBuildFile; fileRef = 245DE63DF516B1B18FDA96887ECB9BDB /* NNSectionsDiffChange.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F22EC1606C701A0BB7DA6E25D4F700D4 /* NNArrayDiff.h in Headers */ = {isa = PBXBuildFile; fileRef = E777C32AD0A1020A5C3F1B2A2BC30026 /* NNArrayDiff.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F5B74F15E87820C0063EF407F5E2471D /* NNSectionsDiff.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B94910F32B8084DDEFA41D3A508BA20 /* NNSectionsDiff.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F83ADCA70835F136766FB696F59BFB76 /* NNTableViewReloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 19AE653E1AECA066F4C7E95542A224C0 /* NNTableViewReloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FCD0A3ECE108F1A2A68670B0BD5DCE80 /* ArrayDiff-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6471082EB79B8484D979B2A3E0A6BA17 /* ArrayDiff-dummy.m */; };
+		1822AE6E99CBEC4BACE4C4A03AA6A48A /* ArrayDiff.h in Headers */ = {isa = PBXBuildFile; fileRef = AC830AC39BF27D0943E513108F1D71ED /* ArrayDiff.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		23233050FEF7590D5B5CDCEB28576361 /* NNSectionsDiffChange.h in Headers */ = {isa = PBXBuildFile; fileRef = 88288C470BB554805FDB17A2CB263B48 /* NNSectionsDiffChange.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2999ADDC9B10456205F769124C86B062 /* NNArrayDiffCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 504733D835CB89F0AC46A1F312B75B05 /* NNArrayDiffCalculator.m */; };
+		3400838E8C95AC0CB3045F631549C005 /* NNSectionsDiff.h in Headers */ = {isa = PBXBuildFile; fileRef = F58D9114766367CDAE490B65FE81AA38 /* NNSectionsDiff.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A9EF298FED625E4F1237E8024736353 /* NNArrayDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3BF51796EB65ABC6A4653EF347BCD8 /* NNArrayDiff.m */; };
+		3B1AE6DD5D1E935BF2254B96AA6FFA2E /* NNDiffReloadOptions.h in Headers */ = {isa = PBXBuildFile; fileRef = A62D477BA3133D344472FE80A131DC1D /* NNDiffReloadOptions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		48DED9821BDC7916BB2EFA6E0390D97D /* NNArrayDiffCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = EB73D63C0401435111279DC8954C10A0 /* NNArrayDiffCalculator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4B436E8354D960EECEF67A8D1B62DC24 /* UITableView+NNSectionsDiff.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A9C43F586E765079F6A62B8948DF524 /* UITableView+NNSectionsDiff.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		53C70516220D77D89472DA8A07AF1CF6 /* NNSectionsDiffTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = C947F71C6F4C249BFD81A59DFB025796 /* NNSectionsDiffTracker.m */; };
+		53DF0A9F852EC07143D0BAF28C9E1DC9 /* NNSectionsDiffChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B411383997B5FE439825B0B3F398680 /* NNSectionsDiffChange.m */; };
+		64EC2CD5986696219070C194567AE368 /* UICollectionView+NNSectionsDiff.h in Headers */ = {isa = PBXBuildFile; fileRef = 85E41A5BB0BB9AB0D62FE2D1E8F1AD6F /* UICollectionView+NNSectionsDiff.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65FB3ADA0E40DC4D8B4DE174AAF83E5A /* NNArrayDiffChange.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E49122C8280AD76BDE518F5FE533D92 /* NNArrayDiffChange.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6E6648AA6820B60C61644FC750709C29 /* NNSectionsDiffTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 8867F0A12DA6AC5B7BAFB6DBA79A0A79 /* NNSectionsDiffTracker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7229485D970B04FC4A10BD3CB26B5B72 /* NNArrayDiff.h in Headers */ = {isa = PBXBuildFile; fileRef = C7A7881FDDCE3A3F15F3D85541985920 /* NNArrayDiff.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		74266229C5B27C98B3BBA35B30E684F8 /* NNDiffReloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 9172B71DFCC55C25A9E7A3A95E0EF5AC /* NNDiffReloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C4E3A47324CC8CF1E99DBAB864AEB04 /* NNArrayDiffChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B780DD6E09BAD8799BB3549F6E1274C /* NNArrayDiffChange.m */; };
+		AB6B2DBC1A3E67EBF802729BCA58F35D /* NNCollectionViewReloader.h in Headers */ = {isa = PBXBuildFile; fileRef = A90257917C5DAB8274C4C2208AA9454A /* NNCollectionViewReloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AC3147A5F2C7517CFD7D61B110D18006 /* NNFetchedResultsControllerDiffAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7769EF6FAAAC7E7522944725FF7BCE5C /* NNFetchedResultsControllerDiffAdapter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AF1E511D8AED590B579B2559B7BF8E81 /* NNSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 41935CE82A55BDD6259FF0DA43BFBCC8 /* NNSection.m */; };
+		B2654E7D43EEC0A3245504D430E51022 /* NNSectionsDiffCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 62522DAFD03C1AD6DE4E564297A90446 /* NNSectionsDiffCalculator.m */; };
+		B28BAEF6362D01E3B291A5DF6FCB0AE2 /* NNArrayDiff-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C24DFECEF8F424A9F598614428AFF9 /* NNArrayDiff-dummy.m */; };
+		B2C51554C7F7232AC3DB7030823FB999 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 272643F56613CA0D336AE3DBF19DC404 /* Pods-dummy.m */; };
+		B84C6B1EA407B048E7DD34C836ECAE2E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B7BDF5CE5CB8F095FE12DA55D9A9BB /* UIKit.framework */; };
+		BC21D9EF70A85AFDAC5123B096298168 /* NNTableViewReloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B728E4B2CA59DC3F42812E4F3F4512D /* NNTableViewReloader.m */; };
+		BF22DF12A78070BA1333764229566056 /* NNDiffReloadOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 771E5E4E28FC625B66B2486458A599E3 /* NNDiffReloadOptions.m */; };
+		C4EC32B3904FDCB773032650ED92705C /* UICollectionView+NNSectionsDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B75DEFF551D4CA0C2C3FAA74CD021C5 /* UICollectionView+NNSectionsDiff.m */; };
+		CF22F418E36693B7664A8A8A251D853A /* NNDiffCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = 255B02E85BEB0F57CEFC7E7A8AD7750D /* NNDiffCalculator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D2EDC4925527C0BDCFE1EB2EA687E0BB /* NNTableViewDiffReloadAnimations.h in Headers */ = {isa = PBXBuildFile; fileRef = 412F9DD5864073316BC72857F8A73E3E /* NNTableViewDiffReloadAnimations.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3604D6CEE891B93DAE17933A41A8DBF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */; };
+		D40C6C249B8A0339853F92A52E64E320 /* NNDiffCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A1830ACADC0E38DC4CCB20CFDFAC36 /* NNDiffCalculator.m */; };
+		DAD7DBA42D232D03DC4C70F9C30E30D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */; };
+		DB5EEB76D393E76A58C4FCB489CDD056 /* NNSectionsDiffCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = A7B75214DCD8C6185A78A04539FCF294 /* NNSectionsDiffCalculator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E0CB61F93C55E1AFE92C2F34B6D96E40 /* UITableView+NNSectionsDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 64276A4C2C8AC5AC3C0D0C47905E1A89 /* UITableView+NNSectionsDiff.m */; };
+		E155F0312D76B71D15FC28B32CED2EDB /* NNCollectionViewReloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 72A450C8B851F79658947CED0BFFE472 /* NNCollectionViewReloader.m */; };
+		E6EAB20A72BBFE4E55D875D3C7206026 /* NNDiffChangeType.h in Headers */ = {isa = PBXBuildFile; fileRef = D71B69BB489D9079C4F7362D52F4681C /* NNDiffChangeType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7282F688B49B9E825B8A1F31EC08C33 /* NNSection.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A3C5005D142195FA1A49B2AB3D5C325 /* NNSection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7B2CFA9935BE93A2B89E86AD931B31F /* NNSectionsDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C64343A400542D39CCE7F615FAC7E5 /* NNSectionsDiff.m */; };
+		ED7E9EF042CD3E46215E4346E4B3ED88 /* NNTableViewReloader.h in Headers */ = {isa = PBXBuildFile; fileRef = D11B24A4331A0E74D62A9034FDD5D07A /* NNTableViewReloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F3358211D5AAA05ED61256596B5985FF /* NNFetchedResultsControllerDiffAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 264CF36A7FE023DAA98616CBED926A02 /* NNFetchedResultsControllerDiffAdapter.m */; };
+		F44C505221C29EC0F0E36C7DF97F57EE /* NNTableViewDiffReloadAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE82F4D9D0875DEE70DA1A7BE070522 /* NNTableViewDiffReloadAnimations.m */; };
+		FA5F70358519B4CBAE9DEDF2A0E101BF /* NNDiffReloader.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A10FA214D9C93B4C5A923160B248DE /* NNDiffReloader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		096837231A5E33D871F10C916654127C /* PBXContainerItemProxy */ = {
+		D27B1F24F696284EC80DBA58D76D5EBA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E1B2CBAB1F15A68CB0DEF859A0B48F4F;
-			remoteInfo = ArrayDiff;
+			remoteGlobalIDString = 7AC73AE20AA658803984C41ECDB77087;
+			remoteInfo = NNArrayDiff;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		001655BBBA48AC747CBD80B0C8565AE9 /* NNArrayDiffChange.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNArrayDiffChange.m; path = ArrayDiff/NNArrayDiffChange.m; sourceTree = "<group>"; };
-		0701011AF22A40C105E12C1404AA0D25 /* NNFetchedResultsControllerDiffAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNFetchedResultsControllerDiffAdapter.h; path = ArrayDiff/CoreData/NNFetchedResultsControllerDiffAdapter.h; sourceTree = "<group>"; };
+		098820D2980C5C9C075457E13D57F968 /* NNArrayDiff.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NNArrayDiff.xcconfig; sourceTree = "<group>"; };
+		0B75DEFF551D4CA0C2C3FAA74CD021C5 /* UICollectionView+NNSectionsDiff.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UICollectionView+NNSectionsDiff.m"; path = "ArrayDiff/UIKit/UICollectionView+NNSectionsDiff.m"; sourceTree = "<group>"; };
+		0E49122C8280AD76BDE518F5FE533D92 /* NNArrayDiffChange.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNArrayDiffChange.h; path = ArrayDiff/NNArrayDiffChange.h; sourceTree = "<group>"; };
 		10834806BD7B412BC24F347361FA2C8E /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
-		133C4EF1CD48182B34E5724094907631 /* NNArrayDiffChange.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNArrayDiffChange.h; path = ArrayDiff/NNArrayDiffChange.h; sourceTree = "<group>"; };
-		153AB31B95E441FBDBE8D267C96EE9E2 /* NNFetchedResultsControllerDiffAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNFetchedResultsControllerDiffAdapter.m; path = ArrayDiff/CoreData/NNFetchedResultsControllerDiffAdapter.m; sourceTree = "<group>"; };
-		1742CB15C2ED107D87008E14BB7C7DE9 /* NNCollectionViewReloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNCollectionViewReloader.m; path = ArrayDiff/UIKit/Private/NNCollectionViewReloader.m; sourceTree = "<group>"; };
-		19AE653E1AECA066F4C7E95542A224C0 /* NNTableViewReloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNTableViewReloader.h; path = ArrayDiff/UIKit/Private/NNTableViewReloader.h; sourceTree = "<group>"; };
-		20C530E290A67ACCA8F3F609B0804D96 /* NNArrayDiffCalculator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNArrayDiffCalculator.m; path = ArrayDiff/NNArrayDiffCalculator.m; sourceTree = "<group>"; };
-		214254854D32BBC3667A584C90F099F0 /* NNSectionsDiffTracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNSectionsDiffTracker.h; path = ArrayDiff/UIKit/Private/NNSectionsDiffTracker.h; sourceTree = "<group>"; };
-		245DE63DF516B1B18FDA96887ECB9BDB /* NNSectionsDiffChange.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNSectionsDiffChange.h; path = ArrayDiff/NNSectionsDiffChange.h; sourceTree = "<group>"; };
-		254A605BCF704602707C87873FA1654E /* UICollectionView+NNSectionsDiff.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UICollectionView+NNSectionsDiff.m"; path = "ArrayDiff/UIKit/UICollectionView+NNSectionsDiff.m"; sourceTree = "<group>"; };
+		255B02E85BEB0F57CEFC7E7A8AD7750D /* NNDiffCalculator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNDiffCalculator.h; path = ArrayDiff/NNDiffCalculator.h; sourceTree = "<group>"; };
+		264CF36A7FE023DAA98616CBED926A02 /* NNFetchedResultsControllerDiffAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNFetchedResultsControllerDiffAdapter.m; path = ArrayDiff/CoreData/NNFetchedResultsControllerDiffAdapter.m; sourceTree = "<group>"; };
 		272643F56613CA0D336AE3DBF19DC404 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
-		2D42F544C781378AEEC9968DDC1E439A /* NNTableViewDiffReloadAnimations.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNTableViewDiffReloadAnimations.h; path = ArrayDiff/UIKit/NNTableViewDiffReloadAnimations.h; sourceTree = "<group>"; };
-		302C25822AA3AA79FF6499D9A261F59C /* NNSection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNSection.h; path = ArrayDiff/NNSection.h; sourceTree = "<group>"; };
+		2B728E4B2CA59DC3F42812E4F3F4512D /* NNTableViewReloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNTableViewReloader.m; path = ArrayDiff/UIKit/Private/NNTableViewReloader.m; sourceTree = "<group>"; };
 		37DB56D75062CC75FCB0966E1C6E8A8E /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3B9A8601092293FB5A3C96A4527BF233 /* NNArrayDiffCalculator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNArrayDiffCalculator.h; path = ArrayDiff/NNArrayDiffCalculator.h; sourceTree = "<group>"; };
-		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		44F04B396554481F67D75FB9829E2A33 /* NNTableViewReloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNTableViewReloader.m; path = ArrayDiff/UIKit/Private/NNTableViewReloader.m; sourceTree = "<group>"; };
-		45DB3306C6C234A74A1713EAD123188F /* NNDiffChangeType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNDiffChangeType.h; path = ArrayDiff/NNDiffChangeType.h; sourceTree = "<group>"; };
+		3B411383997B5FE439825B0B3F398680 /* NNSectionsDiffChange.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNSectionsDiffChange.m; path = ArrayDiff/NNSectionsDiffChange.m; sourceTree = "<group>"; };
+		412F9DD5864073316BC72857F8A73E3E /* NNTableViewDiffReloadAnimations.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNTableViewDiffReloadAnimations.h; path = ArrayDiff/UIKit/NNTableViewDiffReloadAnimations.h; sourceTree = "<group>"; };
+		41935CE82A55BDD6259FF0DA43BFBCC8 /* NNSection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNSection.m; path = ArrayDiff/NNSection.m; sourceTree = "<group>"; };
+		4A9C43F586E765079F6A62B8948DF524 /* UITableView+NNSectionsDiff.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITableView+NNSectionsDiff.h"; path = "ArrayDiff/UIKit/UITableView+NNSectionsDiff.h"; sourceTree = "<group>"; };
 		4E762F23EC34ED4A6FF3312D84E33A40 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
-		5032912E3DB505488505DE99F9CEDAAB /* NNSectionsDiffChange.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNSectionsDiffChange.m; path = ArrayDiff/NNSectionsDiffChange.m; sourceTree = "<group>"; };
-		57422FF2A1D37B0DBEF7DA2C1649FE88 /* NNDiffCalculator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNDiffCalculator.m; path = ArrayDiff/NNDiffCalculator.m; sourceTree = "<group>"; };
-		5E632EE10DB0B3492169365CCED92AD6 /* UITableView+NNSectionsDiff.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITableView+NNSectionsDiff.m"; path = "ArrayDiff/UIKit/UITableView+NNSectionsDiff.m"; sourceTree = "<group>"; };
-		6471082EB79B8484D979B2A3E0A6BA17 /* ArrayDiff-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ArrayDiff-dummy.m"; sourceTree = "<group>"; };
+		504733D835CB89F0AC46A1F312B75B05 /* NNArrayDiffCalculator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNArrayDiffCalculator.m; path = ArrayDiff/NNArrayDiffCalculator.m; sourceTree = "<group>"; };
+		62522DAFD03C1AD6DE4E564297A90446 /* NNSectionsDiffCalculator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNSectionsDiffCalculator.m; path = ArrayDiff/NNSectionsDiffCalculator.m; sourceTree = "<group>"; };
+		64276A4C2C8AC5AC3C0D0C47905E1A89 /* UITableView+NNSectionsDiff.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITableView+NNSectionsDiff.m"; path = "ArrayDiff/UIKit/UITableView+NNSectionsDiff.m"; sourceTree = "<group>"; };
 		6911BECA35E7518D864239B7E898EEF3 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
-		6D7D5B0141A120A5E51B7DC7285D0AD4 /* ArrayDiff-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ArrayDiff-prefix.pch"; sourceTree = "<group>"; };
-		7598A0E005D1BCCB71AC964DDD3C1DDE /* UITableView+NNSectionsDiff.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITableView+NNSectionsDiff.h"; path = "ArrayDiff/UIKit/UITableView+NNSectionsDiff.h"; sourceTree = "<group>"; };
-		778EC5466CF64D1521A0401D70CDFF4B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		872E77CBA745EEEEB197812A5B0D185F /* NNSectionsDiffCalculator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNSectionsDiffCalculator.h; path = ArrayDiff/NNSectionsDiffCalculator.h; sourceTree = "<group>"; };
-		8829357A592C8A622463ACF556BE6B1A /* NNSectionsDiff.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNSectionsDiff.m; path = ArrayDiff/NNSectionsDiff.m; sourceTree = "<group>"; };
-		8B94910F32B8084DDEFA41D3A508BA20 /* NNSectionsDiff.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNSectionsDiff.h; path = ArrayDiff/NNSectionsDiff.h; sourceTree = "<group>"; };
-		920D3AA9F820D05CC1493E27FE3166EB /* NNCollectionViewReloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNCollectionViewReloader.h; path = ArrayDiff/UIKit/Private/NNCollectionViewReloader.h; sourceTree = "<group>"; };
-		94FE7566B597C550473CFF21D8D37111 /* NNDiffReloadOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNDiffReloadOptions.h; path = ArrayDiff/UIKit/NNDiffReloadOptions.h; sourceTree = "<group>"; };
+		6B780DD6E09BAD8799BB3549F6E1274C /* NNArrayDiffChange.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNArrayDiffChange.m; path = ArrayDiff/NNArrayDiffChange.m; sourceTree = "<group>"; };
+		6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6FE82F4D9D0875DEE70DA1A7BE070522 /* NNTableViewDiffReloadAnimations.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNTableViewDiffReloadAnimations.m; path = ArrayDiff/UIKit/NNTableViewDiffReloadAnimations.m; sourceTree = "<group>"; };
+		72A450C8B851F79658947CED0BFFE472 /* NNCollectionViewReloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNCollectionViewReloader.m; path = ArrayDiff/UIKit/Private/NNCollectionViewReloader.m; sourceTree = "<group>"; };
+		771E5E4E28FC625B66B2486458A599E3 /* NNDiffReloadOptions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNDiffReloadOptions.m; path = ArrayDiff/UIKit/NNDiffReloadOptions.m; sourceTree = "<group>"; };
+		7769EF6FAAAC7E7522944725FF7BCE5C /* NNFetchedResultsControllerDiffAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNFetchedResultsControllerDiffAdapter.h; path = ArrayDiff/CoreData/NNFetchedResultsControllerDiffAdapter.h; sourceTree = "<group>"; };
+		85E41A5BB0BB9AB0D62FE2D1E8F1AD6F /* UICollectionView+NNSectionsDiff.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UICollectionView+NNSectionsDiff.h"; path = "ArrayDiff/UIKit/UICollectionView+NNSectionsDiff.h"; sourceTree = "<group>"; };
+		88288C470BB554805FDB17A2CB263B48 /* NNSectionsDiffChange.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNSectionsDiffChange.h; path = ArrayDiff/NNSectionsDiffChange.h; sourceTree = "<group>"; };
+		8867F0A12DA6AC5B7BAFB6DBA79A0A79 /* NNSectionsDiffTracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNSectionsDiffTracker.h; path = ArrayDiff/UIKit/Private/NNSectionsDiffTracker.h; sourceTree = "<group>"; };
+		88C1E491B7CD79E882474E8301704194 /* NNArrayDiff-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NNArrayDiff-prefix.pch"; sourceTree = "<group>"; };
+		8A3C5005D142195FA1A49B2AB3D5C325 /* NNSection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNSection.h; path = ArrayDiff/NNSection.h; sourceTree = "<group>"; };
+		8AD05CB0A321E25B09580C16F1891B18 /* libNNArrayDiff.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNNArrayDiff.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9172B71DFCC55C25A9E7A3A95E0EF5AC /* NNDiffReloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNDiffReloader.h; path = ArrayDiff/UIKit/Private/NNDiffReloader.h; sourceTree = "<group>"; };
 		98C98CDFB3F20F2925F6CD1F141BB14F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
-		9B23A27336E58F179D7868DFD4BE6D61 /* NNDiffReloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNDiffReloader.h; path = ArrayDiff/UIKit/Private/NNDiffReloader.h; sourceTree = "<group>"; };
 		A1A36D34413696BE466E2CA0AFF194DA /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
-		A4CE0C33CF6974D000F0CA2447CB5EB7 /* NNDiffCalculator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNDiffCalculator.h; path = ArrayDiff/NNDiffCalculator.h; sourceTree = "<group>"; };
-		A646E4DE944A9BAFE127AD301BFE652C /* NNSection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNSection.m; path = ArrayDiff/NNSection.m; sourceTree = "<group>"; };
-		A7C25329EC9B151AD7A77A1041DA1BF9 /* libArrayDiff.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libArrayDiff.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		ADE0EDD63CFBD7F3FD94BB08B67B54A0 /* ArrayDiff.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ArrayDiff.h; path = ArrayDiff/ArrayDiff.h; sourceTree = "<group>"; };
-		B051E78430CB609D84DC4C9E5B8AB24C /* NNDiffReloadOptions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNDiffReloadOptions.m; path = ArrayDiff/UIKit/NNDiffReloadOptions.m; sourceTree = "<group>"; };
+		A62D477BA3133D344472FE80A131DC1D /* NNDiffReloadOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNDiffReloadOptions.h; path = ArrayDiff/UIKit/NNDiffReloadOptions.h; sourceTree = "<group>"; };
+		A7B75214DCD8C6185A78A04539FCF294 /* NNSectionsDiffCalculator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNSectionsDiffCalculator.h; path = ArrayDiff/NNSectionsDiffCalculator.h; sourceTree = "<group>"; };
+		A90257917C5DAB8274C4C2208AA9454A /* NNCollectionViewReloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNCollectionViewReloader.h; path = ArrayDiff/UIKit/Private/NNCollectionViewReloader.h; sourceTree = "<group>"; };
+		A9A1830ACADC0E38DC4CCB20CFDFAC36 /* NNDiffCalculator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNDiffCalculator.m; path = ArrayDiff/NNDiffCalculator.m; sourceTree = "<group>"; };
+		AC830AC39BF27D0943E513108F1D71ED /* ArrayDiff.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ArrayDiff.h; path = ArrayDiff/ArrayDiff.h; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		CD6F2CF06AAD0DDBA7A9AB008A56FF8C /* NNSectionsDiffTracker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNSectionsDiffTracker.m; path = ArrayDiff/UIKit/Private/NNSectionsDiffTracker.m; sourceTree = "<group>"; };
-		D2FAA948F1FAB9CCFBACA7A1F4F2BEC2 /* NNTableViewDiffReloadAnimations.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNTableViewDiffReloadAnimations.m; path = ArrayDiff/UIKit/NNTableViewDiffReloadAnimations.m; sourceTree = "<group>"; };
-		E13E63F84DF1F06ECDC58D145B8A59DF /* NNArrayDiff.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNArrayDiff.m; path = ArrayDiff/NNArrayDiff.m; sourceTree = "<group>"; };
-		E5F3A3FB2471F109BC2815C3134ECC22 /* NNSectionsDiffCalculator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNSectionsDiffCalculator.m; path = ArrayDiff/NNSectionsDiffCalculator.m; sourceTree = "<group>"; };
-		E777C32AD0A1020A5C3F1B2A2BC30026 /* NNArrayDiff.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNArrayDiff.h; path = ArrayDiff/NNArrayDiff.h; sourceTree = "<group>"; };
-		E9A24A75877A2D04A6548B2A02606C31 /* NNDiffReloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNDiffReloader.m; path = ArrayDiff/UIKit/Private/NNDiffReloader.m; sourceTree = "<group>"; };
-		EDDE964BCC677B66BCE721D02F8F0231 /* ArrayDiff.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ArrayDiff.xcconfig; sourceTree = "<group>"; };
-		F34CF0AB5FCB55EB3F4EAB4DF05C7863 /* UICollectionView+NNSectionsDiff.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UICollectionView+NNSectionsDiff.h"; path = "ArrayDiff/UIKit/UICollectionView+NNSectionsDiff.h"; sourceTree = "<group>"; };
+		C3B7BDF5CE5CB8F095FE12DA55D9A9BB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		C470E36A56625877755F80B91D5BA521 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4C24DFECEF8F424A9F598614428AFF9 /* NNArrayDiff-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NNArrayDiff-dummy.m"; sourceTree = "<group>"; };
+		C5A10FA214D9C93B4C5A923160B248DE /* NNDiffReloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNDiffReloader.m; path = ArrayDiff/UIKit/Private/NNDiffReloader.m; sourceTree = "<group>"; };
+		C7A7881FDDCE3A3F15F3D85541985920 /* NNArrayDiff.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNArrayDiff.h; path = ArrayDiff/NNArrayDiff.h; sourceTree = "<group>"; };
+		C947F71C6F4C249BFD81A59DFB025796 /* NNSectionsDiffTracker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNSectionsDiffTracker.m; path = ArrayDiff/UIKit/Private/NNSectionsDiffTracker.m; sourceTree = "<group>"; };
+		CD3BF51796EB65ABC6A4653EF347BCD8 /* NNArrayDiff.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNArrayDiff.m; path = ArrayDiff/NNArrayDiff.m; sourceTree = "<group>"; };
+		D11B24A4331A0E74D62A9034FDD5D07A /* NNTableViewReloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNTableViewReloader.h; path = ArrayDiff/UIKit/Private/NNTableViewReloader.h; sourceTree = "<group>"; };
+		D71B69BB489D9079C4F7362D52F4681C /* NNDiffChangeType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNDiffChangeType.h; path = ArrayDiff/NNDiffChangeType.h; sourceTree = "<group>"; };
+		E8C64343A400542D39CCE7F615FAC7E5 /* NNSectionsDiff.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNSectionsDiff.m; path = ArrayDiff/NNSectionsDiff.m; sourceTree = "<group>"; };
+		EB73D63C0401435111279DC8954C10A0 /* NNArrayDiffCalculator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNArrayDiffCalculator.h; path = ArrayDiff/NNArrayDiffCalculator.h; sourceTree = "<group>"; };
+		F58D9114766367CDAE490B65FE81AA38 /* NNSectionsDiff.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNSectionsDiff.h; path = ArrayDiff/NNSectionsDiff.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		121613E25975AC38B4123E69FB5582F3 /* Frameworks */ = {
+		7F80DC48BA40142FAC05B7B6E995EA90 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F58F9742802DD3BC0F3633B7450FA11 /* Foundation.framework in Frameworks */,
+				D3604D6CEE891B93DAE17933A41A8DBF /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		60E8719D556DEE25135FC77DE2CA2DB8 /* Frameworks */ = {
+		EB7F2612921BD81B7BA5004335A521F4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBE0D01365833E2491867E298A4E8C31 /* Foundation.framework in Frameworks */,
+				DAD7DBA42D232D03DC4C70F9C30E30D1 /* Foundation.framework in Frameworks */,
+				B84C6B1EA407B048E7DD34C836ECAE2E /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,21 +143,47 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		2D0898E751E35C118A23FADEC087DB52 /* Support Files */ = {
+		18340F12838DEE43507667CC74401EB1 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				EDDE964BCC677B66BCE721D02F8F0231 /* ArrayDiff.xcconfig */,
-				6471082EB79B8484D979B2A3E0A6BA17 /* ArrayDiff-dummy.m */,
-				6D7D5B0141A120A5E51B7DC7285D0AD4 /* ArrayDiff-prefix.pch */,
+				6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */,
+				C3B7BDF5CE5CB8F095FE12DA55D9A9BB /* UIKit.framework */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/ArrayDiff";
+			name = iOS;
 			sourceTree = "<group>";
 		};
-		38C65595A66048DB44E308D5921E0718 /* Pods */ = {
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D80FAB8ACF2A54991A3299436DD08557 /* ArrayDiff */,
+				18340F12838DEE43507667CC74401EB1 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4BD692FDB8C1D5C1F5EA82EAA1E224D9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8AD05CB0A321E25B09580C16F1891B18 /* libNNArrayDiff.a */,
+				C470E36A56625877755F80B91D5BA521 /* libPods.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5AF607531DEBE7E1EEDBC2032AC8B8D2 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				098820D2980C5C9C075457E13D57F968 /* NNArrayDiff.xcconfig */,
+				C4C24DFECEF8F424A9F598614428AFF9 /* NNArrayDiff-dummy.m */,
+				88C1E491B7CD79E882474E8301704194 /* NNArrayDiff-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/NNArrayDiff";
+			sourceTree = "<group>";
+		};
+		65806E6C3823715FB025B0DBDA90D56F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DAAAE97DA6487FCD36B669E78E3F6EAE /* NNArrayDiff */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -163,9 +192,9 @@
 			isa = PBXGroup;
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				38C65595A66048DB44E308D5921E0718 /* Pods */,
-				D24FE65DDAA52A06CCCE93879B7BDF6F /* Products */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				65806E6C3823715FB025B0DBDA90D56F /* Pods */,
+				4BD692FDB8C1D5C1F5EA82EAA1E224D9 /* Products */,
 				037C0CA694176A3C0915F62C9D20B3E6 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -185,139 +214,114 @@
 			path = "Target Support Files/Pods";
 			sourceTree = "<group>";
 		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+		DAAAE97DA6487FCD36B669E78E3F6EAE /* NNArrayDiff */ = {
 			isa = PBXGroup;
 			children = (
-				BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */,
+				AC830AC39BF27D0943E513108F1D71ED /* ArrayDiff.h */,
+				C7A7881FDDCE3A3F15F3D85541985920 /* NNArrayDiff.h */,
+				CD3BF51796EB65ABC6A4653EF347BCD8 /* NNArrayDiff.m */,
+				EB73D63C0401435111279DC8954C10A0 /* NNArrayDiffCalculator.h */,
+				504733D835CB89F0AC46A1F312B75B05 /* NNArrayDiffCalculator.m */,
+				0E49122C8280AD76BDE518F5FE533D92 /* NNArrayDiffChange.h */,
+				6B780DD6E09BAD8799BB3549F6E1274C /* NNArrayDiffChange.m */,
+				A90257917C5DAB8274C4C2208AA9454A /* NNCollectionViewReloader.h */,
+				72A450C8B851F79658947CED0BFFE472 /* NNCollectionViewReloader.m */,
+				255B02E85BEB0F57CEFC7E7A8AD7750D /* NNDiffCalculator.h */,
+				A9A1830ACADC0E38DC4CCB20CFDFAC36 /* NNDiffCalculator.m */,
+				D71B69BB489D9079C4F7362D52F4681C /* NNDiffChangeType.h */,
+				9172B71DFCC55C25A9E7A3A95E0EF5AC /* NNDiffReloader.h */,
+				C5A10FA214D9C93B4C5A923160B248DE /* NNDiffReloader.m */,
+				A62D477BA3133D344472FE80A131DC1D /* NNDiffReloadOptions.h */,
+				771E5E4E28FC625B66B2486458A599E3 /* NNDiffReloadOptions.m */,
+				7769EF6FAAAC7E7522944725FF7BCE5C /* NNFetchedResultsControllerDiffAdapter.h */,
+				264CF36A7FE023DAA98616CBED926A02 /* NNFetchedResultsControllerDiffAdapter.m */,
+				8A3C5005D142195FA1A49B2AB3D5C325 /* NNSection.h */,
+				41935CE82A55BDD6259FF0DA43BFBCC8 /* NNSection.m */,
+				F58D9114766367CDAE490B65FE81AA38 /* NNSectionsDiff.h */,
+				E8C64343A400542D39CCE7F615FAC7E5 /* NNSectionsDiff.m */,
+				A7B75214DCD8C6185A78A04539FCF294 /* NNSectionsDiffCalculator.h */,
+				62522DAFD03C1AD6DE4E564297A90446 /* NNSectionsDiffCalculator.m */,
+				88288C470BB554805FDB17A2CB263B48 /* NNSectionsDiffChange.h */,
+				3B411383997B5FE439825B0B3F398680 /* NNSectionsDiffChange.m */,
+				8867F0A12DA6AC5B7BAFB6DBA79A0A79 /* NNSectionsDiffTracker.h */,
+				C947F71C6F4C249BFD81A59DFB025796 /* NNSectionsDiffTracker.m */,
+				412F9DD5864073316BC72857F8A73E3E /* NNTableViewDiffReloadAnimations.h */,
+				6FE82F4D9D0875DEE70DA1A7BE070522 /* NNTableViewDiffReloadAnimations.m */,
+				D11B24A4331A0E74D62A9034FDD5D07A /* NNTableViewReloader.h */,
+				2B728E4B2CA59DC3F42812E4F3F4512D /* NNTableViewReloader.m */,
+				85E41A5BB0BB9AB0D62FE2D1E8F1AD6F /* UICollectionView+NNSectionsDiff.h */,
+				0B75DEFF551D4CA0C2C3FAA74CD021C5 /* UICollectionView+NNSectionsDiff.m */,
+				4A9C43F586E765079F6A62B8948DF524 /* UITableView+NNSectionsDiff.h */,
+				64276A4C2C8AC5AC3C0D0C47905E1A89 /* UITableView+NNSectionsDiff.m */,
+				5AF607531DEBE7E1EEDBC2032AC8B8D2 /* Support Files */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		D24FE65DDAA52A06CCCE93879B7BDF6F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A7C25329EC9B151AD7A77A1041DA1BF9 /* libArrayDiff.a */,
-				778EC5466CF64D1521A0401D70CDFF4B /* libPods.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		D80FAB8ACF2A54991A3299436DD08557 /* ArrayDiff */ = {
-			isa = PBXGroup;
-			children = (
-				ADE0EDD63CFBD7F3FD94BB08B67B54A0 /* ArrayDiff.h */,
-				E777C32AD0A1020A5C3F1B2A2BC30026 /* NNArrayDiff.h */,
-				E13E63F84DF1F06ECDC58D145B8A59DF /* NNArrayDiff.m */,
-				3B9A8601092293FB5A3C96A4527BF233 /* NNArrayDiffCalculator.h */,
-				20C530E290A67ACCA8F3F609B0804D96 /* NNArrayDiffCalculator.m */,
-				133C4EF1CD48182B34E5724094907631 /* NNArrayDiffChange.h */,
-				001655BBBA48AC747CBD80B0C8565AE9 /* NNArrayDiffChange.m */,
-				920D3AA9F820D05CC1493E27FE3166EB /* NNCollectionViewReloader.h */,
-				1742CB15C2ED107D87008E14BB7C7DE9 /* NNCollectionViewReloader.m */,
-				A4CE0C33CF6974D000F0CA2447CB5EB7 /* NNDiffCalculator.h */,
-				57422FF2A1D37B0DBEF7DA2C1649FE88 /* NNDiffCalculator.m */,
-				45DB3306C6C234A74A1713EAD123188F /* NNDiffChangeType.h */,
-				9B23A27336E58F179D7868DFD4BE6D61 /* NNDiffReloader.h */,
-				E9A24A75877A2D04A6548B2A02606C31 /* NNDiffReloader.m */,
-				94FE7566B597C550473CFF21D8D37111 /* NNDiffReloadOptions.h */,
-				B051E78430CB609D84DC4C9E5B8AB24C /* NNDiffReloadOptions.m */,
-				0701011AF22A40C105E12C1404AA0D25 /* NNFetchedResultsControllerDiffAdapter.h */,
-				153AB31B95E441FBDBE8D267C96EE9E2 /* NNFetchedResultsControllerDiffAdapter.m */,
-				302C25822AA3AA79FF6499D9A261F59C /* NNSection.h */,
-				A646E4DE944A9BAFE127AD301BFE652C /* NNSection.m */,
-				8B94910F32B8084DDEFA41D3A508BA20 /* NNSectionsDiff.h */,
-				8829357A592C8A622463ACF556BE6B1A /* NNSectionsDiff.m */,
-				872E77CBA745EEEEB197812A5B0D185F /* NNSectionsDiffCalculator.h */,
-				E5F3A3FB2471F109BC2815C3134ECC22 /* NNSectionsDiffCalculator.m */,
-				245DE63DF516B1B18FDA96887ECB9BDB /* NNSectionsDiffChange.h */,
-				5032912E3DB505488505DE99F9CEDAAB /* NNSectionsDiffChange.m */,
-				214254854D32BBC3667A584C90F099F0 /* NNSectionsDiffTracker.h */,
-				CD6F2CF06AAD0DDBA7A9AB008A56FF8C /* NNSectionsDiffTracker.m */,
-				2D42F544C781378AEEC9968DDC1E439A /* NNTableViewDiffReloadAnimations.h */,
-				D2FAA948F1FAB9CCFBACA7A1F4F2BEC2 /* NNTableViewDiffReloadAnimations.m */,
-				19AE653E1AECA066F4C7E95542A224C0 /* NNTableViewReloader.h */,
-				44F04B396554481F67D75FB9829E2A33 /* NNTableViewReloader.m */,
-				F34CF0AB5FCB55EB3F4EAB4DF05C7863 /* UICollectionView+NNSectionsDiff.h */,
-				254A605BCF704602707C87873FA1654E /* UICollectionView+NNSectionsDiff.m */,
-				7598A0E005D1BCCB71AC964DDD3C1DDE /* UITableView+NNSectionsDiff.h */,
-				5E632EE10DB0B3492169365CCED92AD6 /* UITableView+NNSectionsDiff.m */,
-				2D0898E751E35C118A23FADEC087DB52 /* Support Files */,
-			);
-			path = ArrayDiff;
+			path = NNArrayDiff;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		0D1BDEAA730778B5089BE40E7281E70F /* Headers */ = {
+		D11B5446CFA49086CCD658C2778244B3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49F9702D765844225DAB6A55D4B2A687 /* ArrayDiff.h in Headers */,
-				F22EC1606C701A0BB7DA6E25D4F700D4 /* NNArrayDiff.h in Headers */,
-				44ABFC9C7C3F1FF334B019778651E674 /* NNArrayDiffCalculator.h in Headers */,
-				8156A38B56FCAE8693469C61CEF714A7 /* NNArrayDiffChange.h in Headers */,
-				D24656716AF5957E0E83C15B362E8B7D /* NNCollectionViewReloader.h in Headers */,
-				0F1A50018CB635C63F579CF3D8E3E0F7 /* NNDiffCalculator.h in Headers */,
-				B690EE4BDBE2E02D89B87B68A44ED9C5 /* NNDiffChangeType.h in Headers */,
-				64B316E07C9E232EDFCC40FF140A67E3 /* NNDiffReloader.h in Headers */,
-				9697BF54A5EA484BFF74832ECC0E3BA4 /* NNDiffReloadOptions.h in Headers */,
-				413E1872C693C8D9F20148244FB36B71 /* NNFetchedResultsControllerDiffAdapter.h in Headers */,
-				305674A1B2091DC7F47703D1FC1D813F /* NNSection.h in Headers */,
-				F5B74F15E87820C0063EF407F5E2471D /* NNSectionsDiff.h in Headers */,
-				D200E9F8FF81D76EE923A4E47D30D5F0 /* NNSectionsDiffCalculator.h in Headers */,
-				E17A06421D38B590217FE142E2BC0073 /* NNSectionsDiffChange.h in Headers */,
-				C34C0DB25AC68961C84ACA9B3F280F97 /* NNSectionsDiffTracker.h in Headers */,
-				8CA9952C8596A296F5DDF4D91BB4E7DB /* NNTableViewDiffReloadAnimations.h in Headers */,
-				F83ADCA70835F136766FB696F59BFB76 /* NNTableViewReloader.h in Headers */,
-				2BEAAAC377FF116565F7EFBA3FA134E2 /* UICollectionView+NNSectionsDiff.h in Headers */,
-				B05CE15B6932EA00601B621F33133BD6 /* UITableView+NNSectionsDiff.h in Headers */,
+				1822AE6E99CBEC4BACE4C4A03AA6A48A /* ArrayDiff.h in Headers */,
+				7229485D970B04FC4A10BD3CB26B5B72 /* NNArrayDiff.h in Headers */,
+				48DED9821BDC7916BB2EFA6E0390D97D /* NNArrayDiffCalculator.h in Headers */,
+				65FB3ADA0E40DC4D8B4DE174AAF83E5A /* NNArrayDiffChange.h in Headers */,
+				AB6B2DBC1A3E67EBF802729BCA58F35D /* NNCollectionViewReloader.h in Headers */,
+				CF22F418E36693B7664A8A8A251D853A /* NNDiffCalculator.h in Headers */,
+				E6EAB20A72BBFE4E55D875D3C7206026 /* NNDiffChangeType.h in Headers */,
+				74266229C5B27C98B3BBA35B30E684F8 /* NNDiffReloader.h in Headers */,
+				3B1AE6DD5D1E935BF2254B96AA6FFA2E /* NNDiffReloadOptions.h in Headers */,
+				AC3147A5F2C7517CFD7D61B110D18006 /* NNFetchedResultsControllerDiffAdapter.h in Headers */,
+				E7282F688B49B9E825B8A1F31EC08C33 /* NNSection.h in Headers */,
+				3400838E8C95AC0CB3045F631549C005 /* NNSectionsDiff.h in Headers */,
+				DB5EEB76D393E76A58C4FCB489CDD056 /* NNSectionsDiffCalculator.h in Headers */,
+				23233050FEF7590D5B5CDCEB28576361 /* NNSectionsDiffChange.h in Headers */,
+				6E6648AA6820B60C61644FC750709C29 /* NNSectionsDiffTracker.h in Headers */,
+				D2EDC4925527C0BDCFE1EB2EA687E0BB /* NNTableViewDiffReloadAnimations.h in Headers */,
+				ED7E9EF042CD3E46215E4346E4B3ED88 /* NNTableViewReloader.h in Headers */,
+				64EC2CD5986696219070C194567AE368 /* UICollectionView+NNSectionsDiff.h in Headers */,
+				4B436E8354D960EECEF67A8D1B62DC24 /* UITableView+NNSectionsDiff.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		8E29F2E5F1CAEA3D5834CB45010A497E /* Pods */ = {
+		7AC73AE20AA658803984C41ECDB77087 /* NNArrayDiff */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D97533D5B5D4497B0EAAC5AC7DD5F26D /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildConfigurationList = E8559212FC5E08813C7733BBE88CA429 /* Build configuration list for PBXNativeTarget "NNArrayDiff" */;
 			buildPhases = (
-				32B6139F53CBBA787AA2C98D71F86CE1 /* Sources */,
-				60E8719D556DEE25135FC77DE2CA2DB8 /* Frameworks */,
+				4F46B1A8B4289405E65293BDAA4717C3 /* Sources */,
+				EB7F2612921BD81B7BA5004335A521F4 /* Frameworks */,
+				D11B5446CFA49086CCD658C2778244B3 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				EF7A8715044CDC356E9CA17CA5E58C08 /* PBXTargetDependency */,
+			);
+			name = NNArrayDiff;
+			productName = NNArrayDiff;
+			productReference = 8AD05CB0A321E25B09580C16F1891B18 /* libNNArrayDiff.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		8E5694913F31237EAD994D8614FC1E3B /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF5C031B10CA1CC37D784174D9614440 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				713506FA64BB502CFBF96A12A529376E /* Sources */,
+				7F80DC48BA40142FAC05B7B6E995EA90 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				65C7C4CA45DDC6E71CFC36EF102F9482 /* PBXTargetDependency */,
 			);
 			name = Pods;
 			productName = Pods;
-			productReference = 778EC5466CF64D1521A0401D70CDFF4B /* libPods.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		E1B2CBAB1F15A68CB0DEF859A0B48F4F /* ArrayDiff */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6FB9C11018C1413735639223B71F4839 /* Build configuration list for PBXNativeTarget "ArrayDiff" */;
-			buildPhases = (
-				E49EE546B0D46FF5596DD34EE87FB5E5 /* Sources */,
-				121613E25975AC38B4123E69FB5582F3 /* Frameworks */,
-				0D1BDEAA730778B5089BE40E7281E70F /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ArrayDiff;
-			productName = ArrayDiff;
-			productReference = A7C25329EC9B151AD7A77A1041DA1BF9 /* libArrayDiff.a */;
+			productReference = C470E36A56625877755F80B91D5BA521 /* libPods.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -337,58 +341,58 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = D24FE65DDAA52A06CCCE93879B7BDF6F /* Products */;
+			productRefGroup = 4BD692FDB8C1D5C1F5EA82EAA1E224D9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E1B2CBAB1F15A68CB0DEF859A0B48F4F /* ArrayDiff */,
-				8E29F2E5F1CAEA3D5834CB45010A497E /* Pods */,
+				7AC73AE20AA658803984C41ECDB77087 /* NNArrayDiff */,
+				8E5694913F31237EAD994D8614FC1E3B /* Pods */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		32B6139F53CBBA787AA2C98D71F86CE1 /* Sources */ = {
+		4F46B1A8B4289405E65293BDAA4717C3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25190BE772017A005723F4A189DEB7FD /* Pods-dummy.m in Sources */,
+				B28BAEF6362D01E3B291A5DF6FCB0AE2 /* NNArrayDiff-dummy.m in Sources */,
+				3A9EF298FED625E4F1237E8024736353 /* NNArrayDiff.m in Sources */,
+				2999ADDC9B10456205F769124C86B062 /* NNArrayDiffCalculator.m in Sources */,
+				9C4E3A47324CC8CF1E99DBAB864AEB04 /* NNArrayDiffChange.m in Sources */,
+				E155F0312D76B71D15FC28B32CED2EDB /* NNCollectionViewReloader.m in Sources */,
+				D40C6C249B8A0339853F92A52E64E320 /* NNDiffCalculator.m in Sources */,
+				FA5F70358519B4CBAE9DEDF2A0E101BF /* NNDiffReloader.m in Sources */,
+				BF22DF12A78070BA1333764229566056 /* NNDiffReloadOptions.m in Sources */,
+				F3358211D5AAA05ED61256596B5985FF /* NNFetchedResultsControllerDiffAdapter.m in Sources */,
+				AF1E511D8AED590B579B2559B7BF8E81 /* NNSection.m in Sources */,
+				E7B2CFA9935BE93A2B89E86AD931B31F /* NNSectionsDiff.m in Sources */,
+				B2654E7D43EEC0A3245504D430E51022 /* NNSectionsDiffCalculator.m in Sources */,
+				53DF0A9F852EC07143D0BAF28C9E1DC9 /* NNSectionsDiffChange.m in Sources */,
+				53C70516220D77D89472DA8A07AF1CF6 /* NNSectionsDiffTracker.m in Sources */,
+				F44C505221C29EC0F0E36C7DF97F57EE /* NNTableViewDiffReloadAnimations.m in Sources */,
+				BC21D9EF70A85AFDAC5123B096298168 /* NNTableViewReloader.m in Sources */,
+				C4EC32B3904FDCB773032650ED92705C /* UICollectionView+NNSectionsDiff.m in Sources */,
+				E0CB61F93C55E1AFE92C2F34B6D96E40 /* UITableView+NNSectionsDiff.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E49EE546B0D46FF5596DD34EE87FB5E5 /* Sources */ = {
+		713506FA64BB502CFBF96A12A529376E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCD0A3ECE108F1A2A68670B0BD5DCE80 /* ArrayDiff-dummy.m in Sources */,
-				7D92ADEDDB4FBEA412E4B742542B9A9C /* NNArrayDiff.m in Sources */,
-				1A0A6F648DB53F0AA0357D78D4F86E68 /* NNArrayDiffCalculator.m in Sources */,
-				BB21D4D7830E6695F481F2A6802CD1C5 /* NNArrayDiffChange.m in Sources */,
-				04835033DC3A43A2875024CDA4EB4EA4 /* NNCollectionViewReloader.m in Sources */,
-				9D397CE59CE88F4A0A80C0562585CFDF /* NNDiffCalculator.m in Sources */,
-				9C3A3AE31B8DB1A8BA3FD8364FD69B81 /* NNDiffReloader.m in Sources */,
-				C0CF06A08C0829D87141630A24BA1C3B /* NNDiffReloadOptions.m in Sources */,
-				1A6656D1B1F14E4A4C20FE03EAC81732 /* NNFetchedResultsControllerDiffAdapter.m in Sources */,
-				B9ACD5BFF93D32448FDCC452A5B89803 /* NNSection.m in Sources */,
-				7B47E6642A4E323E43A99A35CF2F01FD /* NNSectionsDiff.m in Sources */,
-				97FBCCDA401C3581C38A06FF9078EEAC /* NNSectionsDiffCalculator.m in Sources */,
-				BE674346DAF99E255B87BAE85C5FDD52 /* NNSectionsDiffChange.m in Sources */,
-				3CB84CAE8BA8215EDC7E0D55EB6CC1F8 /* NNSectionsDiffTracker.m in Sources */,
-				1DED0AA78A1F2F4BD0566038FDBC3A94 /* NNTableViewDiffReloadAnimations.m in Sources */,
-				24DC80F6CCB1F4FD08E990C1F59542B3 /* NNTableViewReloader.m in Sources */,
-				BCE39E209052DB6E8C837A279F698C14 /* UICollectionView+NNSectionsDiff.m in Sources */,
-				826CB4E784D4377D5C6025D6F85E92EA /* UITableView+NNSectionsDiff.m in Sources */,
+				B2C51554C7F7232AC3DB7030823FB999 /* Pods-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		EF7A8715044CDC356E9CA17CA5E58C08 /* PBXTargetDependency */ = {
+		65C7C4CA45DDC6E71CFC36EF102F9482 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = ArrayDiff;
-			target = E1B2CBAB1F15A68CB0DEF859A0B48F4F /* ArrayDiff */;
-			targetProxy = 096837231A5E33D871F10C916654127C /* PBXContainerItemProxy */;
+			name = NNArrayDiff;
+			target = 7AC73AE20AA658803984C41ECDB77087 /* NNArrayDiff */;
+			targetProxy = D27B1F24F696284EC80DBA58D76D5EBA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -427,46 +431,30 @@
 			};
 			name = Release;
 		};
-		26133E113C724663056884F91AD15DF5 /* Release */ = {
+		9FDE3865BE2C4569785A0DDCDBC44B5A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 98C98CDFB3F20F2925F6CD1F141BB14F /* Pods.release.xcconfig */;
+			baseConfigurationReference = 098820D2980C5C9C075457E13D57F968 /* NNArrayDiff.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/NNArrayDiff/NNArrayDiff-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		2A6A085BEF9EDC3D703D43A62F3ADC1A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4E762F23EC34ED4A6FF3312D84E33A40 /* Pods.debug.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MACH_O_TYPE = staticlib;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
-		9896BD9F5055D3B5D5441BB9DF8B71C0 /* Release */ = {
+		9FF60F6E571B51E7763E08C66101EE64 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EDDE964BCC677B66BCE721D02F8F0231 /* ArrayDiff.xcconfig */;
+			baseConfigurationReference = 098820D2980C5C9C075457E13D57F968 /* NNArrayDiff.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ArrayDiff/ArrayDiff-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/NNArrayDiff/NNArrayDiff-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
@@ -518,23 +506,39 @@
 			};
 			name = Debug;
 		};
-		C16E4D5DA965233BF75A09143D291ACB /* Debug */ = {
+		C940DF18B98165549D6FE72D1ACD47B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EDDE964BCC677B66BCE721D02F8F0231 /* ArrayDiff.xcconfig */;
+			baseConfigurationReference = 4E762F23EC34ED4A6FF3312D84E33A40 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ArrayDiff/ArrayDiff-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
+		};
+		F2CE620DB0C84FC8C8DD3E384836C931 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98C98CDFB3F20F2925F6CD1F141BB14F /* Pods.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -548,20 +552,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6FB9C11018C1413735639223B71F4839 /* Build configuration list for PBXNativeTarget "ArrayDiff" */ = {
+		AF5C031B10CA1CC37D784174D9614440 /* Build configuration list for PBXNativeTarget "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C16E4D5DA965233BF75A09143D291ACB /* Debug */,
-				9896BD9F5055D3B5D5441BB9DF8B71C0 /* Release */,
+				C940DF18B98165549D6FE72D1ACD47B5 /* Debug */,
+				F2CE620DB0C84FC8C8DD3E384836C931 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D97533D5B5D4497B0EAAC5AC7DD5F26D /* Build configuration list for PBXNativeTarget "Pods" */ = {
+		E8559212FC5E08813C7733BBE88CA429 /* Build configuration list for PBXNativeTarget "NNArrayDiff" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2A6A085BEF9EDC3D703D43A62F3ADC1A /* Debug */,
-				26133E113C724663056884F91AD15DF5 /* Release */,
+				9FDE3865BE2C4569785A0DDCDBC44B5A /* Debug */,
+				9FF60F6E571B51E7763E08C66101EE64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

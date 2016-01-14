@@ -10,7 +10,7 @@
 #import "BLDataItem.h"
 #import "BLDataSection.h"
 
-#import <ArrayDiff/ArrayDiff.h>
+#import <NNArrayDiff/ArrayDiff.h>
 #import "NNSectionsDiff+BLDataDiff.h"
 
 

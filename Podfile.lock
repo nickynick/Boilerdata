@@ -1,20 +1,10 @@
 PODS:
-  - ArrayDiff (0.2.4)
+  - NNArrayDiff (0.2.5)
 
 DEPENDENCIES:
-  - ArrayDiff (from `https://github.com/nickynick/ArrayDiff.git`, branch `master`)
-
-EXTERNAL SOURCES:
-  ArrayDiff:
-    :branch: master
-    :git: https://github.com/nickynick/ArrayDiff.git
-
-CHECKOUT OPTIONS:
-  ArrayDiff:
-    :commit: 68ab28e772c1c11188932111441d3e28c306bbad
-    :git: https://github.com/nickynick/ArrayDiff.git
+  - NNArrayDiff (~> 0.2.5)
 
 SPEC CHECKSUMS:
-  ArrayDiff: c058c4f17abf85d6b6d5d9c51832ee9d51d05f0c
+  NNArrayDiff: 84e05154930caed263b9d2b227a6bdc5ba15ee6e
 
 COCOAPODS: 0.39.0
