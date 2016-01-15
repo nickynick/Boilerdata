@@ -11,6 +11,7 @@
 		01A356801C4718BE009969A3 /* BLUITableViewReloaderEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A3567F1C4718BE009969A3 /* BLUITableViewReloaderEngine.m */; };
 		01A356831C4718C8009969A3 /* BLUICollectionViewReloaderEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A356821C4718C8009969A3 /* BLUICollectionViewReloaderEngine.m */; };
 		01A356861C471CAD009969A3 /* BLUITableViewAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A356851C471CAD009969A3 /* BLUITableViewAnimations.m */; };
+		01A356D91C48FC22009969A3 /* BLAbstractDataProvider+Subclassing.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A356D81C48FC10009969A3 /* BLAbstractDataProvider+Subclassing.m */; };
 		01DC730F1C3F097700D03CA2 /* BLDataDiffCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72D91C3F097700D03CA2 /* BLDataDiffCalculator.m */; };
 		01DC73101C3F097700D03CA2 /* BLMutableDataDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72DC1C3F097700D03CA2 /* BLMutableDataDiff.m */; };
 		01DC73111C3F097700D03CA2 /* BLMutableDataDiffChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72DE1C3F097700D03CA2 /* BLMutableDataDiffChange.m */; };
@@ -57,6 +58,7 @@
 		01A356821C4718C8009969A3 /* BLUICollectionViewReloaderEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLUICollectionViewReloaderEngine.m; sourceTree = "<group>"; };
 		01A356841C471CAD009969A3 /* BLUITableViewAnimations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLUITableViewAnimations.h; sourceTree = "<group>"; };
 		01A356851C471CAD009969A3 /* BLUITableViewAnimations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLUITableViewAnimations.m; sourceTree = "<group>"; };
+		01A356D81C48FC10009969A3 /* BLAbstractDataProvider+Subclassing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BLAbstractDataProvider+Subclassing.m"; sourceTree = "<group>"; };
 		01DC72D71C3F097700D03CA2 /* BLDataDiff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLDataDiff.h; sourceTree = "<group>"; };
 		01DC72D81C3F097700D03CA2 /* BLDataDiffCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLDataDiffCalculator.h; sourceTree = "<group>"; };
 		01DC72D91C3F097700D03CA2 /* BLDataDiffCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLDataDiffCalculator.m; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				01DC72E61C3F097700D03CA2 /* BLAbstractDataProvider.h */,
 				01DC72E71C3F097700D03CA2 /* BLAbstractDataProvider.m */,
 				01DC72E51C3F097700D03CA2 /* BLAbstractDataProvider+Subclassing.h */,
+				01A356D81C48FC10009969A3 /* BLAbstractDataProvider+Subclassing.m */,
 				01DC72E91C3F097700D03CA2 /* BLChainDataProvider.h */,
 				01DC72EA1C3F097700D03CA2 /* BLChainDataProvider.m */,
 				01DC72E81C3F097700D03CA2 /* BLChainDataProvider+Subclassing.h */,
@@ -433,6 +436,7 @@
 				01DC731E1C3F097700D03CA2 /* BLUtils.m in Sources */,
 				01DC731F1C3F097700D03CA2 /* NNArrayDiffChange+BLDataDiffIndexPathChange.m in Sources */,
 				01DC73341C42E84C00D03CA2 /* BLUIKitViewReloader.m in Sources */,
+				01A356D91C48FC22009969A3 /* BLAbstractDataProvider+Subclassing.m in Sources */,
 				01DC731C1C3F097700D03CA2 /* BLFilterDataProvider.m in Sources */,
 				01DC73191C3F097700D03CA2 /* BLStaticArrayDataProvider.m in Sources */,
 				01DC73181C3F097700D03CA2 /* BLArrayDataProvider.m in Sources */,
