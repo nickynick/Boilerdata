@@ -8,7 +8,7 @@
 
 #import "BLStaticDataProviderProxy.h"
 
-@interface BLStaticDataProviderProxy (Subclassing)
+@interface BLStaticDataProviderProxy ()
 
 @property (nonatomic, strong) id<BLStaticDataProvider> staticDataProvider;
 
