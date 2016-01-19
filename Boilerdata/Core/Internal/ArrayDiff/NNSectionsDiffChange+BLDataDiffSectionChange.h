@@ -9,6 +9,6 @@
 #import <NNArrayDiff/ArrayDiff.h>
 #import "BLDataDiffChange.h"
 
-@interface NNSectionsDiffChange (BLDataDiffSectionChange)
+@interface NNSectionsDiffChange (BLDataDiffSectionChange) <BLDataDiffSectionChange>
 
 @end
