@@ -9,10 +9,13 @@
 #import "BLAbstractDataProvider.h"
 
 @protocol BLDataItem;
+@protocol BLDataDiff;
 
 
 @interface BLArrayDataProvider : BLAbstractDataProvider
 
 - (void)updateWithItems:(NSArray<id<BLDataItem>> *)items;
+
+- (void)updateWithItems:(NSArray<id<BLDataItem>> *)items dataDiff:(id<BLDataDiff>)dataDiff;
 
 @end

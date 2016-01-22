@@ -15,11 +15,17 @@
 @implementation BLArrayDataProvider
 
 - (void)updateWithItems:(NSArray<id<BLDataItem>> *)items {
-    BLStaticArrayDataProvider *oldDataProvider = (BLStaticArrayDataProvider *) self.lastQueuedEvent.updatedDataProvider;
-    
+    [self updateWithItems:items dataDiff:nil];
+}
+
+- (void)updateWithItems:(NSArray<id<BLDataItem>> *)items dataDiff:(id<BLDataDiff>)dataDiff {
     BLStaticArrayDataProvider *newDataProvider = [[BLStaticArrayDataProvider alloc] initWithItems:items];
     
-    id<BLDataDiff> dataDiff = [BLDataDiffCalculator diffForItemsBefore:oldDataProvider.items itemsAfter:newDataProvider.items];
+    if (!dataDiff) {
+        BLStaticArrayDataProvider *oldDataProvider = (BLStaticArrayDataProvider *) self.lastQueuedEvent.updatedDataProvider;
+        
+        dataDiff = [BLDataDiffCalculator diffForItemsBefore:oldDataProvider.items itemsAfter:newDataProvider.items];
+    }
     
     [self enqueueDataEvent:[[BLDataEvent alloc] initWithUpdatedDataProvider:newDataProvider
                                                                    dataDiff:dataDiff
