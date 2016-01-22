@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "016E58DE1C3B3EA10087E63A"
-               BuildableName = "libBoilerdata.a"
+               BlueprintIdentifier = "01D57A401C524FA9008E4EB5"
+               BuildableName = "Boilerdata.framework"
                BlueprintName = "Boilerdata"
                ReferencedContainer = "container:Boilerdata.xcodeproj">
             </BuildableReference>
@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "01D57A491C524FA9008E4EB5"
+               BuildableName = "BoilerdataTests.xctest"
+               BlueprintName = "BoilerdataTests"
+               ReferencedContainer = "container:Boilerdata.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "01D57A401C524FA9008E4EB5"
+            BuildableName = "Boilerdata.framework"
+            BlueprintName = "Boilerdata"
+            ReferencedContainer = "container:Boilerdata.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -45,8 +64,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "016E58DE1C3B3EA10087E63A"
-            BuildableName = "libBoilerdata.a"
+            BlueprintIdentifier = "01D57A401C524FA9008E4EB5"
+            BuildableName = "Boilerdata.framework"
             BlueprintName = "Boilerdata"
             ReferencedContainer = "container:Boilerdata.xcodeproj">
          </BuildableReference>
@@ -63,8 +82,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "016E58DE1C3B3EA10087E63A"
-            BuildableName = "libBoilerdata.a"
+            BlueprintIdentifier = "01D57A401C524FA9008E4EB5"
+            BuildableName = "Boilerdata.framework"
             BlueprintName = "Boilerdata"
             ReferencedContainer = "container:Boilerdata.xcodeproj">
          </BuildableReference>

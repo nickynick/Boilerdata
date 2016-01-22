@@ -7,50 +7,82 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		016E58E31C3B3EA10087E63A /* Boilerdata.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 016E58E21C3B3EA10087E63A /* Boilerdata.h */; };
-		01A356801C4718BE009969A3 /* BLUITableViewReloaderEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A3567F1C4718BE009969A3 /* BLUITableViewReloaderEngine.m */; };
-		01A356831C4718C8009969A3 /* BLUICollectionViewReloaderEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A356821C4718C8009969A3 /* BLUICollectionViewReloaderEngine.m */; };
-		01A356861C471CAD009969A3 /* BLUITableViewAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A356851C471CAD009969A3 /* BLUITableViewAnimations.m */; };
-		01A356D91C48FC22009969A3 /* BLAbstractDataProvider+Subclassing.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A356D81C48FC10009969A3 /* BLAbstractDataProvider+Subclassing.m */; };
-		01C2D15F1C4E772500DA204C /* NNSectionsDiffChange+BLDataDiffSectionChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C2D15E1C4E772500DA204C /* NNSectionsDiffChange+BLDataDiffSectionChange.m */; };
-		01DC730F1C3F097700D03CA2 /* BLDataDiffCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72D91C3F097700D03CA2 /* BLDataDiffCalculator.m */; };
-		01DC73101C3F097700D03CA2 /* BLMutableDataDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72DC1C3F097700D03CA2 /* BLMutableDataDiff.m */; };
-		01DC73111C3F097700D03CA2 /* BLMutableDataDiffChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72DE1C3F097700D03CA2 /* BLMutableDataDiffChange.m */; };
-		01DC73121C3F097700D03CA2 /* BLDataSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72E21C3F097700D03CA2 /* BLDataSection.m */; };
-		01DC73131C3F097700D03CA2 /* BLAbstractDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72E71C3F097700D03CA2 /* BLAbstractDataProvider.m */; };
-		01DC73141C3F097700D03CA2 /* BLChainDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72EA1C3F097700D03CA2 /* BLChainDataProvider.m */; };
-		01DC73151C3F097700D03CA2 /* BLStaticDataProviderProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72ED1C3F097700D03CA2 /* BLStaticDataProviderProxy.m */; };
-		01DC73161C3F097700D03CA2 /* BLChainDataEventProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72F01C3F097700D03CA2 /* BLChainDataEventProcessor.m */; };
-		01DC73171C3F097700D03CA2 /* BLNilDataEventProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72F21C3F097700D03CA2 /* BLNilDataEventProcessor.m */; };
-		01DC73181C3F097700D03CA2 /* BLArrayDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72F51C3F097700D03CA2 /* BLArrayDataProvider.m */; };
-		01DC73191C3F097700D03CA2 /* BLStaticArrayDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72F71C3F097700D03CA2 /* BLStaticArrayDataProvider.m */; };
-		01DC731A1C3F097700D03CA2 /* BLDataEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72F91C3F097700D03CA2 /* BLDataEvent.m */; };
-		01DC731B1C3F097700D03CA2 /* BLDataItemFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72FF1C3F097700D03CA2 /* BLDataItemFilter.m */; };
-		01DC731C1C3F097700D03CA2 /* BLFilterDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC73011C3F097700D03CA2 /* BLFilterDataProvider.m */; };
-		01DC731D1C3F097700D03CA2 /* BLStaticFilterDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC73031C3F097700D03CA2 /* BLStaticFilterDataProvider.m */; };
-		01DC731E1C3F097700D03CA2 /* BLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC73061C3F097700D03CA2 /* BLUtils.m */; };
-		01DC731F1C3F097700D03CA2 /* NNArrayDiffChange+BLDataDiffIndexPathChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC730A1C3F097700D03CA2 /* NNArrayDiffChange+BLDataDiffIndexPathChange.m */; };
-		01DC73201C3F097700D03CA2 /* NNSectionsDiff+BLDataDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC730C1C3F097700D03CA2 /* NNSectionsDiff+BLDataDiff.m */; };
-		01DC73211C3F097700D03CA2 /* NSIndexPath+BLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC730E1C3F097700D03CA2 /* NSIndexPath+BLUtils.m */; };
-		01DC73341C42E84C00D03CA2 /* BLUIKitViewReloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC73331C42E84C00D03CA2 /* BLUIKitViewReloader.m */; };
-		C971A6287ACC2CF5BEBD2D16 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D2C76DFF023523F7626A4C /* libPods.a */; };
+		01D57A441C524FA9008E4EB5 /* Boilerdata.h in Headers */ = {isa = PBXBuildFile; fileRef = 01D57A431C524FA9008E4EB5 /* Boilerdata.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01D57A4B1C524FA9008E4EB5 /* Boilerdata.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D57A411C524FA9008E4EB5 /* Boilerdata.framework */; };
+		01D57A501C524FA9008E4EB5 /* BoilerdataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D57A4F1C524FA9008E4EB5 /* BoilerdataTests.m */; };
+		01D57A581C524FD9008E4EB5 /* BLDataSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72E21C3F097700D03CA2 /* BLDataSection.m */; };
+		01D57A591C524FD9008E4EB5 /* BLMutableDataDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72DC1C3F097700D03CA2 /* BLMutableDataDiff.m */; };
+		01D57A5A1C524FD9008E4EB5 /* BLMutableDataDiffChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72DE1C3F097700D03CA2 /* BLMutableDataDiffChange.m */; };
+		01D57A5B1C524FD9008E4EB5 /* BLDataDiffCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72D91C3F097700D03CA2 /* BLDataDiffCalculator.m */; };
+		01D57A5C1C524FD9008E4EB5 /* BLNilDataEventProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72F21C3F097700D03CA2 /* BLNilDataEventProcessor.m */; };
+		01D57A5D1C524FD9008E4EB5 /* BLChainDataEventProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72F01C3F097700D03CA2 /* BLChainDataEventProcessor.m */; };
+		01D57A5E1C524FD9008E4EB5 /* BLStaticDataProviderProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72ED1C3F097700D03CA2 /* BLStaticDataProviderProxy.m */; };
+		01D57A5F1C524FD9008E4EB5 /* BLAbstractDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72E71C3F097700D03CA2 /* BLAbstractDataProvider.m */; };
+		01D57A601C524FD9008E4EB5 /* BLAbstractDataProvider+Subclassing.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A356D81C48FC10009969A3 /* BLAbstractDataProvider+Subclassing.m */; };
+		01D57A611C524FD9008E4EB5 /* BLChainDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72EA1C3F097700D03CA2 /* BLChainDataProvider.m */; };
+		01D57A621C524FD9008E4EB5 /* BLArrayDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72F51C3F097700D03CA2 /* BLArrayDataProvider.m */; };
+		01D57A631C524FD9008E4EB5 /* BLStaticArrayDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72F71C3F097700D03CA2 /* BLStaticArrayDataProvider.m */; };
+		01D57A641C524FD9008E4EB5 /* BLFilterDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC73011C3F097700D03CA2 /* BLFilterDataProvider.m */; };
+		01D57A651C524FD9008E4EB5 /* BLStaticFilterDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC73031C3F097700D03CA2 /* BLStaticFilterDataProvider.m */; };
+		01D57A661C524FD9008E4EB5 /* BLDataItemFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72FF1C3F097700D03CA2 /* BLDataItemFilter.m */; };
+		01D57A671C524FD9008E4EB5 /* BLDataEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC72F91C3F097700D03CA2 /* BLDataEvent.m */; };
+		01D57A681C524FD9008E4EB5 /* BLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC73061C3F097700D03CA2 /* BLUtils.m */; };
+		01D57A691C524FD9008E4EB5 /* NNSectionsDiff+BLDataDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC730C1C3F097700D03CA2 /* NNSectionsDiff+BLDataDiff.m */; };
+		01D57A6A1C524FD9008E4EB5 /* NNArrayDiffChange+BLDataDiffIndexPathChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC730A1C3F097700D03CA2 /* NNArrayDiffChange+BLDataDiffIndexPathChange.m */; };
+		01D57A6B1C524FD9008E4EB5 /* NNSectionsDiffChange+BLDataDiffSectionChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C2D15E1C4E772500DA204C /* NNSectionsDiffChange+BLDataDiffSectionChange.m */; };
+		01D57A6C1C524FD9008E4EB5 /* NSIndexPath+BLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC730E1C3F097700D03CA2 /* NSIndexPath+BLUtils.m */; };
+		01D57A6D1C524FD9008E4EB5 /* BLUITableViewReloaderEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A3567F1C4718BE009969A3 /* BLUITableViewReloaderEngine.m */; };
+		01D57A6E1C524FD9008E4EB5 /* BLUICollectionViewReloaderEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A356821C4718C8009969A3 /* BLUICollectionViewReloaderEngine.m */; };
+		01D57A6F1C524FD9008E4EB5 /* BLUIKitViewReloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DC73331C42E84C00D03CA2 /* BLUIKitViewReloader.m */; };
+		01D57A701C524FD9008E4EB5 /* BLUITableViewAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A356851C471CAD009969A3 /* BLUITableViewAnimations.m */; };
+		01D57A711C524FFE008E4EB5 /* BLDataItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 01DC72E01C3F097700D03CA2 /* BLDataItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01D57A721C524FFE008E4EB5 /* BLDataSection.h in Headers */ = {isa = PBXBuildFile; fileRef = 01DC72E11C3F097700D03CA2 /* BLDataSection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01D57A731C524FFE008E4EB5 /* BLDataDiff.h in Headers */ = {isa = PBXBuildFile; fileRef = 01DC72D71C3F097700D03CA2 /* BLDataDiff.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01D57A741C524FFE008E4EB5 /* BLDataDiffChange.h in Headers */ = {isa = PBXBuildFile; fileRef = 01DC72DA1C3F097700D03CA2 /* BLDataDiffChange.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01D57A751C524FFE008E4EB5 /* BLMutableDataDiff.h in Headers */ = {isa = PBXBuildFile; fileRef = 01DC72DB1C3F097700D03CA2 /* BLMutableDataDiff.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01D57A761C524FFE008E4EB5 /* BLMutableDataDiffChange.h in Headers */ = {isa = PBXBuildFile; fileRef = 01DC72DD1C3F097700D03CA2 /* BLMutableDataDiffChange.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01D57A771C524FFE008E4EB5 /* BLDataDiffCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = 01DC72D81C3F097700D03CA2 /* BLDataDiffCalculator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01D57A781C524FFE008E4EB5 /* BLNilDataEventProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 01DC72F11C3F097700D03CA2 /* BLNilDataEventProcessor.h */; };
+		01D57A791C524FFE008E4EB5 /* BLChainDataEventProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 01DC72EF1C3F097700D03CA2 /* BLChainDataEventProcessor.h */; };
+		01D57A7A1C524FFE008E4EB5 /* BLStaticDataProviderProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 01DC72EC1C3F097700D03CA2 /* BLStaticDataProviderProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01D57A7B1C524FFE008E4EB5 /* BLStaticDataProviderProxy+Subclassing.h in Headers */ = {isa = PBXBuildFile; fileRef = 01DC72EB1C3F097700D03CA2 /* BLStaticDataProviderProxy+Subclassing.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		01D57A7C1C524FFE008E4EB5 /* BLAbstractDataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 01DC72E61C3F097700D03CA2 /* BLAbstractDataProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01D57A7D1C524FFE008E4EB5 /* BLAbstractDataProvider+Subclassing.h in Headers */ = {isa = PBXBuildFile; fileRef = 01DC72E51C3F097700D03CA2 /* BLAbstractDataProvider+Subclassing.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		01D57A7E1C524FFE008E4EB5 /* BLChainDataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 01DC72E91C3F097700D03CA2 /* BLChainDataProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01D57A7F1C524FFE008E4EB5 /* BLChainDataProvider+Subclassing.h in Headers */ = {isa = PBXBuildFile; fileRef = 01DC72E81C3F097700D03CA2 /* BLChainDataProvider+Subclassing.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		01D57A801C524FFE008E4EB5 /* BLArrayDataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 01DC72F41C3F097700D03CA2 /* BLArrayDataProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01D57A811C524FFE008E4EB5 /* BLStaticArrayDataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 01DC72F61C3F097700D03CA2 /* BLStaticArrayDataProvider.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		01D57A821C524FFE008E4EB5 /* BLFilterDataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 01DC73001C3F097700D03CA2 /* BLFilterDataProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01D57A831C524FFE008E4EB5 /* BLStaticFilterDataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 01DC73021C3F097700D03CA2 /* BLStaticFilterDataProvider.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		01D57A841C524FFE008E4EB5 /* BLDataItemFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 01DC72FE1C3F097700D03CA2 /* BLDataItemFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01D57A851C524FFE008E4EB5 /* BLDataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 01DC72FC1C3F097700D03CA2 /* BLDataProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01D57A861C524FFE008E4EB5 /* BLDataObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = 01DC72FB1C3F097700D03CA2 /* BLDataObserver.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01D57A871C524FFE008E4EB5 /* BLDataEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 01DC72F81C3F097700D03CA2 /* BLDataEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01D57A881C524FFE008E4EB5 /* BLDataEventProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 01DC72FA1C3F097700D03CA2 /* BLDataEventProcessor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01D57A891C524FFE008E4EB5 /* BLUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 01DC73051C3F097700D03CA2 /* BLUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01D57A8A1C524FFE008E4EB5 /* NNSectionsDiff+BLDataDiff.h in Headers */ = {isa = PBXBuildFile; fileRef = 01DC730B1C3F097700D03CA2 /* NNSectionsDiff+BLDataDiff.h */; };
+		01D57A8B1C524FFE008E4EB5 /* NNArrayDiffChange+BLDataDiffIndexPathChange.h in Headers */ = {isa = PBXBuildFile; fileRef = 01DC73091C3F097700D03CA2 /* NNArrayDiffChange+BLDataDiffIndexPathChange.h */; };
+		01D57A8C1C524FFE008E4EB5 /* NNSectionsDiffChange+BLDataDiffSectionChange.h in Headers */ = {isa = PBXBuildFile; fileRef = 01C2D15D1C4E772500DA204C /* NNSectionsDiffChange+BLDataDiffSectionChange.h */; };
+		01D57A8D1C524FFE008E4EB5 /* NSIndexPath+BLUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 01DC730D1C3F097700D03CA2 /* NSIndexPath+BLUtils.h */; };
+		01D57A8E1C524FFF008E4EB5 /* BLUIKitViewReloaderEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 01A356771C471877009969A3 /* BLUIKitViewReloaderEngine.h */; };
+		01D57A8F1C524FFF008E4EB5 /* BLUITableViewReloaderEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 01A3567E1C4718BE009969A3 /* BLUITableViewReloaderEngine.h */; };
+		01D57A901C524FFF008E4EB5 /* BLUICollectionViewReloaderEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 01A356811C4718C8009969A3 /* BLUICollectionViewReloaderEngine.h */; };
+		01D57A911C524FFF008E4EB5 /* BLUIKitViewReloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 01DC73321C42E84C00D03CA2 /* BLUIKitViewReloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01D57A921C524FFF008E4EB5 /* BLUITableViewAnimations.h in Headers */ = {isa = PBXBuildFile; fileRef = 01A356841C471CAD009969A3 /* BLUITableViewAnimations.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		752095DF150F58C2E9DD3496 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D2C76DFF023523F7626A4C /* libPods.a */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		016E58DD1C3B3EA10087E63A /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-				016E58E31C3B3EA10087E63A /* Boilerdata.h in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
+/* Begin PBXContainerItemProxy section */
+		01D57A4C1C524FA9008E4EB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 016E58D71C3B3EA10087E63A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 01D57A401C524FA9008E4EB5;
+			remoteInfo = Boilerdata;
 		};
-/* End PBXCopyFilesBuildPhase section */
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		016E58DF1C3B3EA10087E63A /* libBoilerdata.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBoilerdata.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		016E58E21C3B3EA10087E63A /* Boilerdata.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Boilerdata.h; sourceTree = "<group>"; };
 		01A356771C471877009969A3 /* BLUIKitViewReloaderEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLUIKitViewReloaderEngine.h; sourceTree = "<group>"; };
 		01A3567E1C4718BE009969A3 /* BLUITableViewReloaderEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLUITableViewReloaderEngine.h; sourceTree = "<group>"; };
@@ -62,6 +94,12 @@
 		01A356D81C48FC10009969A3 /* BLAbstractDataProvider+Subclassing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BLAbstractDataProvider+Subclassing.m"; sourceTree = "<group>"; };
 		01C2D15D1C4E772500DA204C /* NNSectionsDiffChange+BLDataDiffSectionChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NNSectionsDiffChange+BLDataDiffSectionChange.h"; sourceTree = "<group>"; };
 		01C2D15E1C4E772500DA204C /* NNSectionsDiffChange+BLDataDiffSectionChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NNSectionsDiffChange+BLDataDiffSectionChange.m"; sourceTree = "<group>"; };
+		01D57A411C524FA9008E4EB5 /* Boilerdata.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Boilerdata.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01D57A431C524FA9008E4EB5 /* Boilerdata.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Boilerdata.h; sourceTree = "<group>"; };
+		01D57A451C524FA9008E4EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01D57A4A1C524FA9008E4EB5 /* BoilerdataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoilerdataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		01D57A4F1C524FA9008E4EB5 /* BoilerdataTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoilerdataTests.m; sourceTree = "<group>"; };
+		01D57A511C524FA9008E4EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01DC72D71C3F097700D03CA2 /* BLDataDiff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLDataDiff.h; sourceTree = "<group>"; };
 		01DC72D81C3F097700D03CA2 /* BLDataDiffCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLDataDiffCalculator.h; sourceTree = "<group>"; };
 		01DC72D91C3F097700D03CA2 /* BLDataDiffCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLDataDiffCalculator.m; sourceTree = "<group>"; };
@@ -117,11 +155,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		016E58DC1C3B3EA10087E63A /* Frameworks */ = {
+		01D57A3D1C524FA9008E4EB5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C971A6287ACC2CF5BEBD2D16 /* libPods.a in Frameworks */,
+				752095DF150F58C2E9DD3496 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01D57A471C524FA9008E4EB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01D57A4B1C524FA9008E4EB5 /* Boilerdata.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +178,8 @@
 			isa = PBXGroup;
 			children = (
 				016E58E11C3B3EA10087E63A /* Boilerdata */,
+				01D57A421C524FA9008E4EB5 /* Boilerdata */,
+				01D57A4E1C524FA9008E4EB5 /* BoilerdataTests */,
 				016E58E01C3B3EA10087E63A /* Products */,
 				8CC07F72C0EDEC80F50278CA /* Pods */,
 				9DD83E9B8B813BCD376E2AB3 /* Frameworks */,
@@ -141,7 +189,8 @@
 		016E58E01C3B3EA10087E63A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				016E58DF1C3B3EA10087E63A /* libBoilerdata.a */,
+				01D57A411C524FA9008E4EB5 /* Boilerdata.framework */,
+				01D57A4A1C524FA9008E4EB5 /* BoilerdataTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -166,6 +215,24 @@
 				01A356821C4718C8009969A3 /* BLUICollectionViewReloaderEngine.m */,
 			);
 			path = Internal;
+			sourceTree = "<group>";
+		};
+		01D57A421C524FA9008E4EB5 /* Boilerdata */ = {
+			isa = PBXGroup;
+			children = (
+				01D57A431C524FA9008E4EB5 /* Boilerdata.h */,
+				01D57A451C524FA9008E4EB5 /* Info.plist */,
+			);
+			path = Boilerdata;
+			sourceTree = "<group>";
+		};
+		01D57A4E1C524FA9008E4EB5 /* BoilerdataTests */ = {
+			isa = PBXGroup;
+			children = (
+				01D57A4F1C524FA9008E4EB5 /* BoilerdataTests.m */,
+				01D57A511C524FA9008E4EB5 /* Info.plist */,
+			);
+			path = BoilerdataTests;
 			sourceTree = "<group>";
 		};
 		01DC72D31C3F093700D03CA2 /* UIKit */ = {
@@ -344,16 +411,62 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		01D57A3E1C524FA9008E4EB5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01D57A711C524FFE008E4EB5 /* BLDataItem.h in Headers */,
+				01D57A721C524FFE008E4EB5 /* BLDataSection.h in Headers */,
+				01D57A731C524FFE008E4EB5 /* BLDataDiff.h in Headers */,
+				01D57A741C524FFE008E4EB5 /* BLDataDiffChange.h in Headers */,
+				01D57A751C524FFE008E4EB5 /* BLMutableDataDiff.h in Headers */,
+				01D57A761C524FFE008E4EB5 /* BLMutableDataDiffChange.h in Headers */,
+				01D57A771C524FFE008E4EB5 /* BLDataDiffCalculator.h in Headers */,
+				01D57A7A1C524FFE008E4EB5 /* BLStaticDataProviderProxy.h in Headers */,
+				01D57A7C1C524FFE008E4EB5 /* BLAbstractDataProvider.h in Headers */,
+				01D57A7E1C524FFE008E4EB5 /* BLChainDataProvider.h in Headers */,
+				01D57A801C524FFE008E4EB5 /* BLArrayDataProvider.h in Headers */,
+				01D57A821C524FFE008E4EB5 /* BLFilterDataProvider.h in Headers */,
+				01D57A841C524FFE008E4EB5 /* BLDataItemFilter.h in Headers */,
+				01D57A851C524FFE008E4EB5 /* BLDataProvider.h in Headers */,
+				01D57A861C524FFE008E4EB5 /* BLDataObserver.h in Headers */,
+				01D57A871C524FFE008E4EB5 /* BLDataEvent.h in Headers */,
+				01D57A881C524FFE008E4EB5 /* BLDataEventProcessor.h in Headers */,
+				01D57A891C524FFE008E4EB5 /* BLUtils.h in Headers */,
+				01D57A911C524FFF008E4EB5 /* BLUIKitViewReloader.h in Headers */,
+				01D57A921C524FFF008E4EB5 /* BLUITableViewAnimations.h in Headers */,
+				01D57A441C524FA9008E4EB5 /* Boilerdata.h in Headers */,
+				01D57A811C524FFE008E4EB5 /* BLStaticArrayDataProvider.h in Headers */,
+				01D57A831C524FFE008E4EB5 /* BLStaticFilterDataProvider.h in Headers */,
+				01D57A7B1C524FFE008E4EB5 /* BLStaticDataProviderProxy+Subclassing.h in Headers */,
+				01D57A7D1C524FFE008E4EB5 /* BLAbstractDataProvider+Subclassing.h in Headers */,
+				01D57A7F1C524FFE008E4EB5 /* BLChainDataProvider+Subclassing.h in Headers */,
+				01D57A8E1C524FFF008E4EB5 /* BLUIKitViewReloaderEngine.h in Headers */,
+				01D57A8F1C524FFF008E4EB5 /* BLUITableViewReloaderEngine.h in Headers */,
+				01D57A901C524FFF008E4EB5 /* BLUICollectionViewReloaderEngine.h in Headers */,
+				01D57A781C524FFE008E4EB5 /* BLNilDataEventProcessor.h in Headers */,
+				01D57A791C524FFE008E4EB5 /* BLChainDataEventProcessor.h in Headers */,
+				01D57A8A1C524FFE008E4EB5 /* NNSectionsDiff+BLDataDiff.h in Headers */,
+				01D57A8B1C524FFE008E4EB5 /* NNArrayDiffChange+BLDataDiffIndexPathChange.h in Headers */,
+				01D57A8C1C524FFE008E4EB5 /* NNSectionsDiffChange+BLDataDiffSectionChange.h in Headers */,
+				01D57A8D1C524FFE008E4EB5 /* NSIndexPath+BLUtils.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		016E58DE1C3B3EA10087E63A /* Boilerdata */ = {
+		01D57A401C524FA9008E4EB5 /* Boilerdata */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 016E58E81C3B3EA10087E63A /* Build configuration list for PBXNativeTarget "Boilerdata" */;
+			buildConfigurationList = 01D57A521C524FA9008E4EB5 /* Build configuration list for PBXNativeTarget "Boilerdata" */;
 			buildPhases = (
-				B3190D1472171C8442BAD37B /* Check Pods Manifest.lock */,
-				016E58DB1C3B3EA10087E63A /* Sources */,
-				016E58DC1C3B3EA10087E63A /* Frameworks */,
-				016E58DD1C3B3EA10087E63A /* CopyFiles */,
-				51CD63464A4E02168F84613D /* Copy Pods Resources */,
+				419628A3B55374668689D0B3 /* Check Pods Manifest.lock */,
+				01D57A3C1C524FA9008E4EB5 /* Sources */,
+				01D57A3D1C524FA9008E4EB5 /* Frameworks */,
+				01D57A3E1C524FA9008E4EB5 /* Headers */,
+				01D57A3F1C524FA9008E4EB5 /* Resources */,
+				57FC05B5A995ED75437D655A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -361,8 +474,26 @@
 			);
 			name = Boilerdata;
 			productName = Boilerdata;
-			productReference = 016E58DF1C3B3EA10087E63A /* libBoilerdata.a */;
-			productType = "com.apple.product-type.library.static";
+			productReference = 01D57A411C524FA9008E4EB5 /* Boilerdata.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		01D57A491C524FA9008E4EB5 /* BoilerdataTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01D57A551C524FA9008E4EB5 /* Build configuration list for PBXNativeTarget "BoilerdataTests" */;
+			buildPhases = (
+				01D57A461C524FA9008E4EB5 /* Sources */,
+				01D57A471C524FA9008E4EB5 /* Frameworks */,
+				01D57A481C524FA9008E4EB5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				01D57A4D1C524FA9008E4EB5 /* PBXTargetDependency */,
+			);
+			name = BoilerdataTests;
+			productName = BoilerdataTests;
+			productReference = 01D57A4A1C524FA9008E4EB5 /* BoilerdataTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -374,7 +505,10 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Pixty;
 				TargetAttributes = {
-					016E58DE1C3B3EA10087E63A = {
+					01D57A401C524FA9008E4EB5 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					01D57A491C524FA9008E4EB5 = {
 						CreatedOnToolsVersion = 7.2;
 					};
 				};
@@ -391,28 +525,31 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				016E58DE1C3B3EA10087E63A /* Boilerdata */,
+				01D57A401C524FA9008E4EB5 /* Boilerdata */,
+				01D57A491C524FA9008E4EB5 /* BoilerdataTests */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		51CD63464A4E02168F84613D /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
+/* Begin PBXResourcesBuildPhase section */
+		01D57A3F1C524FA9008E4EB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01D57A481C524FA9008E4EB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
-		B3190D1472171C8442BAD37B /* Check Pods Manifest.lock */ = {
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		419628A3B55374668689D0B3 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -427,42 +564,73 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		57FC05B5A995ED75437D655A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		016E58DB1C3B3EA10087E63A /* Sources */ = {
+		01D57A3C1C524FA9008E4EB5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01DC730F1C3F097700D03CA2 /* BLDataDiffCalculator.m in Sources */,
-				01DC731D1C3F097700D03CA2 /* BLStaticFilterDataProvider.m in Sources */,
-				01DC73131C3F097700D03CA2 /* BLAbstractDataProvider.m in Sources */,
-				01A356801C4718BE009969A3 /* BLUITableViewReloaderEngine.m in Sources */,
-				01DC731E1C3F097700D03CA2 /* BLUtils.m in Sources */,
-				01DC731F1C3F097700D03CA2 /* NNArrayDiffChange+BLDataDiffIndexPathChange.m in Sources */,
-				01DC73341C42E84C00D03CA2 /* BLUIKitViewReloader.m in Sources */,
-				01A356D91C48FC22009969A3 /* BLAbstractDataProvider+Subclassing.m in Sources */,
-				01C2D15F1C4E772500DA204C /* NNSectionsDiffChange+BLDataDiffSectionChange.m in Sources */,
-				01DC731C1C3F097700D03CA2 /* BLFilterDataProvider.m in Sources */,
-				01DC73191C3F097700D03CA2 /* BLStaticArrayDataProvider.m in Sources */,
-				01DC73181C3F097700D03CA2 /* BLArrayDataProvider.m in Sources */,
-				01A356831C4718C8009969A3 /* BLUICollectionViewReloaderEngine.m in Sources */,
-				01DC73111C3F097700D03CA2 /* BLMutableDataDiffChange.m in Sources */,
-				01DC73161C3F097700D03CA2 /* BLChainDataEventProcessor.m in Sources */,
-				01DC73101C3F097700D03CA2 /* BLMutableDataDiff.m in Sources */,
-				01DC73201C3F097700D03CA2 /* NNSectionsDiff+BLDataDiff.m in Sources */,
-				01DC73211C3F097700D03CA2 /* NSIndexPath+BLUtils.m in Sources */,
-				01A356861C471CAD009969A3 /* BLUITableViewAnimations.m in Sources */,
-				01DC73141C3F097700D03CA2 /* BLChainDataProvider.m in Sources */,
-				01DC73121C3F097700D03CA2 /* BLDataSection.m in Sources */,
-				01DC73151C3F097700D03CA2 /* BLStaticDataProviderProxy.m in Sources */,
-				01DC731B1C3F097700D03CA2 /* BLDataItemFilter.m in Sources */,
-				01DC731A1C3F097700D03CA2 /* BLDataEvent.m in Sources */,
-				01DC73171C3F097700D03CA2 /* BLNilDataEventProcessor.m in Sources */,
+				01D57A581C524FD9008E4EB5 /* BLDataSection.m in Sources */,
+				01D57A591C524FD9008E4EB5 /* BLMutableDataDiff.m in Sources */,
+				01D57A5A1C524FD9008E4EB5 /* BLMutableDataDiffChange.m in Sources */,
+				01D57A5B1C524FD9008E4EB5 /* BLDataDiffCalculator.m in Sources */,
+				01D57A5C1C524FD9008E4EB5 /* BLNilDataEventProcessor.m in Sources */,
+				01D57A5D1C524FD9008E4EB5 /* BLChainDataEventProcessor.m in Sources */,
+				01D57A5E1C524FD9008E4EB5 /* BLStaticDataProviderProxy.m in Sources */,
+				01D57A5F1C524FD9008E4EB5 /* BLAbstractDataProvider.m in Sources */,
+				01D57A601C524FD9008E4EB5 /* BLAbstractDataProvider+Subclassing.m in Sources */,
+				01D57A611C524FD9008E4EB5 /* BLChainDataProvider.m in Sources */,
+				01D57A621C524FD9008E4EB5 /* BLArrayDataProvider.m in Sources */,
+				01D57A631C524FD9008E4EB5 /* BLStaticArrayDataProvider.m in Sources */,
+				01D57A641C524FD9008E4EB5 /* BLFilterDataProvider.m in Sources */,
+				01D57A651C524FD9008E4EB5 /* BLStaticFilterDataProvider.m in Sources */,
+				01D57A661C524FD9008E4EB5 /* BLDataItemFilter.m in Sources */,
+				01D57A671C524FD9008E4EB5 /* BLDataEvent.m in Sources */,
+				01D57A681C524FD9008E4EB5 /* BLUtils.m in Sources */,
+				01D57A691C524FD9008E4EB5 /* NNSectionsDiff+BLDataDiff.m in Sources */,
+				01D57A6A1C524FD9008E4EB5 /* NNArrayDiffChange+BLDataDiffIndexPathChange.m in Sources */,
+				01D57A6B1C524FD9008E4EB5 /* NNSectionsDiffChange+BLDataDiffSectionChange.m in Sources */,
+				01D57A6C1C524FD9008E4EB5 /* NSIndexPath+BLUtils.m in Sources */,
+				01D57A6D1C524FD9008E4EB5 /* BLUITableViewReloaderEngine.m in Sources */,
+				01D57A6E1C524FD9008E4EB5 /* BLUICollectionViewReloaderEngine.m in Sources */,
+				01D57A6F1C524FD9008E4EB5 /* BLUIKitViewReloader.m in Sources */,
+				01D57A701C524FD9008E4EB5 /* BLUITableViewAnimations.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01D57A461C524FA9008E4EB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01D57A501C524FA9008E4EB5 /* BoilerdataTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		01D57A4D1C524FA9008E4EB5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 01D57A401C524FA9008E4EB5 /* Boilerdata */;
+			targetProxy = 01D57A4C1C524FA9008E4EB5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		016E58E61C3B3EA10087E63A /* Debug */ = {
@@ -545,21 +713,65 @@
 			};
 			name = Release;
 		};
-		016E58E91C3B3EA10087E63A /* Debug */ = {
+		01D57A531C524FA9008E4EB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 27229336A96FC966E90569F1 /* Pods.debug.xcconfig */;
 			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Boilerdata/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.nickynick.Boilerdata;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		016E58EA1C3B3EA10087E63A /* Release */ = {
+		01D57A541C524FA9008E4EB5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B8EC2E52A39642AB63DCB70F /* Pods.release.xcconfig */;
 			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Boilerdata/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.nickynick.Boilerdata;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		01D57A561C524FA9008E4EB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = BoilerdataTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.nickynick.BoilerdataTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		01D57A571C524FA9008E4EB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = BoilerdataTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.nickynick.BoilerdataTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -575,11 +787,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		016E58E81C3B3EA10087E63A /* Build configuration list for PBXNativeTarget "Boilerdata" */ = {
+		01D57A521C524FA9008E4EB5 /* Build configuration list for PBXNativeTarget "Boilerdata" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				016E58E91C3B3EA10087E63A /* Debug */,
-				016E58EA1C3B3EA10087E63A /* Release */,
+				01D57A531C524FA9008E4EB5 /* Debug */,
+				01D57A541C524FA9008E4EB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01D57A551C524FA9008E4EB5 /* Build configuration list for PBXNativeTarget "BoilerdataTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01D57A561C524FA9008E4EB5 /* Debug */,
+				01D57A571C524FA9008E4EB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
