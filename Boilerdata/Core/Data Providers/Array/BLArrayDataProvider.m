@@ -14,6 +14,19 @@
 
 @implementation BLArrayDataProvider
 
+#pragma mark - Init
+
+- (instancetype)init {
+    self = [super init];
+    if (!self) return nil;
+    
+    [self updateWithItems:@[]];
+    
+    return self;
+}
+
+#pragma mark - Updates
+
 - (void)updateWithItems:(NSArray<id<BLDataItem>> *)items {
     [self updateWithItems:items dataDiff:nil];
 }
