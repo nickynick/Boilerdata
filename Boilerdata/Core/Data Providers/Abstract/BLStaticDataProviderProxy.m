@@ -43,11 +43,12 @@
     return signature;
 }
 
-- (id)forwardingTargetForSelector:(SEL)aSelector {
-    if ([self.staticDataProvider respondsToSelector:aSelector]) {
-        return self.staticDataProvider;
+- (void)forwardInvocation:(NSInvocation *)anInvocation {
+    if ([self.staticDataProvider respondsToSelector:anInvocation.selector]) {
+        [anInvocation invokeWithTarget:self.staticDataProvider];
+    } else {
+        [super forwardInvocation:anInvocation];
     }
-    return [super forwardingTargetForSelector:aSelector];
 }
 
 @end
