@@ -39,6 +39,11 @@
 
 #pragma mark - BLUIKitViewReloaderEngine
 
+- (BOOL)shouldForceReloadData {
+    // Performing animations offscreen is a heavy performance hit
+    return self.tableView.window == nil;
+}
+
 - (void)reloadData {
     [self.tableView reloadData];
 }

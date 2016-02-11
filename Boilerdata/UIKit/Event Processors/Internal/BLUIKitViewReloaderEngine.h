@@ -10,6 +10,8 @@
 
 @protocol BLUIKitViewReloaderEngine <NSObject>
 
+- (BOOL)shouldForceReloadData;
+
 - (void)reloadData;
 
 - (void)performUpdates:(void (^)())updates completion:(void (^)())completion;

@@ -175,8 +175,17 @@
 }
 
 - (BOOL)shouldUseReloadDataForEvent:(BLDataEvent *)event {
-    // TODO: need more sophisticated stuff here
-    return self.forceReloadData;
+    if (self.forceReloadData) {
+        return YES;
+    }
+    
+    if ([self.engine shouldForceReloadData]) {
+        return YES;
+    }
+    
+    // TODO: need more sophisticated stuff here?
+    
+    return NO;
 }
 
 - (BOOL)shouldUseMoveForIndexPathChange:(id<BLDataDiffIndexPathChange>)change {

@@ -36,6 +36,11 @@
 
 #pragma mark - BLUIKitViewReloaderEngine
 
+- (BOOL)shouldForceReloadData {
+    // Performing animations offscreen is a heavy performance hit
+    return self.collectionView.window == nil;
+}
+
 - (void)reloadData {
     [self.collectionView reloadData];
 }
