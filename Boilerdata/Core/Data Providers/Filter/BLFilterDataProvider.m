@@ -34,20 +34,21 @@
     
     self.innerDataProvider = dataProvider;
     
+    [self updatePredicate:nil];
+    
     return self;
 }
 
 #pragma mark - Filtering
 
 - (void)updatePredicate:(NSPredicate *)predicate {
-    BLStaticFilterDataProvider *oldDataProvider = (BLStaticFilterDataProvider *) self.lastQueuedEvent.updatedDataProvider;
-
     BLDataItemFilter *newFilter = [[BLDataItemFilter alloc] initWithPredicate:predicate];
     
     BLStaticFilterDataProvider *newDataProvider =
-        [[BLStaticFilterDataProvider alloc] initWithFullDataProvider:oldDataProvider.fullDataProvider filter:newFilter];
+        [[BLStaticFilterDataProvider alloc] initWithFullDataProvider:[self lastQueuedFullDataProvider] filter:newFilter];
     
-    id<BLDataDiff> dataDiff = [self dataDiffForPredicateUpdateWithOldDataProvider:oldDataProvider newDataProvider:newDataProvider];
+    id<BLDataDiff> dataDiff = [self dataDiffForPredicateUpdateWithOldDataProvider:self.lastQueuedEvent.updatedDataProvider
+                                                                  newDataProvider:newDataProvider];
     
     [self enqueueDataEvent:[[BLDataEvent alloc] initWithUpdatedDataProvider:newDataProvider
                                                                    dataDiff:dataDiff
@@ -79,6 +80,16 @@
 }
 
 #pragma mark - Private
+
+- (id<BLStaticDataProvider>)lastQueuedFullDataProvider {
+    BLStaticFilterDataProvider *lastQueuedDataProvider = (BLStaticFilterDataProvider *) self.lastQueuedEvent.updatedDataProvider;
+    
+    if (lastQueuedDataProvider) {
+        return lastQueuedDataProvider.fullDataProvider;
+    } else {
+        return self.innerDataProvider.snapshot;
+    }
+}
 
 - (id<BLDataDiff>)dataDiffForPredicateUpdateWithOldDataProvider:(BLStaticFilterDataProvider *)oldDataProvider
                                                 newDataProvider:(BLStaticFilterDataProvider *)newDataProvider

@@ -15,7 +15,7 @@
 @interface BLStaticFilterDataProvider ()
 
 @property (strong, readonly, nonatomic) NSArray<NSOrderedSet<NSIndexPath *> *> *filteredSections;
-@property (strong, readonly, nonatomic) NSMapTable<id<BLDataItemId>, NSIndexPath *> *filteredIndexPathsByItemId;
+@property (strong, readonly, nonatomic) NSMutableDictionary<id<BLDataItemId>, NSIndexPath *> *filteredIndexPathsByItemId;
 
 @end
 
@@ -27,6 +27,8 @@
 - (instancetype)initWithFullDataProvider:(id<BLStaticDataProvider>)fullDataProvider filter:(BLDataItemFilter *)filter {
     self = [super init];
     if (!self) return nil;
+    
+    self.staticDataProvider = fullDataProvider;
     
     _fullDataProvider = fullDataProvider;
     _filter = filter;
@@ -72,8 +74,8 @@
         return;
     }
     
-    NSMutableArray *sections = [NSMutableArray arrayWithCapacity:[self.fullDataProvider numberOfSections]];
-    NSMapTable *filteredIndexPathsByItemId = [NSMapTable strongToStrongObjectsMapTable];
+    NSMutableArray<NSOrderedSet *> *sections = [NSMutableArray arrayWithCapacity:[self.fullDataProvider numberOfSections]];
+    NSMutableDictionary<id<BLDataItemId>, NSIndexPath *> *filteredIndexPathsByItemId = [NSMutableDictionary dictionary];
     
     for (NSInteger section = 0; section < [self.fullDataProvider numberOfSections]; ++section) {
         NSMutableOrderedSet *fullIndexPaths = [NSMutableOrderedSet orderedSet];
@@ -85,7 +87,7 @@
                 [fullIndexPaths addObject:indexPath];
                 
                 NSIndexPath *filteredIndexPath = [NSIndexPath bl_indexPathForRow:fullIndexPaths.count - 1 inSection:section];
-                [filteredIndexPathsByItemId setObject:filteredIndexPath forKey:item.itemId];
+                filteredIndexPathsByItemId[item.itemId] = filteredIndexPath;
             }
         }
         
@@ -94,6 +96,42 @@
     
     _filteredSections = sections;
     _filteredIndexPathsByItemId = filteredIndexPathsByItemId;
+}
+
+#pragma mark - BLStaticDataProvider
+
+- (NSInteger)numberOfSections {
+    if (self.identical) {
+        return [super numberOfSections];
+    }
+    
+    return self.filteredSections.count;
+}
+
+- (NSInteger)numberOfItemsInSection:(NSInteger)section {
+    if (self.identical) {
+        return [super numberOfItemsInSection:section];
+    }
+    
+    NSOrderedSet *fullIndexPaths = self.filteredSections[section];
+    return fullIndexPaths.count;
+}
+
+- (id<BLDataItem>)itemAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.identical) {
+        return [super itemAtIndexPath:indexPath];
+    }
+    
+    NSIndexPath *fullIndexPath = [self filteredIndexPathToFull:indexPath];
+    return [self.fullDataProvider itemAtIndexPath:fullIndexPath];
+}
+
+- (NSIndexPath *)indexPathForItemWithId:(id<BLDataItemId>)itemId {
+    if (self.identical) {
+        return [super indexPathForItemWithId:itemId];
+    }
+    
+    return self.filteredIndexPathsByItemId[itemId];
 }
 
 @end
