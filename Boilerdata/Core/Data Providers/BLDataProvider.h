@@ -41,4 +41,6 @@
 
 @property (nonatomic, assign, getter = isLocked) BOOL locked;
 
+@property (nonatomic, strong, readonly) id<BLStaticDataProvider> snapshot;
+
 @end

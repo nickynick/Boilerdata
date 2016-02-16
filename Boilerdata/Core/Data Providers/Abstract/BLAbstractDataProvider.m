@@ -16,6 +16,8 @@
 
 @interface BLAbstractDataProvider ()
 
+@property (nonatomic, strong) id<BLStaticDataProvider> snapshot;
+
 @property (nonatomic, readonly) NSMutableArray<BLDataEvent *> *eventQueue;
 @property (nonatomic, readonly) NSMutableArray<BLAbstractDataProviderEventCallbacks *> *eventCallbacksQueue;
 
@@ -30,6 +32,7 @@
 
 @synthesize observer = _observer;
 @synthesize locked = _locked;
+@synthesize snapshot = _snapshot;
 
 #pragma mark - Protected
 
@@ -85,7 +88,12 @@
     
     [self.eventProcessorInProgress applyEvent:event withDataUpdateBlock:^{
         // TODO: post notification?
+        
         self.staticDataProvider = event.updatedDataProvider;
+        
+        // TODO: @dynamic snapshot + KVO stuff
+        self.snapshot = event.updatedDataProvider;
+        
         // TODO: post notification?
     } completion:^{
         self.eventProcessorInProgress = nil;
