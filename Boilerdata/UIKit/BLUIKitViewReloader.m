@@ -104,7 +104,12 @@
             }
             
             if (change.moved) {
-                [self.engine moveItemAtIndexPath:change.before toIndexPath:change.after];
+                if (self.useMoveWhenPossible) {
+                    [self.engine moveItemAtIndexPath:change.before toIndexPath:change.after];
+                } else {
+                    [self.engine deleteItemsAtIndexPaths:@[ change.before ]];
+                    [self.engine insertItemsAtIndexPaths:@[ change.after ]];
+                }
             }
         }
     } completion:^{
