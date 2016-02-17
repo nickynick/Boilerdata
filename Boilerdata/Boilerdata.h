@@ -15,9 +15,23 @@ FOUNDATION_EXPORT double BoilerdataVersionNumber;
 FOUNDATION_EXPORT const unsigned char BoilerdataVersionString[];
 
 
-// Data item
+// Data
 
+#import <Boilerdata/BLData.h>
 #import <Boilerdata/BLDataItem.h>
+
+#import <Boilerdata/BLArrayData.h>
+
+
+// Data Provider
+
+#import <Boilerdata/BLDataProvider.h>
+#import <Boilerdata/BLDataObserver.h>
+#import <Boilerdata/BLDataEvent.h>
+#import <Boilerdata/BLDataEventProcessor.h>
+
+#import <Boilerdata/BLArrayDataProvider.h>
+#import <Boilerdata/BLFilterDataProvider.h>
 
 
 // Data diff
@@ -29,37 +43,10 @@ FOUNDATION_EXPORT const unsigned char BoilerdataVersionString[];
 #import <Boilerdata/BLDataDiffCalculator.h>
 
 
-// Data provider protocols
-
-#import <Boilerdata/BLDataProvider.h>
-#import <Boilerdata/BLDataObserver.h>
-#import <Boilerdata/BLDataEvent.h>
-#import <Boilerdata/BLDataEventProcessor.h>
-
-
-// Abstract data providers
-
-#import <Boilerdata/BLStaticDataProviderProxy.h>
-#import <Boilerdata/BLAbstractDataProvider.h>
-#import <Boilerdata/BLChainDataProvider.h>
-
-// Import these headers to build your own subclasses:
-/*
-#import <Boilerdata/BLStaticDataProviderProxy+Subclassing.h>
-#import <Boilerdata/BLAbstractDataProvider+Subclassing.h>
-#import <Boilerdata/BLChainDataProvider+Subclassing.h>
- */
-
-
-// Actual data providers
-
-#import <Boilerdata/BLArrayDataProvider.h>
-#import <Boilerdata/BLFilterDataProvider.h>
-
-
 // Goodies
 
 #import <Boilerdata/BLUtils.h>
+#import <Boilerdata/BLDataSection.h>
 
 
 // UIKit
