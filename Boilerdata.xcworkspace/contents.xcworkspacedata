@@ -5,6 +5,9 @@
       location = "group:Boilerdata.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Demo/BoilerdataDemo.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
