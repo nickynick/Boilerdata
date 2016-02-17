@@ -58,7 +58,7 @@
 		01B696AE1C74C4D400B9AD6E /* NSIndexPath+BLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B6967D1C74C4D400B9AD6E /* NSIndexPath+BLUtils.m */; };
 		01B696C01C74CB6600B9AD6E /* BLProxyData.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696BE1C74CB6600B9AD6E /* BLProxyData.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		01B696C11C74CB6600B9AD6E /* BLProxyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B696BF1C74CB6600B9AD6E /* BLProxyData.m */; };
-		01B696C51C74DCC900B9AD6E /* BLEmptyData.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696C31C74DCC900B9AD6E /* BLEmptyData.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		01B696C51C74DCC900B9AD6E /* BLEmptyData.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696C31C74DCC900B9AD6E /* BLEmptyData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01B696C61C74DCC900B9AD6E /* BLEmptyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B696C41C74DCC900B9AD6E /* BLEmptyData.m */; };
 		01B696C91C74F3E400B9AD6E /* Boilerdata+Subclassing.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696C81C74F3E400B9AD6E /* Boilerdata+Subclassing.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		01B696CA1C74F60A00B9AD6E /* Boilerdata.h in Headers */ = {isa = PBXBuildFile; fileRef = 016E58E21C3B3EA10087E63A /* Boilerdata.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -251,8 +251,8 @@
 			isa = PBXGroup;
 			children = (
 				01B696C71C74DCCD00B9AD6E /* Empty */,
-				01B696C21C74CB6A00B9AD6E /* Proxy */,
 				01B696BD1C74C73900B9AD6E /* Array */,
+				01B696C21C74CB6A00B9AD6E /* Proxy */,
 				01B696591C74C4D400B9AD6E /* BLData.h */,
 				01B696631C74C4D400B9AD6E /* BLDataItem.h */,
 			);

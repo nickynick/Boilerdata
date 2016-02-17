@@ -8,7 +8,6 @@
 
 // Import these headers to build your own data providers.
 
-#import <Boilerdata/BLEmptyData.h>
 #import <Boilerdata/BLProxyData.h>
 
 #import <Boilerdata/BLAbstractDataProvider+Subclassing.h>
