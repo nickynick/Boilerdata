@@ -11,13 +11,12 @@
 #import "BLUICollectionViewReloaderEngine.h"
 #import "BLDataEvent.h"
 #import "BLDataDiff.h"
-#import "BLMutableDataDiff.h"
+#import "BLDataDiffChange.h"
 #import "BLUtils.h"
-#import "NSIndexPath+BLUtils.h"
 
 @interface BLUIKitViewReloader ()
 
-@property (nonatomic, readonly) id<BLUIKitViewReloaderEngine> engine;
+@property (nonatomic, strong, readonly) id<BLUIKitViewReloaderEngine> engine;
 
 @end
 
@@ -25,10 +24,6 @@
 @implementation BLUIKitViewReloader
 
 #pragma mark - Init
-
-- (instancetype)init {
-    return [self initWithEngine:nil];
-}
 
 - (instancetype)initWithTableView:(UITableView *)tableView {
     return [self initWithTableView:tableView animations:nil];
@@ -43,14 +38,22 @@
 }
 
 - (instancetype)initWithEngine:(id<BLUIKitViewReloaderEngine>)engine {
-    NSParameterAssert(engine != nil);
-    
     self = [super init];
     if (!self) return nil;
     
     _engine = engine;
     
     return self;
+}
+
+#pragma mark - Config
+
+- (BLCellUpdateBlock)cellUpdateBlock {
+    return self.engine.cellUpdateBlock;
+}
+
+- (void)setCellUpdateBlock:(BLCellUpdateBlock)cellUpdateBlock {
+    self.engine.cellUpdateBlock = cellUpdateBlock;
 }
 
 #pragma mark - BLDataEventProcessor
@@ -72,44 +75,36 @@
         return;
     }
     
-    dataDiff = [self sanitizeDataDiff:dataDiff];
-    
-    // TODO: NNSectionsDiffTracker *tracker = [[NNSectionsDiffTracker alloc] initWithSectionsDiff:diff];
-    NSMutableArray<NSIndexPath *> *indexPathsToUpdateWithBlock = [NSMutableArray array];
-    
     [self.engine performUpdates:^{
         dataUpdateBlock();
         
         [self.engine deleteSections:dataDiff.deletedSections];
         [self.engine insertSections:dataDiff.insertedSections];
-        // TODO: move & reload sections
         
         [self.engine deleteItemsAtIndexPaths:dataDiff.deletedIndexPaths.allObjects];
         [self.engine insertItemsAtIndexPaths:dataDiff.insertedIndexPaths.allObjects];
         
+        for (id<BLDataDiffSectionChange> change in dataDiff.changedSections) {
+            if (change.updated) {
+                [self.engine reloadSections:[NSIndexSet indexSetWithIndex:change.before]];
+            }
+            
+            if (change.moved) {
+                [self.engine moveSection:change.before toSection:change.after];
+            }
+        }
+        
         for (id<BLDataDiffIndexPathChange> change in dataDiff.changedIndexPaths) {
-            if (change.updated && !change.moved) {
-                if (self.useUpdateBlockForReload) {
-                    [indexPathsToUpdateWithBlock addObject:change.after];
+            if (change.updated) {
+                if (self.useCellUpdateBlockForReload) {
+                    [self.engine customReloadItemsAtIndexPaths:@[ change.before ]];
                 } else {
-                    if (self.useMoveWhenPossible) {
-                        // Have to use delete+insert for reloading purpose to co-exist with moves (thanks UIKit!)
-                        [self.engine reloadItemsAtIndexPaths:@[ change.before ] asDeleteAndInsertAtIndexPaths:@[ change.after ]];
-                    } else {
-                        [self.engine reloadItemsAtIndexPaths:@[ change.before ] asDeleteAndInsertAtIndexPaths:nil];
-                    }
+                    [self.engine reloadItemsAtIndexPaths:@[ change.before ]];
                 }
-            } else {
-                if ([self shouldUseMoveForIndexPathChange:change]) {
-                    [self.engine moveItemAtIndexPath:change.before toIndexPath:change.after];
-                    
-                    if (change.updated) {
-                        [indexPathsToUpdateWithBlock addObject:change.after];
-                    }
-                } else {
-                    [self.engine deleteItemsAtIndexPaths:@[ change.before ]];
-                    [self.engine insertItemsAtIndexPaths:@[ change.after ]];
-                }
+            }
+            
+            if (change.moved) {
+                [self.engine moveItemAtIndexPath:change.before toIndexPath:change.after];
             }
         }
     } completion:^{
@@ -117,62 +112,13 @@
             completion();
         }
     }];
-
-    for (NSIndexPath *indexPath in indexPathsToUpdateWithBlock) {
-        id cell = [self.engine cellForItemAtIndexPath:indexPath];
-        if (cell) {
-            self.cellUpdateBlock(cell, indexPath);
-        }
-    }
-    
+        
     if (!self.waitForAnimationCompletion) {
         completion();
     }
 }
 
 #pragma mark - Private
-
-- (id<BLDataDiff>)sanitizeDataDiff:(id<BLDataDiff>)dataDiff {
-    // UIKit would get upset if we attempted to move an item from a section being deleted / into a section being inserted.
-    // Therefore, we should break such moves into deletions+insertions.
-    
-    NSMutableSet *extraInsertedIndexPaths = [NSMutableSet set];
-    NSMutableSet *extraDeletedIndexPaths = [NSMutableSet set];
-    
-    NSSet *badChangedIndexPaths = [dataDiff.changedIndexPaths objectsPassingTest:^BOOL(id<BLDataDiffIndexPathChange> change, BOOL *stop) {
-        if (!change.moved) {
-            return NO;
-        }
-        
-        if ([dataDiff.deletedSections containsIndex:change.before.bl_section]) {
-            if (![dataDiff.insertedSections containsIndex:change.after.bl_section]) {
-                [extraInsertedIndexPaths addObject:change.after];
-            }
-            return YES;
-        }
-        
-        if ([dataDiff.insertedSections containsIndex:change.after.bl_section]) {
-            if (![dataDiff.deletedSections containsIndex:change.before.bl_section]) {
-                [extraDeletedIndexPaths addObject:change.before];
-            }
-            return YES;
-        }
-        
-        return NO;
-    }];
-    
-    if (badChangedIndexPaths.count == 0) {
-        return dataDiff;
-    }
-    
-    BLMutableDataDiff *sanitizedDataDiff = [[BLMutableDataDiff alloc] initWithDataDiff:dataDiff];
-    
-    [sanitizedDataDiff.insertedIndexPaths unionSet:extraInsertedIndexPaths];
-    [sanitizedDataDiff.deletedIndexPaths unionSet:extraDeletedIndexPaths];
-    [sanitizedDataDiff.changedIndexPaths minusSet:badChangedIndexPaths];
-    
-    return sanitizedDataDiff;
-}
 
 - (BOOL)shouldUseReloadDataForEvent:(BLDataEvent *)event {
     if (self.forceReloadData) {
@@ -186,28 +132,6 @@
     // TODO: need more sophisticated stuff here?
     
     return NO;
-}
-
-- (BOOL)shouldUseMoveForIndexPathChange:(id<BLDataDiffIndexPathChange>)change {
-    if (!self.useMoveWhenPossible) {
-        return NO;
-    }
-    
-    // We cannot use move because we also need to update the cell, but there is no update block.
-    if (change.updated && self.cellUpdateBlock == nil) {
-        return NO;
-    }
-    
-    // Move animations between different sections will crash if the destination section index doesn't match its initial one (thanks UIKit!)
-    NSUInteger sourceSectionIndex = [change.before indexAtPosition:0];
-    NSUInteger destinationSectionIndex = [change.after indexAtPosition:0];
-    NSUInteger oldDestinationSectionIndex = 0; // TODO: [tracker oldIndexForSection:destinationSectionIndex];
-    
-    if (sourceSectionIndex != oldDestinationSectionIndex && destinationSectionIndex != oldDestinationSectionIndex) {
-        return NO;
-    }
-    
-    return YES;
 }
 
 @end

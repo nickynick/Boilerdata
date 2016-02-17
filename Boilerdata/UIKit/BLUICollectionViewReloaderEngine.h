@@ -7,10 +7,19 @@
 //
 
 #import "BLUIKitViewReloaderEngine.h"
+#import "BLUIKitViewReloader.h"
 #import <UIKit/UIKit.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
 
 @interface BLUICollectionViewReloaderEngine : NSObject <BLUIKitViewReloaderEngine>
 
-- (instancetype)initWithCollectionView:(UICollectionView *)collectionView;
+- (instancetype)initWithCollectionView:(UICollectionView *)collectionView NS_DESIGNATED_INITIALIZER;
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
+
+
+NS_ASSUME_NONNULL_END

@@ -11,6 +11,11 @@
 
 @class BLUITableViewAnimations;
 
+NS_ASSUME_NONNULL_BEGIN
+
+
+typedef void (^BLCellUpdateBlock)(id cell, NSIndexPath *indexPath);
+
 
 @interface BLUIKitViewReloader : NSObject <BLDataEventProcessor>
 
@@ -19,13 +24,18 @@
 @property (nonatomic, assign) BOOL waitForAnimationCompletion;
 
 @property (nonatomic, assign) BOOL useMoveWhenPossible;
-@property (nonatomic, assign) BOOL useUpdateBlockForReload;
+@property (nonatomic, assign) BOOL useCellUpdateBlockForReload;
 
-@property (nonatomic, copy) void (^cellUpdateBlock)(id cell, NSIndexPath *indexPath);
+@property (nonatomic, copy, nullable) BLCellUpdateBlock cellUpdateBlock;
 
 - (instancetype)initWithTableView:(UITableView *)tableView;
-- (instancetype)initWithTableView:(UITableView *)tableView animations:(BLUITableViewAnimations *)animations;
+- (instancetype)initWithTableView:(UITableView *)tableView animations:(nullable BLUITableViewAnimations *)animations;
 
 - (instancetype)initWithCollectionView:(UICollectionView *)collectionView;
 
+- (instancetype)init NS_UNAVAILABLE;
+
 @end
+
+
+NS_ASSUME_NONNULL_END

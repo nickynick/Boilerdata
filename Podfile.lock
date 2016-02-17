@@ -1,10 +1,14 @@
 PODS:
-  - NNArrayDiff (0.2.5)
+  - NNArrayDiff (0.3.0):
+    - UIKitWorkarounds (>= 0.2.1)
+  - UIKitWorkarounds (0.2.2)
 
 DEPENDENCIES:
-  - NNArrayDiff (~> 0.2.5)
+  - NNArrayDiff (~> 0.3)
+  - UIKitWorkarounds (>= 0.2)
 
 SPEC CHECKSUMS:
-  NNArrayDiff: 84e05154930caed263b9d2b227a6bdc5ba15ee6e
+  NNArrayDiff: 8a9cb33f31185c8fc58efc583c2dee29806c6953
+  UIKitWorkarounds: 31bbb5d25a4b0617a9dbd6e54446e3f218d04f7e
 
 COCOAPODS: 0.39.0

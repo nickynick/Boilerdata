@@ -8,11 +8,14 @@
 
 #import "BLUITableViewReloaderEngine.h"
 #import "BLUITableViewAnimations.h"
+#import <UIKitWorkarounds/NNTableViewReloader.h>
 
 @interface BLUITableViewReloaderEngine ()
 
-@property (nonatomic, readonly) UITableView *tableView;
-@property (nonatomic, readonly) BLUITableViewAnimations *animations;
+@property (nonatomic, strong, readonly) UITableView *tableView;
+@property (nonatomic, strong, readonly) BLUITableViewAnimations *animations;
+
+@property (nonatomic, strong) NNTableViewReloader *reloader;
 
 @end
 
@@ -21,13 +24,8 @@
 
 #pragma mark - Init
 
-- (instancetype)init {
-    return [self initWithTableView:nil animations:nil];
-}
-
-- (instancetype)initWithTableView:(UITableView *)tableView animations:(BLUITableViewAnimations *)animations {
-    NSParameterAssert(tableView != nil);
-    
+- (instancetype)initWithTableView:(UITableView *)tableView
+                       animations:(BLUITableViewAnimations *)animations {
     self = [super init];
     if (!self) return nil;
     
@@ -39,6 +37,8 @@
 
 #pragma mark - BLUIKitViewReloaderEngine
 
+@synthesize cellUpdateBlock = _cellUpdateBlock;
+
 - (BOOL)shouldForceReloadData {
     // Performing animations offscreen is a heavy performance hit
     return self.tableView.window == nil;
@@ -49,59 +49,49 @@
 }
 
 - (void)performUpdates:(void (^)())updates completion:(void (^)())completion {
-    if (completion) {
-        [CATransaction begin];
-        [CATransaction setCompletionBlock:completion];
-    }
+    self.reloader = [[NNTableViewReloader alloc] initWithTableView:self.tableView cellCustomReloadBlock:self.cellUpdateBlock];
     
-    [self.tableView beginUpdates];
-    updates();
-    [self.tableView endUpdates];
-    
-    if (completion) {
-        [CATransaction commit];
-    }
+    [self.reloader performUpdates:updates completion:^{
+        self.reloader = nil;
+        
+        completion();
+    }];
 }
 
 - (void)insertSections:(NSIndexSet *)sections {
-    [self.tableView insertSections:sections withRowAnimation:self.animations.sectionInsertAnimation];
+    [self.reloader insertSections:sections withRowAnimation:self.animations.sectionInsertAnimation];
 }
 
 - (void)deleteSections:(NSIndexSet *)sections {
-    [self.tableView deleteSections:sections withRowAnimation:self.animations.sectionDeleteAnimation];
+    [self.reloader deleteSections:sections withRowAnimation:self.animations.sectionDeleteAnimation];
 }
 
 - (void)reloadSections:(NSIndexSet *)sections {
-    [self.tableView reloadSections:sections withRowAnimation:self.animations.sectionReloadAnimation];
+    [self.reloader reloadSections:sections withRowAnimation:self.animations.sectionReloadAnimation];
 }
 
 - (void)moveSection:(NSUInteger)section toSection:(NSUInteger)newSection {
-    [self.tableView moveSection:section toSection:newSection];
+    [self.reloader moveSection:section toSection:newSection];
 }
 
 - (void)insertItemsAtIndexPaths:(NSArray *)indexPaths {
-    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:self.animations.rowInsertAnimation];
+    [self.reloader insertRowsAtIndexPaths:indexPaths withRowAnimation:self.animations.rowInsertAnimation];
 }
 
 - (void)deleteItemsAtIndexPaths:(NSArray *)indexPaths {
-    [self.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:self.animations.rowDeleteAnimation];
+    [self.reloader deleteRowsAtIndexPaths:indexPaths withRowAnimation:self.animations.rowDeleteAnimation];
 }
 
-- (void)reloadItemsAtIndexPaths:(NSArray *)indexPaths asDeleteAndInsertAtIndexPaths:(NSArray *)insertIndexPaths {
-    if (insertIndexPaths) {
-        [self.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:self.animations.rowReloadAnimation];
-        [self.tableView insertRowsAtIndexPaths:insertIndexPaths withRowAnimation:self.animations.rowReloadAnimation];
-    } else {
-        [self.tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:self.animations.rowReloadAnimation];
-    }
+- (void)reloadItemsAtIndexPaths:(NSArray *)indexPaths {
+    [self.reloader reloadRowsAtIndexPaths:indexPaths withRowAnimation:self.animations.rowReloadAnimation];
+}
+
+- (void)customReloadItemsAtIndexPaths:(NSArray *)indexPaths {
+    [self.reloader reloadRowsAtIndexPathsWithCustomBlock:indexPaths];
 }
 
 - (void)moveItemAtIndexPath:(NSIndexPath *)indexPath toIndexPath:(NSIndexPath *)newIndexPath {
-    [self.tableView moveRowAtIndexPath:indexPath toIndexPath:newIndexPath];
-}
-
-- (id)cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return [self.tableView cellForRowAtIndexPath:indexPath];
+    [self.reloader moveRowAtIndexPath:indexPath toIndexPath:newIndexPath];
 }
 
 @end

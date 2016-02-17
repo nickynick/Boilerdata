@@ -6,9 +6,14 @@
 //  Copyright © 2016 Pixty. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "BLUIKitViewReloader.h"
+
+NS_ASSUME_NONNULL_BEGIN
+
 
 @protocol BLUIKitViewReloaderEngine <NSObject>
+
+@property (nonatomic, copy, nullable) BLCellUpdateBlock cellUpdateBlock;
 
 - (BOOL)shouldForceReloadData;
 
@@ -23,9 +28,11 @@
 
 - (void)insertItemsAtIndexPaths:(NSArray *)indexPaths;
 - (void)deleteItemsAtIndexPaths:(NSArray *)indexPaths;
-- (void)reloadItemsAtIndexPaths:(NSArray *)indexPaths asDeleteAndInsertAtIndexPaths:(NSArray *)insertIndexPaths;
+- (void)reloadItemsAtIndexPaths:(NSArray *)indexPaths;
+- (void)customReloadItemsAtIndexPaths:(NSArray *)indexPaths;
 - (void)moveItemAtIndexPath:(NSIndexPath *)indexPath toIndexPath:(NSIndexPath *)newIndexPath;
 
-- (id)cellForItemAtIndexPath:(NSIndexPath *)indexPath;
-
 @end
+
+
+NS_ASSUME_NONNULL_END

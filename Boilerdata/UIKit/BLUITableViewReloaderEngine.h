@@ -7,13 +7,22 @@
 //
 
 #import "BLUIKitViewReloaderEngine.h"
+#import "BLUIKitViewReloader.h"
 #import <UIKit/UIKit.h>
 
 @class BLUITableViewAnimations;
 
+NS_ASSUME_NONNULL_BEGIN
+
 
 @interface BLUITableViewReloaderEngine : NSObject <BLUIKitViewReloaderEngine>
 
-- (instancetype)initWithTableView:(UITableView *)tableView animations:(BLUITableViewAnimations *)animations;
+- (instancetype)initWithTableView:(UITableView *)tableView
+                       animations:(nullable BLUITableViewAnimations *)animations NS_DESIGNATED_INITIALIZER;
+
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
+
+
+NS_ASSUME_NONNULL_END

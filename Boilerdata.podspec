@@ -20,4 +20,5 @@ Pod::Spec.new do |s|
   s.frameworks = 'UIKit'
 
   s.dependency 'NNArrayDiff', '~> 0.3'
+  s.dependency 'UIKitWorkarounds', '>= 0.2'
 end

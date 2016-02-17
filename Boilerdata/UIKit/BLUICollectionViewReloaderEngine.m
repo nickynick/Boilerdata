@@ -7,10 +7,13 @@
 //
 
 #import "BLUICollectionViewReloaderEngine.h"
+#import <UIKitWorkarounds/NNCollectionViewReloader.h>
 
 @interface BLUICollectionViewReloaderEngine ()
 
-@property (nonatomic, readonly) UICollectionView *collectionView;
+@property (nonatomic, strong ,readonly) UICollectionView *collectionView;
+
+@property (nonatomic, strong) NNCollectionViewReloader *reloader;
 
 @end
 
@@ -19,13 +22,7 @@
 
 #pragma mark - Init
 
-- (instancetype)init {
-    return [self initWithCollectionView:nil];
-}
-
 - (instancetype)initWithCollectionView:(UICollectionView *)collectionView {
-    NSParameterAssert(collectionView != nil);
-    
     self = [super init];
     if (!self) return nil;
     
@@ -35,6 +32,8 @@
 }
 
 #pragma mark - BLUIKitViewReloaderEngine
+
+@synthesize cellUpdateBlock = _cellUpdateBlock;
 
 - (BOOL)shouldForceReloadData {
     // Performing animations offscreen is a heavy performance hit
@@ -46,52 +45,49 @@
 }
 
 - (void)performUpdates:(void (^)())updates completion:(void (^)())completion {
-    [self.collectionView performBatchUpdates:updates completion:^(__unused BOOL finished) {
-        if (completion) {
-            completion();
-        }
+    self.reloader = [[NNCollectionViewReloader alloc] initWithCollectionView:self.collectionView cellCustomReloadBlock:self.cellUpdateBlock];
+    
+    [self.reloader performUpdates:updates completion:^{
+        self.reloader = nil;
+        
+        completion();
     }];
 }
 
 - (void)insertSections:(NSIndexSet *)sections {
-    [self.collectionView insertSections:sections];
+    [self.reloader insertSections:sections];
 }
 
 - (void)deleteSections:(NSIndexSet *)sections {
-    [self.collectionView deleteSections:sections];
+    [self.reloader deleteSections:sections];
 }
 
 - (void)reloadSections:(NSIndexSet *)sections {
-    [self.collectionView reloadSections:sections];
+    [self.reloader reloadSections:sections];
 }
 
 - (void)moveSection:(NSUInteger)section toSection:(NSUInteger)newSection {
-    [self.collectionView moveSection:section toSection:newSection];
+    [self.reloader moveSection:section toSection:newSection];
 }
 
 - (void)insertItemsAtIndexPaths:(NSArray *)indexPaths {
-    [self.collectionView insertItemsAtIndexPaths:indexPaths];
+    [self.reloader insertItemsAtIndexPaths:indexPaths];
 }
 
 - (void)deleteItemsAtIndexPaths:(NSArray *)indexPaths {
-    [self.collectionView deleteItemsAtIndexPaths:indexPaths];
+    [self.reloader deleteItemsAtIndexPaths:indexPaths];
 }
 
-- (void)reloadItemsAtIndexPaths:(NSArray *)indexPaths asDeleteAndInsertAtIndexPaths:(NSArray *)insertIndexPaths {
-    if (insertIndexPaths) {
-        [self.collectionView deleteItemsAtIndexPaths:indexPaths];
-        [self.collectionView insertItemsAtIndexPaths:insertIndexPaths];
-    } else {
-        [self.collectionView reloadItemsAtIndexPaths:indexPaths];
-    }
+- (void)reloadItemsAtIndexPaths:(NSArray *)indexPaths {
+    [self.reloader reloadItemsAtIndexPaths:indexPaths];
+}
+
+- (void)customReloadItemsAtIndexPaths:(NSArray *)indexPaths {
+    [self.reloader reloadItemsAtIndexPathsWithCustomBlock:indexPaths];
 }
 
 - (void)moveItemAtIndexPath:(NSIndexPath *)indexPath toIndexPath:(NSIndexPath *)newIndexPath {
-    [self.collectionView moveItemAtIndexPath:indexPath toIndexPath:newIndexPath];
-}
-
-- (id)cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return [self.collectionView cellForItemAtIndexPath:indexPath];
+    [self.reloader moveItemAtIndexPath:indexPath toIndexPath:newIndexPath];
 }
 
 @end
