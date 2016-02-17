@@ -24,6 +24,8 @@ typedef void (^BLDataItemEnumerationBlock)(id<BLDataItem> item, NSIndexPath *ind
 
 + (NSInteger)dataNumberOfItems:(id<BLData>)data;
 
++ (NSArray<id<BLDataItem>> *)data:(id<BLData>)data itemsInSection:(NSInteger)section;
+
 + (void)data:(id<BLData>)data enumerateItemsWithBlock:(BLDataItemEnumerationBlock)block;
 
 

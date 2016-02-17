@@ -36,7 +36,7 @@
     return nil;
 }
 
-- (nullable NSIndexPath *)indexPathForItemWithId:(id<BLDataItemId>)itemId {
+- (NSIndexPath *)indexPathForItemWithId:(id<BLDataItemId>)itemId {
     return nil;
 }
 

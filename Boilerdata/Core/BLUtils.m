@@ -35,6 +35,17 @@
     return count;
 }
 
++ (NSArray<id<BLDataItem>> *)data:(id<BLData>)data itemsInSection:(NSInteger)section {
+    NSInteger numberOfItems = [data numberOfItemsInSection:section];
+    NSMutableArray<id<BLDataItem>> *items = [NSMutableArray arrayWithCapacity:numberOfItems];
+    
+    for (NSInteger row = 0; row < numberOfItems; ++row) {
+        [items addObject:[data itemAtIndexPath:[NSIndexPath bl_indexPathForRow:row inSection:section]]];
+    }
+    
+    return items;
+}
+
 + (void)data:(id<BLData>)data enumerateItemsWithBlock:(BLDataItemEnumerationBlock)block {
     BOOL stop = NO;
     

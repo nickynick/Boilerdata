@@ -11,6 +11,7 @@
 @protocol BLDataDiff;
 @protocol BLDataItem;
 @protocol BLDataSection;
+@protocol BLData;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -34,6 +35,13 @@ typedef BOOL (^BLDataItemUpdatedBlock)(id<BLDataItem> itemBefore, id<BLDataItem>
 + (id<BLDataDiff>)diffForSectionsBefore:(NSArray<id<BLDataSection>> *)sectionsBefore
                           sectionsAfter:(NSArray<id<BLDataSection>> *)sectionsAfter
                            updatedBlock:(nullable BLDataItemUpdatedBlock)updatedBlock;
+
+
++ (id<BLDataDiff>)diffForDataBefore:(id<BLData>)dataBefore dataAfter:(id<BLData>)dataAfter;
+
++ (id<BLDataDiff>)diffForDataBefore:(id<BLData>)dataBefore
+                          dataAfter:(id<BLData>)dataAfter
+                       updatedBlock:(nullable BLDataItemUpdatedBlock)updatedBlock;
 
 @end
 

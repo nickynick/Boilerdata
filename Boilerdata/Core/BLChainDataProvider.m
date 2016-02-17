@@ -13,6 +13,7 @@
 #import "BLDataObserver.h"
 #import "BLDataEvent.h"
 #import "BLEmptyData.h"
+#import "BLDataDiffCalculator.h"
 #import "BLChainDataEventProcessor.h"
 
 @interface BLChainDataProvider () <BLDataObserver>
@@ -92,7 +93,7 @@
     id<BLData> oldInnerData = _lastQueuedInnerData;
     _lastQueuedInnerData = self.innerDataProvider ? self.innerDataProvider.data : [BLEmptyData data];
 
-    id<BLDataDiff> innerDataDiff = nil; // TODO
+    id<BLDataDiff> innerDataDiff = [BLDataDiffCalculator diffForDataBefore:oldInnerData dataAfter:_lastQueuedInnerData];
     
     BLDataEvent *innerDataEvent = [[BLDataEvent alloc] initWithUpdatedData:_lastQueuedInnerData dataDiff:innerDataDiff context:nil];
     

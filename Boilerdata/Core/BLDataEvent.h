@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BLDataEvent : NSObject
 
-@property (nonatomic, strong, readonly) __kindof id<BLData> updatedData;
+@property (nonatomic, strong, readonly) id<BLData> updatedData;
 
 @property (nonatomic, strong, readonly) id<BLDataDiff> dataDiff;
 
