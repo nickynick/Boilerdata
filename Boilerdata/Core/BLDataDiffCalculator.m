@@ -87,7 +87,14 @@
     
     for (NSInteger section = 0; section < numberOfSections; ++section) {
         NSArray<id<BLDataItem>> *items = [BLUtils data:data itemsInSection:section];
-        id key = [data titleForSection:section] ?: @(section);
+        
+        id key;
+        if ([data respondsToSelector:@selector(titleForSection:)]) {
+            key = [data titleForSection:section];
+        }
+        if (!key) {
+            key = @(section);
+        }
         
         [sections addObject:[[NNSection alloc] initWithKey:key objects:items]];
     }

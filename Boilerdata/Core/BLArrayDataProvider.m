@@ -14,15 +14,10 @@
 
 @implementation BLArrayDataProvider
 
-#pragma mark - Init
+#pragma mark - BLAbstractDataProvider
 
-- (instancetype)init {
-    self = [super init];
-    if (!self) return nil;
-    
-    [self updateWithItems:@[]];
-    
-    return self;
+- (id<BLData>)createInitialData {
+    return [[BLArrayData alloc] initWithItems:@[]];
 }
 
 #pragma mark - Updates
