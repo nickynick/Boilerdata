@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  BLFilterDemoViewController.h
 //  BoilerdataDemo
 //
 //  Created by Nick Tymchenko on 18/02/16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface BLFilterDemoViewController : UITableViewController
 
 @end
-
