@@ -12,12 +12,12 @@
 
 #pragma mark - Init
 
-- (instancetype)initWithItems:(NSArray<id<BLDataItem>> *)items headerItem:(id<BLDataItem>)headerItem {
+- (instancetype)initWithItems:(NSArray<id<BLDataItem>> *)items sectionItem:(id<BLSectionItem>)sectionItem {
     self = [super init];
     if (!self) return nil;
 
     _items = items;
-    _headerItem = headerItem;
+    _sectionItem = sectionItem;
     
     return self;
 }
@@ -25,6 +25,6 @@
 #pragma mark - BLDataSection
 
 @synthesize items = _items;
-@synthesize headerItem = _headerItem;
+@synthesize sectionItem = _sectionItem;
 
 @end

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @protocol BLDataItem;
+@protocol BLSectionItem;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,15 +18,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly) NSArray<id<BLDataItem>> *items;
 
-@property (nonatomic, readonly) id<BLDataItem> headerItem;
+@property (nonatomic, readonly) id<BLSectionItem> sectionItem;
 
 @end
 
 
 @interface BLDataSection : NSObject <BLDataSection>
 
-- (instancetype)initWithItems:(NSArray<id<BLDataItem>> *)items
-                   headerItem:(id<BLDataItem>)headerItem NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithItems:(NSArray<id<BLDataItem>> *)items sectionItem:(id<BLSectionItem>)sectionItem NS_DESIGNATED_INITIALIZER;
 
 - (instancetype)init NS_UNAVAILABLE;
 

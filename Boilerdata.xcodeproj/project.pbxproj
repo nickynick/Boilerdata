@@ -78,6 +78,7 @@
 		01B6972B1C76245200B9AD6E /* BLSearchIndexData.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B697291C76245200B9AD6E /* BLSearchIndexData.h */; };
 		01B6972C1C76245200B9AD6E /* BLSearchIndexData.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B6972A1C76245200B9AD6E /* BLSearchIndexData.m */; };
 		01B6972E1C76254E00B9AD6E /* Boilerdata+UIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B6972D1C76253800B9AD6E /* Boilerdata+UIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01B697351C76332500B9AD6E /* BLSectionItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B697341C76332500B9AD6E /* BLSectionItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01D57A4B1C524FA9008E4EB5 /* Boilerdata.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D57A411C524FA9008E4EB5 /* Boilerdata.framework */; };
 		01D57A501C524FA9008E4EB5 /* BoilerdataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D57A4F1C524FA9008E4EB5 /* BoilerdataTests.m */; };
 		752095DF150F58C2E9DD3496 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D2C76DFF023523F7626A4C /* libPods.a */; };
@@ -165,6 +166,7 @@
 		01B697291C76245200B9AD6E /* BLSearchIndexData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLSearchIndexData.h; sourceTree = "<group>"; };
 		01B6972A1C76245200B9AD6E /* BLSearchIndexData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLSearchIndexData.m; sourceTree = "<group>"; };
 		01B6972D1C76253800B9AD6E /* Boilerdata+UIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Boilerdata+UIKit.h"; sourceTree = "<group>"; };
+		01B697341C76332500B9AD6E /* BLSectionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLSectionItem.h; sourceTree = "<group>"; };
 		01D57A411C524FA9008E4EB5 /* Boilerdata.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Boilerdata.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		01D57A451C524FA9008E4EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01D57A4A1C524FA9008E4EB5 /* BoilerdataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoilerdataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -270,6 +272,7 @@
 				01B696C21C74CB6A00B9AD6E /* Proxy */,
 				01B696591C74C4D400B9AD6E /* BLData.h */,
 				01B696631C74C4D400B9AD6E /* BLDataItem.h */,
+				01B697341C76332500B9AD6E /* BLSectionItem.h */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				01B696A51C74C4D400B9AD6E /* BLUtils.h in Headers */,
 				01B6969B1C74C4D400B9AD6E /* BLFilterDataProvider.h in Headers */,
 				01B6972E1C76254E00B9AD6E /* Boilerdata+UIKit.h in Headers */,
+				01B697351C76332500B9AD6E /* BLSectionItem.h in Headers */,
 				01B697251C7623A300B9AD6E /* BLSearchIndexDataProvider.h in Headers */,
 				01B696DB1C74F64400B9AD6E /* BLUITableViewReloaderEngine.h in Headers */,
 				01B6968F1C74C4D400B9AD6E /* BLDataEvent.h in Headers */,

@@ -92,7 +92,7 @@
     NSMutableArray<NNSection *> *convertedSections = [NSMutableArray arrayWithCapacity:sections.count];
     
     for (id<BLDataSection> section in sections) {
-        [convertedSections addObject:[[NNSection alloc] initWithKey:section.headerItem.itemId objects:section.items]];
+        [convertedSections addObject:[[NNSection alloc] initWithKey:section.sectionItem objects:section.items]];
     }
     
     return convertedSections;
@@ -106,8 +106,8 @@
         NSArray<id<BLDataItem>> *items = [BLUtils data:data itemsInSection:section];
         
         id key;
-        if ([data respondsToSelector:@selector(titleForSection:)]) {
-            key = [data titleForSection:section];
+        if ([data respondsToSelector:@selector(itemForSection:)]) {
+            key = [data itemForSection:section];
         }
         if (!key) {
             key = @(section);
