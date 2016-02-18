@@ -21,6 +21,13 @@ typedef BOOL (^BLDataItemUpdatedBlock)(id<BLDataItem> itemBefore, id<BLDataItem>
 
 @interface BLDataDiffCalculator : NSObject
 
++ (id<BLDataDiff>)diffForDataBefore:(id<BLData>)dataBefore dataAfter:(id<BLData>)dataAfter;
+
++ (id<BLDataDiff>)diffForDataBefore:(id<BLData>)dataBefore
+                          dataAfter:(id<BLData>)dataAfter
+                       updatedBlock:(nullable BLDataItemUpdatedBlock)updatedBlock;
+
+
 + (id<BLDataDiff>)diffForItemsBefore:(NSArray<id<BLDataItem>> *)itemsBefore
                           itemsAfter:(NSArray<id<BLDataItem>> *)itemsAfter;
 
@@ -35,13 +42,6 @@ typedef BOOL (^BLDataItemUpdatedBlock)(id<BLDataItem> itemBefore, id<BLDataItem>
 + (id<BLDataDiff>)diffForSectionsBefore:(NSArray<id<BLDataSection>> *)sectionsBefore
                           sectionsAfter:(NSArray<id<BLDataSection>> *)sectionsAfter
                            updatedBlock:(nullable BLDataItemUpdatedBlock)updatedBlock;
-
-
-+ (id<BLDataDiff>)diffForDataBefore:(id<BLData>)dataBefore dataAfter:(id<BLData>)dataAfter;
-
-+ (id<BLDataDiff>)diffForDataBefore:(id<BLData>)dataBefore
-                          dataAfter:(id<BLData>)dataAfter
-                       updatedBlock:(nullable BLDataItemUpdatedBlock)updatedBlock;
 
 @end
 

@@ -39,9 +39,11 @@ FOUNDATION_EXPORT const unsigned char BoilerdataVersionString[];
 
 #import <Boilerdata/BLDataDiff.h>
 #import <Boilerdata/BLDataDiffChange.h>
+#import <Boilerdata/BLDataDiffCalculator.h>
+
 #import <Boilerdata/BLMutableDataDiff.h>
 #import <Boilerdata/BLMutableDataDiffChange.h>
-#import <Boilerdata/BLDataDiffCalculator.h>
+#import <Boilerdata/BLSimpleDataDiff.h>
 
 
 // Goodies

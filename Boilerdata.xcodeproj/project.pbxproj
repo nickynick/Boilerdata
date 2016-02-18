@@ -71,6 +71,8 @@
 		01B696DA1C74F64400B9AD6E /* BLUITableViewAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B696D11C74F64400B9AD6E /* BLUITableViewAnimations.m */; };
 		01B696DB1C74F64400B9AD6E /* BLUITableViewReloaderEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696D21C74F64400B9AD6E /* BLUITableViewReloaderEngine.h */; };
 		01B696DC1C74F64400B9AD6E /* BLUITableViewReloaderEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B696D31C74F64400B9AD6E /* BLUITableViewReloaderEngine.m */; };
+		01B697201C761B8500B9AD6E /* BLSimpleDataDiff.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B6971E1C761B8500B9AD6E /* BLSimpleDataDiff.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01B697211C761B8500B9AD6E /* BLSimpleDataDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B6971F1C761B8500B9AD6E /* BLSimpleDataDiff.m */; };
 		01D57A4B1C524FA9008E4EB5 /* Boilerdata.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D57A411C524FA9008E4EB5 /* Boilerdata.framework */; };
 		01D57A501C524FA9008E4EB5 /* BoilerdataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D57A4F1C524FA9008E4EB5 /* BoilerdataTests.m */; };
 		752095DF150F58C2E9DD3496 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D2C76DFF023523F7626A4C /* libPods.a */; };
@@ -151,6 +153,8 @@
 		01B696D11C74F64400B9AD6E /* BLUITableViewAnimations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLUITableViewAnimations.m; sourceTree = "<group>"; };
 		01B696D21C74F64400B9AD6E /* BLUITableViewReloaderEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLUITableViewReloaderEngine.h; sourceTree = "<group>"; };
 		01B696D31C74F64400B9AD6E /* BLUITableViewReloaderEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLUITableViewReloaderEngine.m; sourceTree = "<group>"; };
+		01B6971E1C761B8500B9AD6E /* BLSimpleDataDiff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLSimpleDataDiff.h; sourceTree = "<group>"; };
+		01B6971F1C761B8500B9AD6E /* BLSimpleDataDiff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLSimpleDataDiff.m; sourceTree = "<group>"; };
 		01D57A411C524FA9008E4EB5 /* Boilerdata.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Boilerdata.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		01D57A451C524FA9008E4EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01D57A4A1C524FA9008E4EB5 /* BoilerdataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoilerdataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -269,6 +273,8 @@
 				01B6966D1C74C4D400B9AD6E /* BLMutableDataDiff.m */,
 				01B6966E1C74C4D400B9AD6E /* BLMutableDataDiffChange.h */,
 				01B6966F1C74C4D400B9AD6E /* BLMutableDataDiffChange.m */,
+				01B6971E1C761B8500B9AD6E /* BLSimpleDataDiff.h */,
+				01B6971F1C761B8500B9AD6E /* BLSimpleDataDiff.m */,
 			);
 			name = "Data Diff";
 			sourceTree = "<group>";
@@ -494,6 +500,7 @@
 				01B6967E1C74C4D400B9AD6E /* BLAbstractDataProvider.h in Headers */,
 				01B6968B1C74C4D400B9AD6E /* BLDataDiff.h in Headers */,
 				01B696C51C74DCC900B9AD6E /* BLEmptyData.h in Headers */,
+				01B697201C761B8500B9AD6E /* BLSimpleDataDiff.h in Headers */,
 				01B696D41C74F64400B9AD6E /* BLUICollectionViewReloaderEngine.h in Headers */,
 				01B696801C74C4D400B9AD6E /* BLAbstractDataProvider+Subclassing.h in Headers */,
 				01B696CA1C74F60A00B9AD6E /* Boilerdata.h in Headers */,
@@ -665,6 +672,7 @@
 				01B6969C1C74C4D400B9AD6E /* BLFilterDataProvider.m in Sources */,
 				01B696A21C74C4D400B9AD6E /* BLNilDataEventProcessor.m in Sources */,
 				01B696A61C74C4D400B9AD6E /* BLUtils.m in Sources */,
+				01B697211C761B8500B9AD6E /* BLSimpleDataDiff.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

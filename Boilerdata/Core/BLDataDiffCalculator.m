@@ -10,6 +10,7 @@
 #import "BLData.h"
 #import "BLDataItem.h"
 #import "BLDataSection.h"
+#import "BLSimpleDataDiff.h"
 #import "BLUtils.h"
 
 #import <NNArrayDiff/ArrayDiff.h>
@@ -17,6 +18,26 @@
 
 
 @implementation BLDataDiffCalculator
+
++ (id<BLDataDiff>)diffForDataBefore:(id<BLData>)dataBefore dataAfter:(id<BLData>)dataAfter {
+    return [self diffForDataBefore:dataBefore dataAfter:dataAfter updatedBlock:nil];
+}
+
++ (id<BLDataDiff>)diffForDataBefore:(id<BLData>)dataBefore
+                          dataAfter:(id<BLData>)dataAfter
+                       updatedBlock:(BLDataItemUpdatedBlock)updatedBlock {
+    if ([dataBefore numberOfSections] == 0) {
+        return [[BLSimpleDataDiff alloc] initWithNumberOfSections:[dataAfter numberOfSections] inserted:YES];
+    }
+    
+    if ([dataAfter numberOfSections] == 0) {
+        return [[BLSimpleDataDiff alloc] initWithNumberOfSections:[dataBefore numberOfSections] inserted:NO];
+    }
+    
+    NNSectionsDiffCalculator *calculator = [self calculatorWithUpdatedBlock:updatedBlock];
+    return [calculator calculateDiffForSectionsBefore:[self sectionsWithData:dataBefore]
+                                             andAfter:[self sectionsWithData:dataAfter]];
+}
 
 + (id<BLDataDiff>)diffForItemsBefore:(NSArray<id<BLDataItem>> *)itemsBefore
                           itemsAfter:(NSArray<id<BLDataItem>> *)itemsAfter {
@@ -38,21 +59,17 @@
 + (id<BLDataDiff>)diffForSectionsBefore:(NSArray<id<BLDataSection>> *)sectionsBefore
                           sectionsAfter:(NSArray<id<BLDataSection>> *)sectionsAfter
                            updatedBlock:(BLDataItemUpdatedBlock)updatedBlock {
+    if (sectionsBefore.count == 0) {
+        return [[BLSimpleDataDiff alloc] initWithNumberOfSections:sectionsAfter.count inserted:YES];
+    }
+    
+    if (sectionsAfter.count == 0) {
+        return [[BLSimpleDataDiff alloc] initWithNumberOfSections:sectionsBefore.count inserted:NO];
+    }
+    
     NNSectionsDiffCalculator *calculator = [self calculatorWithUpdatedBlock:updatedBlock];
     return [calculator calculateDiffForSectionsBefore:[self convertSections:sectionsBefore]
                                              andAfter:[self convertSections:sectionsAfter]];
-}
-
-+ (id<BLDataDiff>)diffForDataBefore:(id<BLData>)dataBefore dataAfter:(id<BLData>)dataAfter {
-    return [self diffForDataBefore:dataBefore dataAfter:dataAfter updatedBlock:nil];
-}
-
-+ (id<BLDataDiff>)diffForDataBefore:(id<BLData>)dataBefore
-                          dataAfter:(id<BLData>)dataAfter
-                       updatedBlock:(BLDataItemUpdatedBlock)updatedBlock {
-    NNSectionsDiffCalculator *calculator = [self calculatorWithUpdatedBlock:updatedBlock];
-    return [calculator calculateDiffForSectionsBefore:[self sectionsWithData:dataBefore]
-                                             andAfter:[self sectionsWithData:dataAfter]];
 }
 
 #pragma mark - Private
