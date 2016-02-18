@@ -44,7 +44,7 @@
 }
 
 + (id<BLDataDiff>)diffForDataBefore:(id<BLData>)dataBefore dataAfter:(id<BLData>)dataAfter {
-    return [self diffForDataBefore:dataAfter dataAfter:dataAfter updatedBlock:nil];
+    return [self diffForDataBefore:dataBefore dataAfter:dataAfter updatedBlock:nil];
 }
 
 + (id<BLDataDiff>)diffForDataBefore:(id<BLData>)dataBefore
