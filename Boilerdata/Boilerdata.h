@@ -24,7 +24,7 @@ FOUNDATION_EXPORT const unsigned char BoilerdataVersionString[];
 #import <Boilerdata/BLArrayData.h>
 
 
-// Data Provider
+// Data Providers
 
 #import <Boilerdata/BLDataProvider.h>
 #import <Boilerdata/BLDataObserver.h>
@@ -54,5 +54,7 @@ FOUNDATION_EXPORT const unsigned char BoilerdataVersionString[];
 
 // UIKit
 
-#import <Boilerdata/BLUIKitViewReloader.h>
-#import <Boilerdata/BLUITableViewAnimations.h>
+#import <Boilerdata/Boilerdata+UIKit.h>
+
+
+

@@ -6,7 +6,8 @@
 //  Copyright © 2016 Pixty. All rights reserved.
 //
 
-// Import these headers to build your own data providers.
+
+// Import this header to build your own data providers.
 
 #import <Boilerdata/BLProxyData.h>
 
