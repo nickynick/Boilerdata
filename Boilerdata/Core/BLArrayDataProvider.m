@@ -31,7 +31,7 @@
     
     if (!dataDiff) {
         BLArrayData *oldData = self.lastQueuedData;
-        dataDiff = [BLDataDiffCalculator diffForItemsBefore:oldData.items itemsAfter:newData.items];
+        dataDiff = [BLDataDiffCalculator diffForDataBefore:oldData dataAfter:newData];
     }
     
     [self enqueueDataEvent:[[BLDataEvent alloc] initWithUpdatedData:newData dataDiff:dataDiff context:nil]];

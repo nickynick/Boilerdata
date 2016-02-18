@@ -30,7 +30,7 @@
 #pragma mark - BLData
 
 - (NSInteger)numberOfSections {
-    return 1;
+    return self.items.count > 0 ? 1 : 0;
 }
 
 - (NSInteger)numberOfItemsInSection:(NSInteger)section {
