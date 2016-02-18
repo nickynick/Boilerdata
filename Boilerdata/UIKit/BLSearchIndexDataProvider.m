@@ -24,7 +24,7 @@
     return self;
 }
 
-#pragma mark - BLChainDataProvider
+#pragma mark - Chaining
 
 - (BLDataEvent *)handleInnerDataEvent:(BLDataEvent *)event {
     return [[BLDataEvent alloc] initWithUpdatedData:[[BLSearchIndexData alloc] initWithOriginalData:event.updatedData]

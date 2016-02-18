@@ -12,6 +12,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
+/**
+ * Appends UITableViewIndexSearch to the array of section index titles.
+ */
 @interface BLSearchIndexDataProvider : BLChainDataProvider
 
 - (instancetype)initWithDataProvider:(id<BLDataProvider>)dataProvider NS_DESIGNATED_INITIALIZER;
