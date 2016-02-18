@@ -18,8 +18,8 @@ static NSString * const kCellIdentifier = @"cell";
 @property (nonatomic, strong, readonly) BLArrayDataProvider *arrayDataProvider;
 @property (nonatomic, strong, readonly) BLFilterDataProvider *filterDataProvider;
 
-@property (nonatomic, strong, readonly) NSArray<NSArray<NSString *> *> *itemOptions;
-@property (nonatomic, assign) NSInteger currentItemOption;
+@property (nonatomic, strong, readonly) NSArray<NSArray<NSString *> *> *itemsOptions;
+@property (nonatomic, assign) NSInteger currentItemsOption;
 
 @property (nonatomic, strong, readonly) UISearchController *searchController;
 
@@ -45,7 +45,7 @@ static NSString * const kCellIdentifier = @"cell";
     _filterDataProvider = [[BLFilterDataProvider alloc] initWithDataProvider:_arrayDataProvider];
     _filterDataProvider.observer = self;
     
-    _itemOptions = @[
+    _itemsOptions = @[
         @[ @"One", @"Two", @"Three", @"Four", @"Five", @"Six", @"Seven", @"Eight", @"Nine", @"Ten" ],
         @[ @"One", @"Two", @"Boop", @"Four", @"Five", @"Beep", @"Seven", @"Eight", @"Nine", @"Ten", @"Eleven", @"Twelve" ],
         @[ @"Meow", @"Moo", @"One", @"Two", @"Three", @"Four", @"Five", @"Bok", @"Cock-a-doodle-doo" ]
@@ -55,9 +55,9 @@ static NSString * const kCellIdentifier = @"cell";
 }
 
 - (void)updateData {
-    [self.arrayDataProvider updateWithItems:self.itemOptions[self.currentItemOption]];
+    [self.arrayDataProvider updateWithItems:self.itemsOptions[self.currentItemsOption]];
     
-    self.currentItemOption = (self.currentItemOption + 1) % self.itemOptions.count;
+    self.currentItemsOption = (self.currentItemsOption + 1) % self.itemsOptions.count;
 }
 
 - (void)viewDidLoad {
@@ -105,14 +105,8 @@ static NSString * const kCellIdentifier = @"cell";
 #pragma mark - UISearchResultsUpdating
 
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
-    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSString *evaluatedObject, NSDictionary<NSString *, id> *bindings) {
-        NSString *searchText = searchController.searchBar.text;
-        if (searchText.length == 0) {
-            return YES;
-        }
-        
-        return [evaluatedObject rangeOfString:searchText options:NSCaseInsensitiveSearch].length > 0;
-    }];
+    NSString *searchText = searchController.searchBar.text;
+    NSPredicate *predicate = searchText.length > 0 ? [NSPredicate predicateWithFormat:@"self contains[cd] %@", searchText] : nil;
     
     [self.filterDataProvider updateWithPredicate:predicate];
 }
