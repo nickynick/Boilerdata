@@ -15,8 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithNumberOfSections:(NSUInteger)numberOfSections inserted:(BOOL)inserted NS_DESIGNATED_INITIALIZER;
 
-- (instancetype)init NS_UNAVAILABLE;
-
 @end
 
 

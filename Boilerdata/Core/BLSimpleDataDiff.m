@@ -21,6 +21,10 @@
 
 #pragma mark - Init
 
+- (instancetype)init {
+    return [self initWithNumberOfSections:0 inserted:NO];
+}
+
 - (instancetype)initWithNumberOfSections:(NSUInteger)numberOfSections inserted:(BOOL)inserted {
     self = [super init];
     if (!self) return nil;
