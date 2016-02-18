@@ -9,7 +9,7 @@
 #import "BLAbstractDataProvider.h"
 #import "BLAbstractDataProvider+Subclassing.h"
 #import "BLEmptyData.h"
-#import "BLMutableDataDiff.h"
+#import "BLSimpleDataDiff.h"
 #import "BLDataEventCallbacks.h"
 #import "BLDataEvent.h"
 #import "BLDataEventProcessor.h"
@@ -70,7 +70,7 @@
 - (void)enqueueDataEventWithInitialData {
     id<BLData> initialData = [self createInitialData];
     
-    BLDataEvent *event = [[BLDataEvent alloc] initWithUpdatedData:initialData dataDiff:[[BLMutableDataDiff alloc] init] context:nil];
+    BLDataEvent *event = [[BLDataEvent alloc] initWithUpdatedData:initialData dataDiff:[BLSimpleDataDiff empty] context:nil];
     [self enqueueDataEvent:event];
 }
 

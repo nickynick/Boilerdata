@@ -19,6 +19,17 @@
 
 @implementation BLSimpleDataDiff
 
+#pragma mark - Shared
+
++ (instancetype)empty {
+    static id instance;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [[self alloc] init];
+    });
+    return instance;
+}
+
 #pragma mark - Init
 
 - (instancetype)init {

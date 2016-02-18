@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BLSimpleDataDiff : NSObject <BLDataDiff>
 
++ (instancetype)empty;
+
 - (instancetype)initWithNumberOfSections:(NSUInteger)numberOfSections inserted:(BOOL)inserted NS_DESIGNATED_INITIALIZER;
 
 @end
