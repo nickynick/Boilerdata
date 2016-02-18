@@ -34,6 +34,7 @@ FOUNDATION_EXPORT const unsigned char BoilerdataVersionString[];
 
 #import <Boilerdata/BLArrayDataProvider.h>
 #import <Boilerdata/BLFilterDataProvider.h>
+#import <Boilerdata/BLClassificationDataProvider.h>
 
 
 // Data diff
