@@ -10,7 +10,10 @@
 #import "BLData.h"
 #import "BLDataItem.h"
 #import "BLDataSection.h"
+#import "BLIndexPathMapping.h"
 #import "BLSimpleDataDiff.h"
+#import "BLMutableDataDiff.h"
+#import "BLMutableDataDiffChange.h"
 #import "BLUtils.h"
 
 #import <NNArrayDiff/ArrayDiff.h>
@@ -70,6 +73,74 @@
     NNSectionsDiffCalculator *calculator = [self calculatorWithUpdatedBlock:updatedBlock];
     return [calculator calculateDiffForSectionsBefore:[self convertSections:sectionsBefore]
                                              andAfter:[self convertSections:sectionsAfter]];
+}
+
++ (id<BLDataDiff>)indexPathDiffWithOriginalDiff:(id<BLDataDiff>)originalDiff
+                                  mappingBefore:(id<BLIndexPathMapping>)mappingBefore
+                                   mappingAfter:(id<BLIndexPathMapping>)mappingAfter {
+    if (mappingBefore.identical && mappingAfter.identical) {
+        return originalDiff;
+    }
+    
+    BLMutableDataDiff *diff = [[BLMutableDataDiff alloc] init];
+    
+    for (NSIndexPath *originalIndexPath in originalDiff.deletedIndexPaths) {
+        NSIndexPath *indexPath = [mappingBefore originalIndexPathToMapped:originalIndexPath];
+        if (indexPath) {
+            [diff.deletedIndexPaths addObject:indexPath];
+        }
+    }
+    
+    for (NSIndexPath *originalIndexPath in originalDiff.insertedIndexPaths) {
+        NSIndexPath *indexPath = [mappingAfter originalIndexPathToMapped:originalIndexPath];
+        if (indexPath) {
+            [diff.insertedIndexPaths addObject:indexPath];
+        }
+    }
+    
+    for (id<BLDataDiffIndexPathChange> originalChange in originalDiff.changedIndexPaths) {
+        NSIndexPath *indexPathBefore = [mappingBefore originalIndexPathToMapped:originalChange.before];
+        NSIndexPath *indexPathAfter = [mappingAfter originalIndexPathToMapped:originalChange.after];
+        
+        if (indexPathBefore && indexPathAfter) {
+            BLMutableDataDiffIndexPathChange *change = [[BLMutableDataDiffIndexPathChange alloc] initWithChange:originalChange];
+            change.before = indexPathBefore;
+            change.after = indexPathAfter;
+            
+            [diff.changedIndexPaths addObject:change];
+        } else if (indexPathBefore && !indexPathAfter) {
+            [diff.deletedIndexPaths addObject:indexPathBefore];
+        } else if (!indexPathBefore && indexPathAfter) {
+            [diff.insertedIndexPaths addObject:indexPathAfter];
+        }
+    }
+    
+    return diff;
+}
+
++ (id<BLDataDiff>)indexPathDiffForMappingUpdateWithMappedDataBefore:(id<BLData, BLIndexPathMapping>)mappedDataBefore
+                                                    mappedDataAfter:(id<BLData, BLIndexPathMapping>)mappedDataAfter {
+    BLMutableDataDiff *diff = [[BLMutableDataDiff alloc] init];
+    
+    if (!mappedDataAfter.full) {
+        [BLUtils data:mappedDataBefore enumerateItemsWithBlock:^(id<BLDataItem> item, NSIndexPath *indexPath, BOOL *stop) {
+            NSIndexPath *originalIndexPath = [mappedDataBefore mappedIndexPathToOriginal:indexPath];
+            if (![mappedDataAfter originalIndexPathToMapped:originalIndexPath]) {
+                [diff.deletedIndexPaths addObject:indexPath];
+            }
+        }];
+    }
+    
+    if (!mappedDataBefore.full) {
+        [BLUtils data:mappedDataAfter enumerateItemsWithBlock:^(id<BLDataItem> item, NSIndexPath *indexPath, BOOL *stop) {
+            NSIndexPath *originalIndexPath = [mappedDataAfter mappedIndexPathToOriginal:indexPath];
+            if (![mappedDataBefore originalIndexPathToMapped:originalIndexPath]) {
+                [diff.insertedIndexPaths addObject:indexPath];
+            }
+        }];
+    }
+    
+    return diff;
 }
 
 #pragma mark - Private

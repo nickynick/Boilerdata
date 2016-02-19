@@ -37,40 +37,8 @@
     return self;
 }
 
-#pragma mark - Public
-
-- (BOOL)isIdentical {
-    return self.filter.predicate == nil;
-}
-
-- (NSIndexPath *)filteredIndexPathToOriginal:(NSIndexPath *)filteredIndexPath {
-    if (self.identical) {
-        return filteredIndexPath;
-    }
-    
-    NSOrderedSet<NSIndexPath *> *originalIndexPaths = self.filteredSections[filteredIndexPath.bl_section];
-    return originalIndexPaths[filteredIndexPath.bl_row];
-}
-
-- (NSIndexPath *)originalIndexPathToFiltered:(NSIndexPath *)originalIndexPath {
-    if (self.identical) {
-        return originalIndexPath;
-    }
-    
-    NSOrderedSet<NSIndexPath *> *originalIndexPaths = self.filteredSections[originalIndexPath.bl_section];
-    NSInteger filteredIndex = [originalIndexPaths indexOfObject:originalIndexPath];
-    
-    if (filteredIndex != NSNotFound) {
-        return [NSIndexPath bl_indexPathForRow:filteredIndex inSection:originalIndexPath.bl_section];
-    } else {
-        return nil;
-    }
-}
-
-#pragma mark - Private
-
 - (void)calculateFilteredSections {
-    if (self.identical) {
+    if (_filter.predicate == nil) {
         return;
     }
     
@@ -98,10 +66,10 @@
     _filteredIndexPathsByItemId = filteredIndexPathsByItemId;
 }
 
-#pragma mark - BLStaticDataProvider
+#pragma mark - BLData
 
 - (NSInteger)numberOfSections {
-    if (self.identical) {
+    if (self.full) {
         return [super numberOfSections];
     }
     
@@ -109,7 +77,7 @@
 }
 
 - (NSInteger)numberOfItemsInSection:(NSInteger)section {
-    if (self.identical) {
+    if (self.full) {
         return [super numberOfItemsInSection:section];
     }
     
@@ -118,20 +86,55 @@
 }
 
 - (id<BLDataItem>)itemAtIndexPath:(NSIndexPath *)indexPath {
-    if (self.identical) {
+    if (self.full) {
         return [super itemAtIndexPath:indexPath];
     }
     
-    NSIndexPath *originalIndexPath = [self filteredIndexPathToOriginal:indexPath];
+    NSIndexPath *originalIndexPath = [self mappedIndexPathToOriginal:indexPath];
     return [self.originalData itemAtIndexPath:originalIndexPath];
 }
 
 - (NSIndexPath *)indexPathForItemWithId:(id<BLDataItemId>)itemId {
-    if (self.identical) {
+    if (self.full) {
         return [super indexPathForItemWithId:itemId];
     }
     
     return self.filteredIndexPathsByItemId[itemId];
+}
+
+#pragma mark - BLIndexPathMapping
+
+- (BOOL)isIdentical {
+    return [self isFull];
+}
+
+- (BOOL)isFull {
+    // TODO: this is not quite correct
+    return self.filter.predicate == nil;
+}
+
+- (NSIndexPath *)originalIndexPathToMapped:(NSIndexPath *)originalIndexPath {
+    if (self.full) {
+        return originalIndexPath;
+    }
+    
+    NSOrderedSet<NSIndexPath *> *originalIndexPaths = self.filteredSections[originalIndexPath.bl_section];
+    NSInteger filteredIndex = [originalIndexPaths indexOfObject:originalIndexPath];
+    
+    if (filteredIndex != NSNotFound) {
+        return [NSIndexPath bl_indexPathForRow:filteredIndex inSection:originalIndexPath.bl_section];
+    } else {
+        return nil;
+    }
+}
+
+- (NSIndexPath *)mappedIndexPathToOriginal:(NSIndexPath *)mappedIndexPath {
+    if (self.full) {
+        return mappedIndexPath;
+    }
+    
+    NSOrderedSet<NSIndexPath *> *originalIndexPaths = self.filteredSections[mappedIndexPath.bl_section];
+    return originalIndexPaths[mappedIndexPath.bl_row];
 }
 
 @end

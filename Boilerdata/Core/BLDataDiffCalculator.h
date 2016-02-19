@@ -9,9 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @protocol BLDataDiff;
+@protocol BLData;
 @protocol BLDataItem;
 @protocol BLDataSection;
-@protocol BLData;
+@protocol BLIndexPathMapping;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -42,6 +43,14 @@ typedef BOOL (^BLDataItemUpdatedBlock)(id<BLDataItem> itemBefore, id<BLDataItem>
 + (id<BLDataDiff>)diffForSectionsBefore:(NSArray<id<BLDataSection>> *)sectionsBefore
                           sectionsAfter:(NSArray<id<BLDataSection>> *)sectionsAfter
                            updatedBlock:(nullable BLDataItemUpdatedBlock)updatedBlock;
+
+
++ (id<BLDataDiff>)indexPathDiffWithOriginalDiff:(id<BLDataDiff>)originalDiff
+                                  mappingBefore:(id<BLIndexPathMapping>)mappingBefore
+                                   mappingAfter:(id<BLIndexPathMapping>)mappingAfter;
+
++ (id<BLDataDiff>)indexPathDiffForMappingUpdateWithMappedDataBefore:(id<BLData, BLIndexPathMapping>)mappedDataBefore
+                                                    mappedDataAfter:(id<BLData, BLIndexPathMapping>)mappedDataAfter;
 
 @end
 

@@ -7,13 +7,14 @@
 //
 
 #import "BLProxyData.h"
+#import "BLIndexPathMapping.h"
 
 @class BLDataItemFilter;
 
 NS_ASSUME_NONNULL_BEGIN
 
 
-@interface BLFilteredData : BLProxyData
+@interface BLFilteredData : BLProxyData <BLIndexPathMapping>
 
 @property (nonatomic, strong, readonly, nullable) BLDataItemFilter *filter;
 
@@ -21,10 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithOriginalData:(id<BLData>)originalData
                               filter:(nullable BLDataItemFilter *)filter NS_DESIGNATED_INITIALIZER;
-
-- (NSIndexPath *)filteredIndexPathToOriginal:(NSIndexPath *)filteredIndexPath;
-
-- (nullable NSIndexPath *)originalIndexPathToFiltered:(NSIndexPath *)originalIndexPath;
 
 @end
 

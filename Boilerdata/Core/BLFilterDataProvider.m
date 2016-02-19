@@ -15,8 +15,8 @@
 #import "BLDataItemFilter.h"
 #import "BLDataEvent.h"
 #import "BLDataDiff.h"
+#import "BLDataDiffCalculator.h"
 #import "BLMutableDataDiff.h"
-#import "BLMutableDataDiffChange.h"
 #import "BLUtils.h"
 
 @implementation BLFilterDataProvider
@@ -42,9 +42,12 @@
 
 - (void)updateWithPredicate:(NSPredicate *)predicate {
     BLDataItemFilter *newFilter = [[BLDataItemFilter alloc] initWithPredicate:predicate];
+    
+    BLFilteredData *oldData = self.lastQueuedData;
     BLFilteredData *newData = [[BLFilteredData alloc] initWithOriginalData:self.lastQueuedInnerData filter:newFilter];
     
-    id<BLDataDiff> dataDiff = [self dataDiffForPredicateUpdateWithOldData:self.lastQueuedData newData:newData];
+    id<BLDataDiff> dataDiff = [BLDataDiffCalculator indexPathDiffForMappingUpdateWithMappedDataBefore:oldData
+                                                                                      mappedDataAfter:newData];
     
     [self enqueueDataEvent:[[BLDataEvent alloc] initWithUpdatedData:newData dataDiff:dataDiff context:nil]];
 }
@@ -55,7 +58,6 @@
     BLFilteredData *oldData = self.lastQueuedData;
     
     BLDataItemFilter *newFilter = [oldData.filter copy];
-    
     for (id<BLDataDiffIndexPathChange> change in event.dataDiff.changedIndexPaths) {
         if (change.updated) {
             id<BLDataItem> updatedItem = [event.updatedData itemAtIndexPath:change.after];
@@ -65,78 +67,23 @@
     
     BLFilteredData *newData = [[BLFilteredData alloc] initWithOriginalData:event.updatedData filter:newFilter];
     
-    id<BLDataDiff> dataDiff = [self dataDiffForInnerDataEvent:event oldData:oldData newData:newData];
+    id<BLDataDiff> dataDiff = [self dataDiffForInnerDiff:event.dataDiff oldData:oldData newData:newData];
     
     return [[BLDataEvent alloc] initWithUpdatedData:newData dataDiff:dataDiff context:event.context];
 }
 
 #pragma mark - Private
 
-- (id<BLDataDiff>)dataDiffForPredicateUpdateWithOldData:(BLFilteredData *)oldData newData:(BLFilteredData *)newData {
-    BLMutableDataDiff *dataDiff = [[BLMutableDataDiff alloc] init];
-    
-    if (!newData.identical) {
-        [BLUtils data:oldData enumerateItemsWithBlock:^(id<BLDataItem> item, NSIndexPath *indexPath, BOOL *stop) {
-            NSIndexPath *originalIndexPath = [oldData filteredIndexPathToOriginal:indexPath];
-            if (![newData originalIndexPathToFiltered:originalIndexPath]) {
-                [dataDiff.deletedIndexPaths addObject:indexPath];
-            }
-        }];
-    }
-    
-    if (!oldData.identical) {
-        [BLUtils data:newData enumerateItemsWithBlock:^(id<BLDataItem> item, NSIndexPath *indexPath, BOOL *stop) {
-            NSIndexPath *originalIndexPath = [newData filteredIndexPathToOriginal:indexPath];
-            if (![oldData originalIndexPathToFiltered:originalIndexPath]) {
-                [dataDiff.insertedIndexPaths addObject:indexPath];
-            }
-        }];
-    }
-    
-    return dataDiff;
-}
-
-- (id<BLDataDiff>)dataDiffForInnerDataEvent:(BLDataEvent *)event oldData:(BLFilteredData *)oldData newData:(BLFilteredData *)newData {
-    id<BLDataDiff> innerDataDiff = event.dataDiff;
-    
+- (id<BLDataDiff>)dataDiffForInnerDiff:(id<BLDataDiff>)innerDataDiff oldData:(BLFilteredData *)oldData newData:(BLFilteredData *)newData {
     if (oldData.identical && newData.identical) {
         return innerDataDiff;
     }
     
     BLMutableDataDiff *dataDiff = [[BLMutableDataDiff alloc] init];
     [dataDiff addSectionsFromDiff:innerDataDiff];
-    
-    for (NSIndexPath *originalIndexPath in innerDataDiff.deletedIndexPaths) {
-        NSIndexPath *indexPath = [oldData originalIndexPathToFiltered:originalIndexPath];
-        if (indexPath) {
-            [dataDiff.deletedIndexPaths addObject:indexPath];
-        }
-    }
-    
-    for (NSIndexPath *originalIndexPath in innerDataDiff.insertedIndexPaths) {
-        NSIndexPath *indexPath = [newData originalIndexPathToFiltered:originalIndexPath];
-        if (indexPath) {
-            [dataDiff.insertedIndexPaths addObject:indexPath];
-        }
-    }
-    
-    for (id<BLDataDiffIndexPathChange> originalChange in innerDataDiff.changedIndexPaths) {
-        NSIndexPath *indexPathBefore = [oldData originalIndexPathToFiltered:originalChange.before];
-        NSIndexPath *indexPathAfter = [newData originalIndexPathToFiltered:originalChange.after];
-        
-        if (indexPathBefore && indexPathAfter) {
-            BLMutableDataDiffIndexPathChange *filteredChange = [[BLMutableDataDiffIndexPathChange alloc] initWithChange:originalChange];
-            filteredChange.before = indexPathBefore;
-            filteredChange.after = indexPathAfter;
-            
-            [dataDiff.changedIndexPaths addObject:filteredChange];
-        } else if (indexPathBefore && !indexPathAfter) {
-            [dataDiff.deletedIndexPaths addObject:indexPathBefore];
-        } else if (!indexPathBefore && indexPathAfter) {
-            [dataDiff.insertedIndexPaths addObject:indexPathAfter];
-        }
-    }
-    
+    [dataDiff addIndexPathsFromDiff:[BLDataDiffCalculator indexPathDiffWithOriginalDiff:innerDataDiff
+                                                                          mappingBefore:oldData
+                                                                           mappingAfter:newData]];
     return dataDiff;
 }
 
