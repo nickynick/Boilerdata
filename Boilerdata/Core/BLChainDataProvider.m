@@ -14,7 +14,6 @@
 #import "BLDataEvent.h"
 #import "BLEmptyData.h"
 #import "BLDataDiffCalculator.h"
-#import "BLChainDataEventProcessor.h"
 
 @interface BLChainDataProvider () <BLDataObserver>
 
@@ -47,23 +46,9 @@
 #pragma mark - BLDataObserver
 
 - (id<BLDataEventProcessor>)dataProvider:(id<BLDataProvider>)dataProvider willUpdateWithEvent:(BLDataEvent *)event {
-    if (dataProvider != self.innerDataProvider) {
-        return nil;
-    }
+    [self enqueueInnerDataEvent:event];
     
-    _lastQueuedInnerData = event.updatedData;
-    
-    BLDataEvent *externalDataEvent = [self handleInnerDataEvent:event];
-    
-    if (externalDataEvent == nil) {
-        return nil;
-    }
-    
-    BLChainDataEventProcessor *chainProcessor = [[BLChainDataEventProcessor alloc] init];
-    
-    [self enqueueDataEvent:externalDataEvent callbacks:chainProcessor.callbacks];
-
-    return chainProcessor;
+    return nil;
 }
 
 #pragma mark - Protected
@@ -91,14 +76,20 @@
 
 - (void)enqueueDataEventForInnerDataProviderUpdate {
     id<BLData> oldInnerData = _lastQueuedInnerData;
-    _lastQueuedInnerData = self.innerDataProvider ? self.innerDataProvider.data : [BLEmptyData data];
+    id<BLData> newInnerData = self.innerDataProvider ? self.innerDataProvider.data : [BLEmptyData data];
 
-    id<BLDataDiff> innerDataDiff = [BLDataDiffCalculator diffForDataBefore:oldInnerData dataAfter:_lastQueuedInnerData];
+    id<BLDataDiff> innerDataDiff = [BLDataDiffCalculator diffForDataBefore:oldInnerData dataAfter:newInnerData];
     
-    BLDataEvent *innerDataEvent = [[BLDataEvent alloc] initWithUpdatedData:_lastQueuedInnerData dataDiff:innerDataDiff context:nil];
+    BLDataEvent *innerDataEvent = [[BLDataEvent alloc] initWithUpdatedData:newInnerData dataDiff:innerDataDiff context:nil];
+    
+    [self enqueueInnerDataEvent:innerDataEvent];
+}
+
+- (void)enqueueInnerDataEvent:(BLDataEvent *)innerDataEvent {
+    _lastQueuedInnerData = innerDataEvent.updatedData;
     
     BLDataEvent *externalDataEvent = [self handleInnerDataEvent:innerDataEvent];
-
+    
     if (externalDataEvent) {
         [self enqueueDataEvent:externalDataEvent];
     }

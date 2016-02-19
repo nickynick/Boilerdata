@@ -15,4 +15,3 @@
 #import <Boilerdata/BLChainDataProvider+Subclassing.h>
 
 #import <Boilerdata/BLDataEventCallbacks.h>
-#import <Boilerdata/BLNilDataEventProcessor.h>

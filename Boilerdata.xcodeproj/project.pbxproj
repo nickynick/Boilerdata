@@ -14,8 +14,6 @@
 		01B696821C74C4D400B9AD6E /* BLArrayData.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B696511C74C4D400B9AD6E /* BLArrayData.m */; };
 		01B696831C74C4D400B9AD6E /* BLArrayDataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696521C74C4D400B9AD6E /* BLArrayDataProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01B696841C74C4D400B9AD6E /* BLArrayDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B696531C74C4D400B9AD6E /* BLArrayDataProvider.m */; };
-		01B696851C74C4D400B9AD6E /* BLChainDataEventProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696541C74C4D400B9AD6E /* BLChainDataEventProcessor.h */; };
-		01B696861C74C4D400B9AD6E /* BLChainDataEventProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B696551C74C4D400B9AD6E /* BLChainDataEventProcessor.m */; };
 		01B696871C74C4D400B9AD6E /* BLChainDataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696561C74C4D400B9AD6E /* BLChainDataProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01B696881C74C4D400B9AD6E /* BLChainDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B696571C74C4D400B9AD6E /* BLChainDataProvider.m */; };
 		01B696891C74C4D400B9AD6E /* BLChainDataProvider+Subclassing.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696581C74C4D400B9AD6E /* BLChainDataProvider+Subclassing.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -42,7 +40,7 @@
 		01B6969E1C74C4D400B9AD6E /* BLMutableDataDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B6966D1C74C4D400B9AD6E /* BLMutableDataDiff.m */; };
 		01B6969F1C74C4D400B9AD6E /* BLMutableDataDiffChange.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B6966E1C74C4D400B9AD6E /* BLMutableDataDiffChange.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01B696A01C74C4D400B9AD6E /* BLMutableDataDiffChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B6966F1C74C4D400B9AD6E /* BLMutableDataDiffChange.m */; };
-		01B696A11C74C4D400B9AD6E /* BLNilDataEventProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696701C74C4D400B9AD6E /* BLNilDataEventProcessor.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		01B696A11C74C4D400B9AD6E /* BLNilDataEventProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696701C74C4D400B9AD6E /* BLNilDataEventProcessor.h */; };
 		01B696A21C74C4D400B9AD6E /* BLNilDataEventProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B696711C74C4D400B9AD6E /* BLNilDataEventProcessor.m */; };
 		01B696A31C74C4D400B9AD6E /* BLFilteredData.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696721C74C4D400B9AD6E /* BLFilteredData.h */; };
 		01B696A41C74C4D400B9AD6E /* BLFilteredData.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B696731C74C4D400B9AD6E /* BLFilteredData.m */; };
@@ -106,8 +104,6 @@
 		01B696511C74C4D400B9AD6E /* BLArrayData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLArrayData.m; sourceTree = "<group>"; };
 		01B696521C74C4D400B9AD6E /* BLArrayDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLArrayDataProvider.h; sourceTree = "<group>"; };
 		01B696531C74C4D400B9AD6E /* BLArrayDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLArrayDataProvider.m; sourceTree = "<group>"; };
-		01B696541C74C4D400B9AD6E /* BLChainDataEventProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLChainDataEventProcessor.h; sourceTree = "<group>"; };
-		01B696551C74C4D400B9AD6E /* BLChainDataEventProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLChainDataEventProcessor.m; sourceTree = "<group>"; };
 		01B696561C74C4D400B9AD6E /* BLChainDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLChainDataProvider.h; sourceTree = "<group>"; };
 		01B696571C74C4D400B9AD6E /* BLChainDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLChainDataProvider.m; sourceTree = "<group>"; };
 		01B696581C74C4D400B9AD6E /* BLChainDataProvider+Subclassing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BLChainDataProvider+Subclassing.h"; sourceTree = "<group>"; };
@@ -344,21 +340,11 @@
 		01B696B81C74C61F00B9AD6E /* Chain */ = {
 			isa = PBXGroup;
 			children = (
-				01B696B91C74C62500B9AD6E /* Internal */,
 				01B696561C74C4D400B9AD6E /* BLChainDataProvider.h */,
 				01B696571C74C4D400B9AD6E /* BLChainDataProvider.m */,
 				01B696581C74C4D400B9AD6E /* BLChainDataProvider+Subclassing.h */,
 			);
 			name = Chain;
-			sourceTree = "<group>";
-		};
-		01B696B91C74C62500B9AD6E /* Internal */ = {
-			isa = PBXGroup;
-			children = (
-				01B696541C74C4D400B9AD6E /* BLChainDataEventProcessor.h */,
-				01B696551C74C4D400B9AD6E /* BLChainDataEventProcessor.m */,
-			);
-			name = Internal;
 			sourceTree = "<group>";
 		};
 		01B696BA1C74C67200B9AD6E /* Array */ = {
@@ -566,7 +552,6 @@
 				01B696A91C74C4D400B9AD6E /* NNSectionsDiff+BLDataDiff.h in Headers */,
 				01B696A71C74C4D400B9AD6E /* NNArrayDiffChange+BLDataDiffIndexPathChange.h in Headers */,
 				01B696AB1C74C4D400B9AD6E /* NNSectionsDiffChange+BLDataDiffSectionChange.h in Headers */,
-				01B696851C74C4D400B9AD6E /* BLChainDataEventProcessor.h in Headers */,
 				01B696D91C74F64400B9AD6E /* BLUITableViewAnimations.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -712,7 +697,6 @@
 				01B696D71C74F64400B9AD6E /* BLUIKitViewReloader.m in Sources */,
 				01B697261C7623A300B9AD6E /* BLSearchIndexDataProvider.m in Sources */,
 				01B696A81C74C4D400B9AD6E /* NNArrayDiffChange+BLDataDiffIndexPathChange.m in Sources */,
-				01B696861C74C4D400B9AD6E /* BLChainDataEventProcessor.m in Sources */,
 				01B696901C74C4D400B9AD6E /* BLDataEvent.m in Sources */,
 				01B696C11C74CB6600B9AD6E /* BLProxyData.m in Sources */,
 				01B697391C765F9300B9AD6E /* BLClassificationDataProvider.m in Sources */,
