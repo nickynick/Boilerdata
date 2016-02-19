@@ -10,6 +10,7 @@
 
 @protocol BLData;
 @protocol BLDataItem;
+@protocol BLDataItemId;
 @protocol BLSectionItem;
 @protocol BLDataDiff;
 
@@ -26,6 +27,8 @@ typedef void (^BLDataItemEnumerationBlock)(id<BLDataItem> item, NSIndexPath *ind
 + (NSInteger)dataNumberOfItems:(id<BLData>)data;
 
 + (NSArray<id<BLDataItem>> *)data:(id<BLData>)data itemsInSection:(NSInteger)section;
+
++ (NSDictionary<id<BLDataItemId>, id<BLDataItem>> *)dataItemsById:(id<BLData>)data;
 
 + (NSArray<id<BLSectionItem>> *)dataSectionItems:(id<BLData>)data;
 

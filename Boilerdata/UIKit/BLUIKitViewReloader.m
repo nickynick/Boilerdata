@@ -10,8 +10,10 @@
 #import "BLUITableViewReloaderEngine.h"
 #import "BLUICollectionViewReloaderEngine.h"
 #import "BLDataEvent.h"
+#import "BLDataItem.h"
 #import "BLDataDiff.h"
 #import "BLDataDiffChange.h"
+#import "BLDataDiffCalculator.h"
 #import "BLUtils.h"
 
 @interface BLUIKitViewReloader ()
@@ -59,18 +61,22 @@
 #pragma mark - BLDataEventProcessor
 
 - (void)applyEvent:(BLDataEvent *)event withDataUpdateBlock:(void (^)())dataUpdateBlock completion:(void (^)())completion {
-    id<BLDataDiff> dataDiff = event.dataDiff;
-    
-    if ([BLUtils dataDiffIsEmpty:dataDiff]) {
-        dataUpdateBlock();
-        completion();
-        return;
-    }
-    
     if ([self shouldUseReloadDataForEvent:event]) {
         dataUpdateBlock();
         // TODO: we need a callback here
         [self.engine reloadData];
+        completion();
+        return;
+    }
+    
+    id<BLDataDiff> dataDiff = [BLDataDiffCalculator diffForDataBefore:event.oldData
+                                                            dataAfter:event.newData
+                                                         updatedBlock:^BOOL(id<BLDataItem> itemBefore, id<BLDataItem> itemAfter) {
+                                                             return [event.updatedItemIds containsObject:itemAfter.itemId];
+                                                         }];
+    
+    if ([BLUtils dataDiffIsEmpty:dataDiff]) {
+        dataUpdateBlock();
         completion();
         return;
     }

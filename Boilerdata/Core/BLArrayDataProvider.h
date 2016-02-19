@@ -9,16 +9,21 @@
 #import "BLAbstractDataProvider.h"
 
 @protocol BLDataItem;
-@protocol BLDataDiff;
+@protocol BLDataItemId;
 
 NS_ASSUME_NONNULL_BEGIN
 
 
+typedef BOOL (^BLDataItemIsUpdatedBlock)(__kindof id<BLDataItem> oldItem, __kindof id<BLDataItem> newItem);
+
+
 @interface BLArrayDataProvider : BLAbstractDataProvider
+
+- (instancetype)initWithIsUpdatedBlock:(nullable BLDataItemIsUpdatedBlock)isUpdatedBlock NS_DESIGNATED_INITIALIZER;
 
 - (void)updateWithItems:(NSArray<id<BLDataItem>> *)items;
 
-- (void)updateWithItems:(NSArray<id<BLDataItem>> *)items precalculatedDiff:(nullable id<BLDataDiff>)dataDiff;
+- (void)updateWithItems:(NSArray<id<BLDataItem>> *)items updatedItemIds:(nullable NSSet<id<BLDataItemId>> *)updatedItemIds;
 
 @end
 

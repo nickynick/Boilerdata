@@ -7,6 +7,7 @@
 //
 
 #import "BLChainDataProvider.h"
+#import "BLAbstractDataProvider+Subclassing.h"
 
 @protocol BLData;
 @class BLDataEvent;
@@ -16,19 +17,21 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BLChainDataProvider ()
 
-@property (nonatomic, strong, readonly) id<BLData> lastQueuedInnerData;
-
 - (void)updateInnerDataProvider:(id<BLDataProvider>)innerDataProvider;
+
+- (void)updateChainingWithBlock:(void (^)(__kindof id<BLData> lastQueuedData, id<BLData> lastQueuedInnerData))block;
 
 @end
 
 
+/**
+ * Override either of these two methods to customize chaining transformations.
+ */
 @interface BLChainDataProvider (Overridable)
 
-/**
- * Override this method to customize chaining transformations.
- */
-- (nullable BLDataEvent *)handleInnerDataEvent:(BLDataEvent *)event;
+- (nullable BLDataEvent *)transformInnerEvent:(BLDataEvent *)innerEvent withLastQueuedData:(__kindof id<BLData>)lastQueuedData;
+
+- (nullable id<BLData>)transformInnerDataForEvent:(BLDataEvent *)innerEvent withLastQueuedData:(__kindof id<BLData>)lastQueuedData;
 
 @end
 

@@ -9,7 +9,6 @@
 #import "BLAbstractDataProvider.h"
 #import "BLAbstractDataProvider+Subclassing.h"
 #import "BLEmptyData.h"
-#import "BLSimpleDataDiff.h"
 #import "BLDataEventCallbacks.h"
 #import "BLDataEvent.h"
 #import "BLDataEventProcessor.h"
@@ -52,13 +51,15 @@
 
 #pragma mark - Protected
 
+- (void)updateWithBlock:(void (^)(__kindof id<BLData> lastQueuedData))block {
+    block(self.eventQueue.lastObject.newData ?: self.data);
+}
+
 - (void)enqueueDataEvent:(BLDataEvent *)event {
     [self enqueueDataEvent:event callbacks:nil];
 }
 
 - (void)enqueueDataEvent:(BLDataEvent *)event callbacks:(BLDataEventCallbacks *)callbacks {
-    _lastQueuedData = event.updatedData;
-    
     [self.eventQueue addObject:event];
     [self.eventCallbacksQueue addObject:callbacks ?: [[BLDataEventCallbacks alloc] init]];
     
@@ -70,7 +71,8 @@
 - (void)enqueueDataEventWithInitialData {
     id<BLData> initialData = [self createInitialData];
     
-    BLDataEvent *event = [[BLDataEvent alloc] initWithUpdatedData:initialData dataDiff:[BLSimpleDataDiff empty] context:nil];
+    BLDataEvent *event = [[BLDataEvent alloc] initWithOldData:[BLEmptyData data] newData:initialData];
+    
     [self enqueueDataEvent:event];
 }
 
@@ -95,7 +97,7 @@
             callbacks.willUpdateDataBlock();
         }
         
-        self.data = event.updatedData;
+        self.data = event.newData;
         
         if (callbacks.didUpdateDataBlock) {
             callbacks.didUpdateDataBlock();

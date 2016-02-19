@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BLAbstractDataProvider ()
 
-@property (nonatomic, strong, readonly) __kindof id<BLData> lastQueuedData;
+- (void)updateWithBlock:(void (^)(__kindof id<BLData> lastQueuedData))block;
 
 - (void)enqueueDataEvent:(BLDataEvent *)event;
 - (void)enqueueDataEvent:(BLDataEvent *)event callbacks:(nullable BLDataEventCallbacks *)callbacks;

@@ -7,17 +7,11 @@
 //
 
 #import "BLFilterDataProvider.h"
-#import "BLAbstractDataProvider+Subclassing.h"
 #import "BLChainDataProvider+Subclassing.h"
 #import "BLFilteredData.h"
 #import "BLEmptyData.h"
-#import "BLDataItem.h"
 #import "BLDataItemFilter.h"
 #import "BLDataEvent.h"
-#import "BLDataDiff.h"
-#import "BLDataDiffCalculator.h"
-#import "BLMutableDataDiff.h"
-#import "BLUtils.h"
 
 @implementation BLFilterDataProvider
 
@@ -35,56 +29,35 @@
 #pragma mark - BLAbstractDataProvider
 
 - (id<BLData>)createInitialData {
-    return [[BLFilteredData alloc] initWithOriginalData:self.lastQueuedInnerData filter:nil];
+    return [[BLFilteredData alloc] initWithOriginalData:[BLEmptyData data] filter:nil];
 }
 
-#pragma mark - Filtering
+#pragma mark - BLChainDataProvider
+
+- (id<BLData>)transformInnerDataForEvent:(BLDataEvent *)innerEvent withLastQueuedData:(BLFilteredData *)lastQueuedData {
+    BLDataItemFilter *newFilter = [lastQueuedData.filter copy];
+    
+    if (newFilter) {
+        for (id<BLDataItemId> itemId in innerEvent.updatedItemIds) {
+            [newFilter invalidateCachedEvaluationForItemWithId:itemId];
+        }
+        
+        // TODO: invalidate deleted items too?
+    }
+    
+    return [[BLFilteredData alloc] initWithOriginalData:innerEvent.newData filter:newFilter];
+}
+
+#pragma mark - Updates
 
 - (void)updateWithPredicate:(NSPredicate *)predicate {
-    BLDataItemFilter *newFilter = [[BLDataItemFilter alloc] initWithPredicate:predicate];
-    
-    BLFilteredData *oldData = self.lastQueuedData;
-    BLFilteredData *newData = [[BLFilteredData alloc] initWithOriginalData:self.lastQueuedInnerData filter:newFilter];
-    
-    id<BLDataDiff> dataDiff = [BLDataDiffCalculator indexPathDiffForMappingUpdateWithMappedDataBefore:oldData
-                                                                                      mappedDataAfter:newData];
-    
-    [self enqueueDataEvent:[[BLDataEvent alloc] initWithUpdatedData:newData dataDiff:dataDiff context:nil]];
-}
-
-#pragma mark - Chaining
-
-- (BLDataEvent *)handleInnerDataEvent:(BLDataEvent *)event {
-    BLFilteredData *oldData = self.lastQueuedData;
-    
-    BLDataItemFilter *newFilter = [oldData.filter copy];
-    for (id<BLDataDiffIndexPathChange> change in event.dataDiff.changedIndexPaths) {
-        if (change.updated) {
-            id<BLDataItem> updatedItem = [event.updatedData itemAtIndexPath:change.after];
-            [newFilter invalidateCachedEvaluationForItemWithId:updatedItem.itemId];
-        }
-    }
-    
-    BLFilteredData *newData = [[BLFilteredData alloc] initWithOriginalData:event.updatedData filter:newFilter];
-    
-    id<BLDataDiff> dataDiff = [self dataDiffForInnerDiff:event.dataDiff oldData:oldData newData:newData];
-    
-    return [[BLDataEvent alloc] initWithUpdatedData:newData dataDiff:dataDiff context:event.context];
-}
-
-#pragma mark - Private
-
-- (id<BLDataDiff>)dataDiffForInnerDiff:(id<BLDataDiff>)innerDataDiff oldData:(BLFilteredData *)oldData newData:(BLFilteredData *)newData {
-    if (oldData.identical && newData.identical) {
-        return innerDataDiff;
-    }
-    
-    BLMutableDataDiff *dataDiff = [[BLMutableDataDiff alloc] init];
-    [dataDiff addSectionsFromDiff:innerDataDiff];
-    [dataDiff addIndexPathsFromDiff:[BLDataDiffCalculator indexPathDiffWithOriginalDiff:innerDataDiff
-                                                                          mappingBefore:oldData
-                                                                           mappingAfter:newData]];
-    return dataDiff;
+    [self updateChainingWithBlock:^(BLFilteredData *lastQueuedData, id<BLData> lastQueuedInnerData) {
+        BLDataItemFilter *newFilter = [[BLDataItemFilter alloc] initWithPredicate:predicate];
+        
+        BLFilteredData *newData = [[BLFilteredData alloc] initWithOriginalData:lastQueuedInnerData filter:newFilter];
+        
+        [self enqueueDataEvent:[[BLDataEvent alloc] initWithOldData:lastQueuedData newData:newData]];
+    }];
 }
 
 @end

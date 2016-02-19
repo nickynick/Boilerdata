@@ -8,16 +8,16 @@
 
 #import "BLChainDataProvider.h"
 #import "BLChainDataProvider+Subclassing.h"
-#import "BLAbstractDataProvider+Subclassing.h"
 #import "BLData.h"
 #import "BLDataObserver.h"
 #import "BLDataEvent.h"
 #import "BLEmptyData.h"
-#import "BLDataDiffCalculator.h"
 
 @interface BLChainDataProvider () <BLDataObserver>
 
 @property (nonatomic, strong) id<BLDataProvider> innerDataProvider;
+
+@property (nonatomic, strong) id<BLData> lastQueuedInnerData;
 
 @end
 
@@ -35,21 +35,12 @@
 #pragma mark - BLDataObserver
 
 - (id<BLDataEventProcessor>)dataProvider:(id<BLDataProvider>)dataProvider willUpdateWithEvent:(BLDataEvent *)event {
-    [self enqueueInnerDataEvent:event];
+    [self enqueueTransformedInnerEvent:event];
     
     return nil;
 }
 
 #pragma mark - Protected
-
-@synthesize lastQueuedInnerData = _lastQueuedInnerData;
-
-- (id<BLData>)lastQueuedInnerData {
-    if (!_lastQueuedInnerData) {
-        _lastQueuedInnerData = [BLEmptyData data];
-    }
-    return _lastQueuedInnerData;
-}
 
 - (void)updateInnerDataProvider:(id<BLDataProvider>)innerDataProvider {
     if (self.innerDataProvider == innerDataProvider) {
@@ -59,6 +50,12 @@
     self.innerDataProvider = innerDataProvider;
     
     [self enqueueDataEventForInnerDataProviderUpdate];
+}
+
+- (void)updateChainingWithBlock:(void (^)(__kindof id<BLData> lastQueuedData, id<BLData> lastQueuedInnerData))block {
+    [self updateWithBlock:^(__kindof id<BLData> lastQueuedData) {
+        block(lastQueuedData, self.lastQueuedInnerData);
+    }];
 }
 
 #pragma mark - Private
@@ -73,24 +70,27 @@
 }
 
 - (void)enqueueDataEventForInnerDataProviderUpdate {
-    id<BLData> oldInnerData = _lastQueuedInnerData;
+    id<BLData> oldInnerData = self.lastQueuedInnerData;
     id<BLData> newInnerData = self.innerDataProvider ? self.innerDataProvider.data : [BLEmptyData data];
-
-    id<BLDataDiff> innerDataDiff = [BLDataDiffCalculator diffForDataBefore:oldInnerData dataAfter:newInnerData];
     
-    BLDataEvent *innerDataEvent = [[BLDataEvent alloc] initWithUpdatedData:newInnerData dataDiff:innerDataDiff context:nil];
+    BLDataEvent *fauxInnerEvent = [[BLDataEvent alloc] initWithOldData:oldInnerData
+                                                               newData:newInnerData
+                                                        updatedItemIds:nil // TODO?
+                                                               context:nil];
     
-    [self enqueueInnerDataEvent:innerDataEvent];
+    [self enqueueTransformedInnerEvent:fauxInnerEvent];
 }
 
-- (void)enqueueInnerDataEvent:(BLDataEvent *)innerDataEvent {
-    _lastQueuedInnerData = innerDataEvent.updatedData;
-    
-    BLDataEvent *externalDataEvent = [self handleInnerDataEvent:innerDataEvent];
-    
-    if (externalDataEvent) {
-        [self enqueueDataEvent:externalDataEvent];
-    }
+- (void)enqueueTransformedInnerEvent:(BLDataEvent *)innerEvent {
+    [self updateWithBlock:^(__kindof id<BLData> lastQueuedData) {
+        self.lastQueuedInnerData = innerEvent.newData;
+        
+        BLDataEvent *externalDataEvent = [self transformInnerEvent:innerEvent withLastQueuedData:lastQueuedData];
+        
+        if (externalDataEvent) {
+            [self enqueueDataEvent:externalDataEvent];
+        }
+    }];
 }
 
 @end
@@ -98,8 +98,20 @@
 
 @implementation BLChainDataProvider (Overridable)
 
-- (BLDataEvent *)handleInnerDataEvent:(BLDataEvent *)event {
-    return event;
+- (BLDataEvent *)transformInnerEvent:(BLDataEvent *)innerEvent withLastQueuedData:(__kindof id<BLData>)lastQueuedData {
+    id<BLData> newData = [self transformInnerDataForEvent:innerEvent withLastQueuedData:lastQueuedData];
+    if (!newData) {
+        return nil;
+    }
+    
+    return [[BLDataEvent alloc] initWithOldData:lastQueuedData
+                                        newData:newData
+                                 updatedItemIds:innerEvent.updatedItemIds
+                                        context:innerEvent.context];
+}
+
+- (id<BLData>)transformInnerDataForEvent:(BLDataEvent *)innerEvent withLastQueuedData:(__kindof id<BLData>)lastQueuedData {
+    return innerEvent.newData;
 }
 
 @end

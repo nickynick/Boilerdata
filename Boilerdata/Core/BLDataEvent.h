@@ -9,27 +9,34 @@
 #import <Foundation/Foundation.h>
 
 @protocol BLData;
-@protocol BLDataDiff;
+@protocol BLDataItemId;
 
 NS_ASSUME_NONNULL_BEGIN
 
 
 @interface BLDataEvent : NSObject
 
-@property (nonatomic, strong, readonly) id<BLData> updatedData;
+@property (nonatomic, strong, readonly) id<BLData> oldData;
 
-@property (nonatomic, strong, readonly) id<BLDataDiff> dataDiff;
+@property (nonatomic, strong, readonly) id<BLData> newData NS_RETURNS_NOT_RETAINED;
 
-// TODO: consider removing this.
-// Wouldn't it be better to store special model info in .updateData itself?
-// However, this won't work with chaining.
-@property (nonatomic, copy, readonly) NSDictionary *context; // optional arbitrary data from model
+@property (nonatomic, copy, readonly) NSSet<id<BLDataItemId>> *updatedItemIds;
 
-- (instancetype)initWithUpdatedData:(id<BLData>)updatedData
-                           dataDiff:(id<BLDataDiff>)dataDiff
-                            context:(nullable NSDictionary *)context NS_DESIGNATED_INITIALIZER;
+/**
+ * Optional arbitrary data from model.
+ */
+@property (nonatomic, copy, readonly) NSDictionary *context;
+
+- (instancetype)initWithOldData:(id<BLData>)oldData newData:(id<BLData>)newData;
+
+- (instancetype)initWithOldData:(id<BLData>)oldData
+                        newData:(id<BLData>)newData
+                 updatedItemIds:(nullable NSSet<id<BLDataItemId>> *)updatedItemIds
+                        context:(nullable NSDictionary *)context NS_DESIGNATED_INITIALIZER;
 
 - (instancetype)init NS_UNAVAILABLE;
+
++ (instancetype)empty;
 
 @end
 

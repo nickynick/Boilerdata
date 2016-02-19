@@ -8,8 +8,9 @@
 
 #import "BLUtils.h"
 #import "BLData.h"
-#import "NSIndexPath+BLUtils.h"
+#import "BLDataItem.h"
 #import "BLDataDiff.h"
+#import "NSIndexPath+BLUtils.h"
 
 @implementation BLUtils
 
@@ -42,6 +43,16 @@
     for (NSInteger row = 0; row < numberOfItems; ++row) {
         [items addObject:[data itemAtIndexPath:[NSIndexPath bl_indexPathForRow:row inSection:section]]];
     }
+    
+    return items;
+}
+
++ (NSDictionary<id<BLDataItemId>, id<BLDataItem>> *)dataItemsById:(id<BLData>)data {
+    NSMutableDictionary<id<BLDataItemId>, id<BLDataItem>> *items = [NSMutableDictionary dictionaryWithCapacity:[self dataNumberOfItems:data]];
+    
+    [self data:data enumerateItemsWithBlock:^(id<BLDataItem> item, NSIndexPath *indexPath, BOOL *stop) {
+        items[item.itemId] = item;
+    }];
     
     return items;
 }

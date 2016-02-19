@@ -24,12 +24,10 @@
     return self;
 }
 
-#pragma mark - Chaining
+#pragma mark - BLChainDataProvider
 
-- (BLDataEvent *)handleInnerDataEvent:(BLDataEvent *)event {
-    return [[BLDataEvent alloc] initWithUpdatedData:[[BLSearchIndexData alloc] initWithOriginalData:event.updatedData]
-                                           dataDiff:event.dataDiff
-                                            context:event.context];
+- (id<BLData>)transformInnerDataForEvent:(BLDataEvent *)innerEvent withLastQueuedData:(id<BLData>)lastQueuedData {
+    return [[BLSearchIndexData alloc] initWithOriginalData:innerEvent.newData];
 }
 
 @end
