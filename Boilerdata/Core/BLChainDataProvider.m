@@ -24,17 +24,6 @@
 
 @implementation BLChainDataProvider
 
-#pragma mark - Init
-
-- (instancetype)init {
-    self = [super init];
-    if (!self) return nil;
-    
-    _lastQueuedInnerData = [BLEmptyData data];
-    
-    return self;
-}
-
 #pragma mark - BLDataProvider
 
 - (void)setLocked:(BOOL)locked {
@@ -52,6 +41,15 @@
 }
 
 #pragma mark - Protected
+
+@synthesize lastQueuedInnerData = _lastQueuedInnerData;
+
+- (id<BLData>)lastQueuedInnerData {
+    if (!_lastQueuedInnerData) {
+        _lastQueuedInnerData = [BLEmptyData data];
+    }
+    return _lastQueuedInnerData;
+}
 
 - (void)updateInnerDataProvider:(id<BLDataProvider>)innerDataProvider {
     if (self.innerDataProvider == innerDataProvider) {

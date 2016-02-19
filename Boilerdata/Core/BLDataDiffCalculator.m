@@ -17,6 +17,7 @@
 #import "BLUtils.h"
 
 #import <NNArrayDiff/ArrayDiff.h>
+#import "NNArrayDiff+BLDataDiff.h"
 #import "NNSectionsDiff+BLDataDiff.h"
 
 
@@ -141,6 +142,12 @@
     }
     
     return diff;
+}
+
++ (id<BLDataDiff>)sectionDiffForSectionItemsBefore:(NSArray<id<BLSectionItem>> *)sectionItemsBefore
+                                 sectionItemsAfter:(NSArray<id<BLSectionItem>> *)sectionItemsAfter {
+    NNArrayDiffCalculator *calculator = [[NNArrayDiffCalculator alloc] init];
+    return [calculator calculateDiffForObjectsBefore:sectionItemsBefore andAfter:sectionItemsAfter];
 }
 
 #pragma mark - Private

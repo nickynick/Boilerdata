@@ -1,14 +1,14 @@
 //
-//  NNArrayDiffChange+BLDataDiffIndexPathChange.m
+//  NNArrayDiffChange+BLDataDiffChange.m
 //  Boilerdata
 //
 //  Created by Nick Tymchenko on 07/01/16.
 //  Copyright © 2016 Pixty. All rights reserved.
 //
 
-#import "NNArrayDiffChange+BLDataDiffIndexPathChange.h"
+#import "NNArrayDiffChange+BLDataDiffChange.h"
 
-@implementation NNArrayDiffChange (BLDataDiffIndexPathChange)
+@implementation NNArrayDiffChange (BLDataDiffChange)
 
 - (BOOL)isMoved {
     return self.type & NNDiffChangeMove;

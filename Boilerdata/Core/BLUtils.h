@@ -10,6 +10,7 @@
 
 @protocol BLData;
 @protocol BLDataItem;
+@protocol BLSectionItem;
 @protocol BLDataDiff;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -25,6 +26,8 @@ typedef void (^BLDataItemEnumerationBlock)(id<BLDataItem> item, NSIndexPath *ind
 + (NSInteger)dataNumberOfItems:(id<BLData>)data;
 
 + (NSArray<id<BLDataItem>> *)data:(id<BLData>)data itemsInSection:(NSInteger)section;
+
++ (NSArray<id<BLSectionItem>> *)dataSectionItems:(id<BLData>)data;
 
 + (void)data:(id<BLData>)data enumerateItemsWithBlock:(BLDataItemEnumerationBlock)block;
 

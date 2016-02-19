@@ -7,12 +7,12 @@
 //
 
 #import "BLClassificationDataProvider.h"
+#import "BLAbstractDataProvider+Subclassing.h"
 #import "BLChainDataProvider+Subclassing.h"
-#import "BLData.h"
-#import "BLDataItem.h"
-#import "BLSectionItem.h"
+#import "BLClassifiedData.h"
 #import "BLDataEvent.h"
-#import "BLDataSection.h"
+#import "BLDataDiffCalculator.h"
+#import "BLMutableDataDiff.h"
 #import "BLUtils.h"
 
 @interface BLClassificationDataProvider ()
@@ -42,53 +42,40 @@
     return self;
 }
 
+#pragma mark - BLAbstractDataProvider
+
+- (id<BLData>)createInitialData {
+    return [[BLClassifiedData alloc] initWithOriginalData:self.lastQueuedInnerData
+                                      classificationBlock:self.classificationBlock
+                                      sectionSortingBlock:self.sectionSortingBlock];
+}
+
 #pragma mark - Chaining
 
 - (BLDataEvent *)handleInnerDataEvent:(BLDataEvent *)event {
-    NSArray<id<BLDataSection>> *sections = [self collectSectionsFromData:event.updatedData];
+    BLClassifiedData *oldData = self.lastQueuedData;
+    BLClassifiedData *newData = [[BLClassifiedData alloc] initWithOriginalData:event.updatedData
+                                                           classificationBlock:self.classificationBlock
+                                                           sectionSortingBlock:self.sectionSortingBlock];
     
-    return event; // TODO
+    id<BLDataDiff> dataDiff = [self dataDiffForInnerDiff:event.dataDiff oldData:oldData newData:newData];
+    
+    return [[BLDataEvent alloc] initWithUpdatedData:newData dataDiff:dataDiff context:event.context];
 }
 
-- (NSArray<id<BLDataSection>> *)collectSectionsFromData:(id<BLData>)data {
-    NSMutableOrderedSet<id<BLSectionItem>> *sectionItems = [NSMutableOrderedSet orderedSet];
-    NSMutableDictionary<id<BLSectionItem>, NSMutableArray<id<BLDataItem>> *> *classifiedItems = [NSMutableDictionary dictionary];
-    
-    [BLUtils data:data enumerateItemsWithBlock:^(id<BLDataItem> item, NSIndexPath *indexPath, BOOL *stop) {
-        id<BLSectionItem> sectionItem = self.classificationBlock(item);
-        [sectionItems addObject:sectionItem];
-        
-        NSMutableArray<id<BLDataItem>> *items = classifiedItems[sectionItem];
-        if (!items) {
-            items = [NSMutableArray array];
-            classifiedItems[sectionItem] = items;
-        }
-        
-        [items addObject:item];
-    }];
-    
-    NSArray<id<BLSectionItem>> *sortedSectionItems = [self sortSectionItems:sectionItems.array];
-    
-    NSMutableArray<id<BLDataSection>> *sections = [NSMutableArray arrayWithCapacity:sectionItems.count];
-    
-    for (id<BLSectionItem> sectionItem in sortedSectionItems) {
-        id<BLDataSection> section = [[BLDataSection alloc] initWithItems:classifiedItems[sectionItem]
-                                                             sectionItem:sectionItem];
-        [sections addObject:section];
-    }
-    
-    return sections;
-}
+#pragma mark - Private
 
-- (NSArray<id<BLSectionItem>> *)sortSectionItems:(NSArray<id<BLSectionItem>> *)sectionItems {
-    if (!self.sectionSortingBlock) {
-        return sectionItems;
-    }
+- (id<BLDataDiff>)dataDiffForInnerDiff:(id<BLDataDiff>)innerDataDiff oldData:(BLClassifiedData *)oldData newData:(BLClassifiedData *)newData {
+    BLMutableDataDiff *dataDiff = [[BLMutableDataDiff alloc] init];
     
-    NSArray<id<BLSectionItem>> *sortedSectionItems = self.sectionSortingBlock(sectionItems);
-    // TODO: check that all items are present
+    [dataDiff addSectionsFromDiff:[BLDataDiffCalculator sectionDiffForSectionItemsBefore:[BLUtils dataSectionItems:oldData]
+                                                                       sectionItemsAfter:[BLUtils dataSectionItems:newData]]];
     
-    return sortedSectionItems;
+    [dataDiff addIndexPathsFromDiff:[BLDataDiffCalculator indexPathDiffWithOriginalDiff:innerDataDiff
+                                                                          mappingBefore:oldData
+                                                                           mappingAfter:newData]];
+    
+    return dataDiff;
 }
 
 @end

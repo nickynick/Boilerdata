@@ -46,12 +46,12 @@
 		01B696A41C74C4D400B9AD6E /* BLFilteredData.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B696731C74C4D400B9AD6E /* BLFilteredData.m */; };
 		01B696A51C74C4D400B9AD6E /* BLUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696741C74C4D400B9AD6E /* BLUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01B696A61C74C4D400B9AD6E /* BLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B696751C74C4D400B9AD6E /* BLUtils.m */; };
-		01B696A71C74C4D400B9AD6E /* NNArrayDiffChange+BLDataDiffIndexPathChange.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696761C74C4D400B9AD6E /* NNArrayDiffChange+BLDataDiffIndexPathChange.h */; };
-		01B696A81C74C4D400B9AD6E /* NNArrayDiffChange+BLDataDiffIndexPathChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B696771C74C4D400B9AD6E /* NNArrayDiffChange+BLDataDiffIndexPathChange.m */; };
+		01B696A71C74C4D400B9AD6E /* NNArrayDiffChange+BLDataDiffChange.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696761C74C4D400B9AD6E /* NNArrayDiffChange+BLDataDiffChange.h */; };
+		01B696A81C74C4D400B9AD6E /* NNArrayDiffChange+BLDataDiffChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B696771C74C4D400B9AD6E /* NNArrayDiffChange+BLDataDiffChange.m */; };
 		01B696A91C74C4D400B9AD6E /* NNSectionsDiff+BLDataDiff.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696781C74C4D400B9AD6E /* NNSectionsDiff+BLDataDiff.h */; };
 		01B696AA1C74C4D400B9AD6E /* NNSectionsDiff+BLDataDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B696791C74C4D400B9AD6E /* NNSectionsDiff+BLDataDiff.m */; };
-		01B696AB1C74C4D400B9AD6E /* NNSectionsDiffChange+BLDataDiffSectionChange.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B6967A1C74C4D400B9AD6E /* NNSectionsDiffChange+BLDataDiffSectionChange.h */; };
-		01B696AC1C74C4D400B9AD6E /* NNSectionsDiffChange+BLDataDiffSectionChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B6967B1C74C4D400B9AD6E /* NNSectionsDiffChange+BLDataDiffSectionChange.m */; };
+		01B696AB1C74C4D400B9AD6E /* NNSectionsDiffChange+BLDataDiffChange.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B6967A1C74C4D400B9AD6E /* NNSectionsDiffChange+BLDataDiffChange.h */; };
+		01B696AC1C74C4D400B9AD6E /* NNSectionsDiffChange+BLDataDiffChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B6967B1C74C4D400B9AD6E /* NNSectionsDiffChange+BLDataDiffChange.m */; };
 		01B696AD1C74C4D400B9AD6E /* NSIndexPath+BLUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B6967C1C74C4D400B9AD6E /* NSIndexPath+BLUtils.h */; };
 		01B696AE1C74C4D400B9AD6E /* NSIndexPath+BLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B6967D1C74C4D400B9AD6E /* NSIndexPath+BLUtils.m */; };
 		01B696C01C74CB6600B9AD6E /* BLProxyData.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696BE1C74CB6600B9AD6E /* BLProxyData.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -80,6 +80,10 @@
 		01B697381C765F9300B9AD6E /* BLClassificationDataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B697361C765F9300B9AD6E /* BLClassificationDataProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01B697391C765F9300B9AD6E /* BLClassificationDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B697371C765F9300B9AD6E /* BLClassificationDataProvider.m */; };
 		01B6973C1C7686AF00B9AD6E /* BLIndexPathMapping.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B6973B1C7686AF00B9AD6E /* BLIndexPathMapping.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01B697401C77674700B9AD6E /* BLClassifiedData.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B6973E1C77674700B9AD6E /* BLClassifiedData.h */; };
+		01B697411C77674700B9AD6E /* BLClassifiedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B6973F1C77674700B9AD6E /* BLClassifiedData.m */; };
+		01B697451C776F7A00B9AD6E /* NNArrayDiff+BLDataDiff.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B697431C776F7A00B9AD6E /* NNArrayDiff+BLDataDiff.h */; };
+		01B697461C776F7A00B9AD6E /* NNArrayDiff+BLDataDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B697441C776F7A00B9AD6E /* NNArrayDiff+BLDataDiff.m */; };
 		01D57A4B1C524FA9008E4EB5 /* Boilerdata.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D57A411C524FA9008E4EB5 /* Boilerdata.framework */; };
 		01D57A501C524FA9008E4EB5 /* BoilerdataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D57A4F1C524FA9008E4EB5 /* BoilerdataTests.m */; };
 		752095DF150F58C2E9DD3496 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D2C76DFF023523F7626A4C /* libPods.a */; };
@@ -136,12 +140,12 @@
 		01B696731C74C4D400B9AD6E /* BLFilteredData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLFilteredData.m; sourceTree = "<group>"; };
 		01B696741C74C4D400B9AD6E /* BLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLUtils.h; sourceTree = "<group>"; };
 		01B696751C74C4D400B9AD6E /* BLUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLUtils.m; sourceTree = "<group>"; };
-		01B696761C74C4D400B9AD6E /* NNArrayDiffChange+BLDataDiffIndexPathChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NNArrayDiffChange+BLDataDiffIndexPathChange.h"; sourceTree = "<group>"; };
-		01B696771C74C4D400B9AD6E /* NNArrayDiffChange+BLDataDiffIndexPathChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NNArrayDiffChange+BLDataDiffIndexPathChange.m"; sourceTree = "<group>"; };
+		01B696761C74C4D400B9AD6E /* NNArrayDiffChange+BLDataDiffChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NNArrayDiffChange+BLDataDiffChange.h"; sourceTree = "<group>"; };
+		01B696771C74C4D400B9AD6E /* NNArrayDiffChange+BLDataDiffChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NNArrayDiffChange+BLDataDiffChange.m"; sourceTree = "<group>"; };
 		01B696781C74C4D400B9AD6E /* NNSectionsDiff+BLDataDiff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NNSectionsDiff+BLDataDiff.h"; sourceTree = "<group>"; };
 		01B696791C74C4D400B9AD6E /* NNSectionsDiff+BLDataDiff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NNSectionsDiff+BLDataDiff.m"; sourceTree = "<group>"; };
-		01B6967A1C74C4D400B9AD6E /* NNSectionsDiffChange+BLDataDiffSectionChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NNSectionsDiffChange+BLDataDiffSectionChange.h"; sourceTree = "<group>"; };
-		01B6967B1C74C4D400B9AD6E /* NNSectionsDiffChange+BLDataDiffSectionChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NNSectionsDiffChange+BLDataDiffSectionChange.m"; sourceTree = "<group>"; };
+		01B6967A1C74C4D400B9AD6E /* NNSectionsDiffChange+BLDataDiffChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NNSectionsDiffChange+BLDataDiffChange.h"; sourceTree = "<group>"; };
+		01B6967B1C74C4D400B9AD6E /* NNSectionsDiffChange+BLDataDiffChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NNSectionsDiffChange+BLDataDiffChange.m"; sourceTree = "<group>"; };
 		01B6967C1C74C4D400B9AD6E /* NSIndexPath+BLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+BLUtils.h"; sourceTree = "<group>"; };
 		01B6967D1C74C4D400B9AD6E /* NSIndexPath+BLUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+BLUtils.m"; sourceTree = "<group>"; };
 		01B696BE1C74CB6600B9AD6E /* BLProxyData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLProxyData.h; sourceTree = "<group>"; };
@@ -169,6 +173,10 @@
 		01B697361C765F9300B9AD6E /* BLClassificationDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLClassificationDataProvider.h; sourceTree = "<group>"; };
 		01B697371C765F9300B9AD6E /* BLClassificationDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLClassificationDataProvider.m; sourceTree = "<group>"; };
 		01B6973B1C7686AF00B9AD6E /* BLIndexPathMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLIndexPathMapping.h; sourceTree = "<group>"; };
+		01B6973E1C77674700B9AD6E /* BLClassifiedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLClassifiedData.h; sourceTree = "<group>"; };
+		01B6973F1C77674700B9AD6E /* BLClassifiedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLClassifiedData.m; sourceTree = "<group>"; };
+		01B697431C776F7A00B9AD6E /* NNArrayDiff+BLDataDiff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NNArrayDiff+BLDataDiff.h"; sourceTree = "<group>"; };
+		01B697441C776F7A00B9AD6E /* NNArrayDiff+BLDataDiff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NNArrayDiff+BLDataDiff.m"; sourceTree = "<group>"; };
 		01D57A411C524FA9008E4EB5 /* Boilerdata.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Boilerdata.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		01D57A451C524FA9008E4EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01D57A4A1C524FA9008E4EB5 /* BoilerdataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoilerdataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -244,12 +252,14 @@
 		01B696B01C74C4EA00B9AD6E /* Internal */ = {
 			isa = PBXGroup;
 			children = (
+				01B697431C776F7A00B9AD6E /* NNArrayDiff+BLDataDiff.h */,
+				01B697441C776F7A00B9AD6E /* NNArrayDiff+BLDataDiff.m */,
 				01B696781C74C4D400B9AD6E /* NNSectionsDiff+BLDataDiff.h */,
 				01B696791C74C4D400B9AD6E /* NNSectionsDiff+BLDataDiff.m */,
-				01B696761C74C4D400B9AD6E /* NNArrayDiffChange+BLDataDiffIndexPathChange.h */,
-				01B696771C74C4D400B9AD6E /* NNArrayDiffChange+BLDataDiffIndexPathChange.m */,
-				01B6967A1C74C4D400B9AD6E /* NNSectionsDiffChange+BLDataDiffSectionChange.h */,
-				01B6967B1C74C4D400B9AD6E /* NNSectionsDiffChange+BLDataDiffSectionChange.m */,
+				01B696761C74C4D400B9AD6E /* NNArrayDiffChange+BLDataDiffChange.h */,
+				01B696771C74C4D400B9AD6E /* NNArrayDiffChange+BLDataDiffChange.m */,
+				01B6967A1C74C4D400B9AD6E /* NNSectionsDiffChange+BLDataDiffChange.h */,
+				01B6967B1C74C4D400B9AD6E /* NNSectionsDiffChange+BLDataDiffChange.m */,
 			);
 			name = Internal;
 			sourceTree = "<group>";
@@ -450,10 +460,20 @@
 		01B6973A1C765F9700B9AD6E /* Classification */ = {
 			isa = PBXGroup;
 			children = (
+				01B697421C7767C000B9AD6E /* Internal */,
 				01B697361C765F9300B9AD6E /* BLClassificationDataProvider.h */,
 				01B697371C765F9300B9AD6E /* BLClassificationDataProvider.m */,
 			);
 			name = Classification;
+			sourceTree = "<group>";
+		};
+		01B697421C7767C000B9AD6E /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				01B6973E1C77674700B9AD6E /* BLClassifiedData.h */,
+				01B6973F1C77674700B9AD6E /* BLClassifiedData.m */,
+			);
+			name = Internal;
 			sourceTree = "<group>";
 		};
 		01D57A4E1C524FA9008E4EB5 /* BoilerdataTests */ = {
@@ -522,12 +542,14 @@
 				01B6972E1C76254E00B9AD6E /* Boilerdata+UIKit.h in Headers */,
 				01B697351C76332500B9AD6E /* BLSectionItem.h in Headers */,
 				01B697251C7623A300B9AD6E /* BLSearchIndexDataProvider.h in Headers */,
+				01B697401C77674700B9AD6E /* BLClassifiedData.h in Headers */,
 				01B696DB1C74F64400B9AD6E /* BLUITableViewReloaderEngine.h in Headers */,
 				01B6968F1C74C4D400B9AD6E /* BLDataEvent.h in Headers */,
 				01B696A11C74C4D400B9AD6E /* BLNilDataEventProcessor.h in Headers */,
 				01B696981C74C4D400B9AD6E /* BLDataProvider.h in Headers */,
 				01B6968C1C74C4D400B9AD6E /* BLDataDiffCalculator.h in Headers */,
 				01B696D61C74F64400B9AD6E /* BLUIKitViewReloader.h in Headers */,
+				01B697451C776F7A00B9AD6E /* NNArrayDiff+BLDataDiff.h in Headers */,
 				01B696C91C74F3E400B9AD6E /* Boilerdata+Subclassing.h in Headers */,
 				01B6968E1C74C4D400B9AD6E /* BLDataDiffChange.h in Headers */,
 				01B6968A1C74C4D400B9AD6E /* BLData.h in Headers */,
@@ -550,8 +572,8 @@
 				01B696891C74C4D400B9AD6E /* BLChainDataProvider+Subclassing.h in Headers */,
 				01B696AD1C74C4D400B9AD6E /* NSIndexPath+BLUtils.h in Headers */,
 				01B696A91C74C4D400B9AD6E /* NNSectionsDiff+BLDataDiff.h in Headers */,
-				01B696A71C74C4D400B9AD6E /* NNArrayDiffChange+BLDataDiffIndexPathChange.h in Headers */,
-				01B696AB1C74C4D400B9AD6E /* NNSectionsDiffChange+BLDataDiffSectionChange.h in Headers */,
+				01B696A71C74C4D400B9AD6E /* NNArrayDiffChange+BLDataDiffChange.h in Headers */,
+				01B696AB1C74C4D400B9AD6E /* NNSectionsDiffChange+BLDataDiffChange.h in Headers */,
 				01B696D91C74F64400B9AD6E /* BLUITableViewAnimations.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -696,12 +718,13 @@
 				01B696DC1C74F64400B9AD6E /* BLUITableViewReloaderEngine.m in Sources */,
 				01B696D71C74F64400B9AD6E /* BLUIKitViewReloader.m in Sources */,
 				01B697261C7623A300B9AD6E /* BLSearchIndexDataProvider.m in Sources */,
-				01B696A81C74C4D400B9AD6E /* NNArrayDiffChange+BLDataDiffIndexPathChange.m in Sources */,
+				01B697411C77674700B9AD6E /* BLClassifiedData.m in Sources */,
+				01B696A81C74C4D400B9AD6E /* NNArrayDiffChange+BLDataDiffChange.m in Sources */,
 				01B696901C74C4D400B9AD6E /* BLDataEvent.m in Sources */,
 				01B696C11C74CB6600B9AD6E /* BLProxyData.m in Sources */,
 				01B697391C765F9300B9AD6E /* BLClassificationDataProvider.m in Sources */,
 				01B6972C1C76245200B9AD6E /* BLSearchIndexData.m in Sources */,
-				01B696AC1C74C4D400B9AD6E /* NNSectionsDiffChange+BLDataDiffSectionChange.m in Sources */,
+				01B696AC1C74C4D400B9AD6E /* NNSectionsDiffChange+BLDataDiffChange.m in Sources */,
 				01B696881C74C4D400B9AD6E /* BLChainDataProvider.m in Sources */,
 				01B696AA1C74C4D400B9AD6E /* NNSectionsDiff+BLDataDiff.m in Sources */,
 				01B696D51C74F64400B9AD6E /* BLUICollectionViewReloaderEngine.m in Sources */,
@@ -715,6 +738,7 @@
 				01B696961C74C4D400B9AD6E /* BLDataItemFilter.m in Sources */,
 				01B6969C1C74C4D400B9AD6E /* BLFilterDataProvider.m in Sources */,
 				01B696A21C74C4D400B9AD6E /* BLNilDataEventProcessor.m in Sources */,
+				01B697461C776F7A00B9AD6E /* NNArrayDiff+BLDataDiff.m in Sources */,
 				01B696A61C74C4D400B9AD6E /* BLUtils.m in Sources */,
 				01B697211C761B8500B9AD6E /* BLSimpleDataDiff.m in Sources */,
 			);

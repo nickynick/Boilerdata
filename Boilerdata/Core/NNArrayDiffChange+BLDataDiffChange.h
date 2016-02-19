@@ -1,5 +1,5 @@
 //
-//  NNArrayDiffChange+BLDataDiffIndexPathChange.h
+//  NNArrayDiffChange+BLDataDiffChange.h
 //  Boilerdata
 //
 //  Created by Nick Tymchenko on 07/01/16.
@@ -9,6 +9,6 @@
 #import <NNArrayDiff/ArrayDiff.h>
 #import "BLDataDiffChange.h"
 
-@interface NNArrayDiffChange (BLDataDiffIndexPathChange) <BLDataDiffIndexPathChange>
+@interface NNArrayDiffChange (BLDataDiffChange) <BLDataDiffSectionChange>
 
 @end

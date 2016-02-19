@@ -46,6 +46,17 @@
     return items;
 }
 
++ (NSArray<id<BLSectionItem>> *)dataSectionItems:(id<BLData>)data {
+    NSInteger numberOfSections = [data numberOfSections];
+    NSMutableArray<id<BLSectionItem>> *items = [NSMutableArray arrayWithCapacity:numberOfSections];
+    
+    for (NSInteger section = 0; section < numberOfSections; ++section) {
+        [items addObject:[data itemForSection:section]];
+    }
+    
+    return items;
+}
+
 + (void)data:(id<BLData>)data enumerateItemsWithBlock:(BLDataItemEnumerationBlock)block {
     BOOL stop = NO;
     

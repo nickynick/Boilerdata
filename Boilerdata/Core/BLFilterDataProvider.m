@@ -35,7 +35,7 @@
 #pragma mark - BLAbstractDataProvider
 
 - (id<BLData>)createInitialData {
-    return [[BLFilteredData alloc] initWithOriginalData:[BLEmptyData data] filter:nil];
+    return [[BLFilteredData alloc] initWithOriginalData:self.lastQueuedInnerData filter:nil];
 }
 
 #pragma mark - Filtering
