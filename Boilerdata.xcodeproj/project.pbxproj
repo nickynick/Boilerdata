@@ -44,8 +44,6 @@
 		01B696A21C74C4D400B9AD6E /* BLNilDataEventProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B696711C74C4D400B9AD6E /* BLNilDataEventProcessor.m */; };
 		01B696A31C74C4D400B9AD6E /* BLFilteredData.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696721C74C4D400B9AD6E /* BLFilteredData.h */; };
 		01B696A41C74C4D400B9AD6E /* BLFilteredData.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B696731C74C4D400B9AD6E /* BLFilteredData.m */; };
-		01B696A51C74C4D400B9AD6E /* BLUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696741C74C4D400B9AD6E /* BLUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		01B696A61C74C4D400B9AD6E /* BLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B696751C74C4D400B9AD6E /* BLUtils.m */; };
 		01B696A71C74C4D400B9AD6E /* NNArrayDiffChange+BLDataDiffChange.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696761C74C4D400B9AD6E /* NNArrayDiffChange+BLDataDiffChange.h */; };
 		01B696A81C74C4D400B9AD6E /* NNArrayDiffChange+BLDataDiffChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B696771C74C4D400B9AD6E /* NNArrayDiffChange+BLDataDiffChange.m */; };
 		01B696A91C74C4D400B9AD6E /* NNSectionsDiff+BLDataDiff.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B696781C74C4D400B9AD6E /* NNSectionsDiff+BLDataDiff.h */; };
@@ -84,6 +82,8 @@
 		01B697411C77674700B9AD6E /* BLClassifiedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B6973F1C77674700B9AD6E /* BLClassifiedData.m */; };
 		01B697451C776F7A00B9AD6E /* NNArrayDiff+BLDataDiff.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B697431C776F7A00B9AD6E /* NNArrayDiff+BLDataDiff.h */; };
 		01B697461C776F7A00B9AD6E /* NNArrayDiff+BLDataDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B697441C776F7A00B9AD6E /* NNArrayDiff+BLDataDiff.m */; };
+		01B697491C77E23D00B9AD6E /* BLDataUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B697471C77E23D00B9AD6E /* BLDataUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01B6974A1C77E23D00B9AD6E /* BLDataUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B697481C77E23D00B9AD6E /* BLDataUtils.m */; };
 		01D57A4B1C524FA9008E4EB5 /* Boilerdata.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D57A411C524FA9008E4EB5 /* Boilerdata.framework */; };
 		01D57A501C524FA9008E4EB5 /* BoilerdataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D57A4F1C524FA9008E4EB5 /* BoilerdataTests.m */; };
 		752095DF150F58C2E9DD3496 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D2C76DFF023523F7626A4C /* libPods.a */; };
@@ -138,8 +138,6 @@
 		01B696711C74C4D400B9AD6E /* BLNilDataEventProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLNilDataEventProcessor.m; sourceTree = "<group>"; };
 		01B696721C74C4D400B9AD6E /* BLFilteredData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLFilteredData.h; sourceTree = "<group>"; };
 		01B696731C74C4D400B9AD6E /* BLFilteredData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLFilteredData.m; sourceTree = "<group>"; };
-		01B696741C74C4D400B9AD6E /* BLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLUtils.h; sourceTree = "<group>"; };
-		01B696751C74C4D400B9AD6E /* BLUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLUtils.m; sourceTree = "<group>"; };
 		01B696761C74C4D400B9AD6E /* NNArrayDiffChange+BLDataDiffChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NNArrayDiffChange+BLDataDiffChange.h"; sourceTree = "<group>"; };
 		01B696771C74C4D400B9AD6E /* NNArrayDiffChange+BLDataDiffChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NNArrayDiffChange+BLDataDiffChange.m"; sourceTree = "<group>"; };
 		01B696781C74C4D400B9AD6E /* NNSectionsDiff+BLDataDiff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NNSectionsDiff+BLDataDiff.h"; sourceTree = "<group>"; };
@@ -177,6 +175,8 @@
 		01B6973F1C77674700B9AD6E /* BLClassifiedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLClassifiedData.m; sourceTree = "<group>"; };
 		01B697431C776F7A00B9AD6E /* NNArrayDiff+BLDataDiff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NNArrayDiff+BLDataDiff.h"; sourceTree = "<group>"; };
 		01B697441C776F7A00B9AD6E /* NNArrayDiff+BLDataDiff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NNArrayDiff+BLDataDiff.m"; sourceTree = "<group>"; };
+		01B697471C77E23D00B9AD6E /* BLDataUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLDataUtils.h; sourceTree = "<group>"; };
+		01B697481C77E23D00B9AD6E /* BLDataUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLDataUtils.m; sourceTree = "<group>"; };
 		01D57A411C524FA9008E4EB5 /* Boilerdata.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Boilerdata.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		01D57A451C524FA9008E4EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01D57A4A1C524FA9008E4EB5 /* BoilerdataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoilerdataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -268,8 +268,6 @@
 			isa = PBXGroup;
 			children = (
 				01B696AF1C74C4DC00B9AD6E /* Internal */,
-				01B696741C74C4D400B9AD6E /* BLUtils.h */,
-				01B696751C74C4D400B9AD6E /* BLUtils.m */,
 				01B696681C74C4D400B9AD6E /* BLDataSection.h */,
 				01B696691C74C4D400B9AD6E /* BLDataSection.m */,
 			);
@@ -285,6 +283,8 @@
 				01B696591C74C4D400B9AD6E /* BLData.h */,
 				01B696631C74C4D400B9AD6E /* BLDataItem.h */,
 				01B697341C76332500B9AD6E /* BLSectionItem.h */,
+				01B697471C77E23D00B9AD6E /* BLDataUtils.h */,
+				01B697481C77E23D00B9AD6E /* BLDataUtils.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -537,7 +537,6 @@
 				01B696871C74C4D400B9AD6E /* BLChainDataProvider.h in Headers */,
 				01B696991C74C4D400B9AD6E /* BLDataSection.h in Headers */,
 				01B6969D1C74C4D400B9AD6E /* BLMutableDataDiff.h in Headers */,
-				01B696A51C74C4D400B9AD6E /* BLUtils.h in Headers */,
 				01B6969B1C74C4D400B9AD6E /* BLFilterDataProvider.h in Headers */,
 				01B6972E1C76254E00B9AD6E /* Boilerdata+UIKit.h in Headers */,
 				01B697351C76332500B9AD6E /* BLSectionItem.h in Headers */,
@@ -563,6 +562,7 @@
 				01B696951C74C4D400B9AD6E /* BLDataItemFilter.h in Headers */,
 				01B6967E1C74C4D400B9AD6E /* BLAbstractDataProvider.h in Headers */,
 				01B6968B1C74C4D400B9AD6E /* BLDataDiff.h in Headers */,
+				01B697491C77E23D00B9AD6E /* BLDataUtils.h in Headers */,
 				01B6972B1C76245200B9AD6E /* BLSearchIndexData.h in Headers */,
 				01B696C51C74DCC900B9AD6E /* BLEmptyData.h in Headers */,
 				01B697201C761B8500B9AD6E /* BLSimpleDataDiff.h in Headers */,
@@ -727,6 +727,7 @@
 				01B696AC1C74C4D400B9AD6E /* NNSectionsDiffChange+BLDataDiffChange.m in Sources */,
 				01B696881C74C4D400B9AD6E /* BLChainDataProvider.m in Sources */,
 				01B696AA1C74C4D400B9AD6E /* NNSectionsDiff+BLDataDiff.m in Sources */,
+				01B6974A1C77E23D00B9AD6E /* BLDataUtils.m in Sources */,
 				01B696D51C74F64400B9AD6E /* BLUICollectionViewReloaderEngine.m in Sources */,
 				01B696DA1C74F64400B9AD6E /* BLUITableViewAnimations.m in Sources */,
 				01B696841C74C4D400B9AD6E /* BLArrayDataProvider.m in Sources */,
@@ -739,7 +740,6 @@
 				01B6969C1C74C4D400B9AD6E /* BLFilterDataProvider.m in Sources */,
 				01B696A21C74C4D400B9AD6E /* BLNilDataEventProcessor.m in Sources */,
 				01B697461C776F7A00B9AD6E /* NNArrayDiff+BLDataDiff.m in Sources */,
-				01B696A61C74C4D400B9AD6E /* BLUtils.m in Sources */,
 				01B697211C761B8500B9AD6E /* BLSimpleDataDiff.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

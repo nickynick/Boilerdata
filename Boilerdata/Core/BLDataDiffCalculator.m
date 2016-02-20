@@ -14,7 +14,7 @@
 #import "BLSimpleDataDiff.h"
 #import "BLMutableDataDiff.h"
 #import "BLMutableDataDiffChange.h"
-#import "BLUtils.h"
+#import "BLDataUtils.h"
 
 #import <NNArrayDiff/ArrayDiff.h>
 #import "NNArrayDiff+BLDataDiff.h"
@@ -124,7 +124,7 @@
     BLMutableDataDiff *diff = [[BLMutableDataDiff alloc] init];
     
     if (!mappedDataAfter.full) {
-        [BLUtils data:mappedDataBefore enumerateItemsWithBlock:^(id<BLDataItem> item, NSIndexPath *indexPath, BOOL *stop) {
+        [BLDataUtils(mappedDataBefore) enumerateItemsWithBlock:^(id<BLDataItem> item, NSIndexPath *indexPath, BOOL *stop) {
             NSIndexPath *originalIndexPath = [mappedDataBefore mappedIndexPathToOriginal:indexPath];
             if (![mappedDataAfter originalIndexPathToMapped:originalIndexPath]) {
                 [diff.deletedIndexPaths addObject:indexPath];
@@ -133,7 +133,7 @@
     }
     
     if (!mappedDataBefore.full) {
-        [BLUtils data:mappedDataAfter enumerateItemsWithBlock:^(id<BLDataItem> item, NSIndexPath *indexPath, BOOL *stop) {
+        [BLDataUtils(mappedDataAfter) enumerateItemsWithBlock:^(id<BLDataItem> item, NSIndexPath *indexPath, BOOL *stop) {
             NSIndexPath *originalIndexPath = [mappedDataAfter mappedIndexPathToOriginal:indexPath];
             if (![mappedDataBefore originalIndexPathToMapped:originalIndexPath]) {
                 [diff.insertedIndexPaths addObject:indexPath];
@@ -181,7 +181,7 @@
     NSMutableArray<NNSection *> *sections = [NSMutableArray arrayWithCapacity:numberOfSections];
     
     for (NSInteger section = 0; section < numberOfSections; ++section) {
-        NSArray<id<BLDataItem>> *items = [BLUtils data:data itemsInSection:section];
+        NSArray<id<BLDataItem>> *items = [BLDataUtils(data) itemsInSection:section];
         
         id key;
         if ([data respondsToSelector:@selector(itemForSection:)]) {

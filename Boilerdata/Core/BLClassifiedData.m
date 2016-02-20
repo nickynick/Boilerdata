@@ -10,7 +10,7 @@
 #import "BLDataItem.h"
 #import "BLSectionItem.h"
 #import "BLDataSection.h"
-#import "BLUtils.h"
+#import "BLDataUtils.h"
 #import "NSIndexPath+BLUtils.h"
 
 @interface BLClassifiedData ()
@@ -52,7 +52,7 @@
     NSMutableOrderedSet<id<BLSectionItem>> *sectionItems = [NSMutableOrderedSet orderedSet];
     NSMutableDictionary<id<BLSectionItem>, NSMutableArray<id<BLDataItem>> *> *classifiedItems = [NSMutableDictionary dictionary];
     
-    [BLUtils data:self.originalData enumerateItemsWithBlock:^(id<BLDataItem> item, NSIndexPath *indexPath, BOOL *stop) {
+    [BLDataUtils(self.originalData) enumerateItemsWithBlock:^(id<BLDataItem> item, NSIndexPath *indexPath, BOOL *stop) {
         id<BLSectionItem> sectionItem = self.classificationBlock(item);
         [sectionItems addObject:sectionItem];
         
@@ -91,9 +91,9 @@
 
 - (NSDictionary<id<BLDataItemId>, NSIndexPath *> *)calculateClassifiedIndexPaths {
     NSMutableDictionary<id<BLDataItemId>, NSIndexPath *> *classifiedIndexPaths =
-        [NSMutableDictionary dictionaryWithCapacity:[BLUtils dataNumberOfItems:self.originalData]];
+        [NSMutableDictionary dictionaryWithCapacity:[BLDataUtils(self.originalData) numberOfItems]];
     
-    [BLUtils data:self enumerateItemsWithBlock:^(id<BLDataItem> item, NSIndexPath *indexPath, BOOL *stop) {
+    [BLDataUtils(self) enumerateItemsWithBlock:^(id<BLDataItem> item, NSIndexPath *indexPath, BOOL *stop) {
         classifiedIndexPaths[item.itemId] = indexPath;
     }];
     

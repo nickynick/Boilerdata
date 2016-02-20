@@ -14,7 +14,6 @@
 #import "BLDataDiff.h"
 #import "BLDataDiffChange.h"
 #import "BLDataDiffCalculator.h"
-#import "BLUtils.h"
 
 @interface BLUIKitViewReloader ()
 
@@ -75,7 +74,7 @@
                                                              return [event.updatedItemIds containsObject:itemAfter.itemId];
                                                          }];
     
-    if ([BLUtils dataDiffIsEmpty:dataDiff]) {
+    if ([self isDataDiffEmpty:dataDiff]) {
         dataUpdateBlock();
         completion();
         return;
@@ -143,6 +142,15 @@
     // TODO: need more sophisticated stuff here?
     
     return NO;
+}
+
+- (BOOL)isDataDiffEmpty:(id<BLDataDiff>)dataDiff {
+    return (dataDiff.insertedIndexPaths.count == 0 &&
+            dataDiff.deletedIndexPaths.count == 0 &&
+            dataDiff.changedIndexPaths.count == 0 &&
+            dataDiff.insertedSections.count == 0 &&
+            dataDiff.deletedSections.count == 0 &&
+            dataDiff.changedSections.count == 0);
 }
 
 @end

@@ -11,7 +11,7 @@
 #import "BLArrayData.h"
 #import "BLDataItem.h"
 #import "BLDataEvent.h"
-#import "BLUtils.h"
+#import "BLDataUtils.h"
 
 @interface BLArrayDataProvider ()
 
@@ -62,8 +62,8 @@
 #pragma mark - Private
 
 - (NSSet<id<BLDataItemId>> *)updatedItemIdsForOldData:(id<BLData>)oldData newData:(id<BLData>)newData {
-    NSDictionary<id<BLDataItemId>, id<BLDataItem>> *oldItemsById = [BLUtils dataItemsById:oldData];
-    NSDictionary<id<BLDataItemId>, id<BLDataItem>> *newItemsById = [BLUtils dataItemsById:newData];
+    NSDictionary<id<BLDataItemId>, id<BLDataItem>> *oldItemsById = [BLDataUtils(oldData) itemsById];
+    NSDictionary<id<BLDataItemId>, id<BLDataItem>> *newItemsById = [BLDataUtils(newData) itemsById];
     
     NSMutableSet<id<BLDataItemId>> *updatedItemIds = [NSMutableSet set];
     
