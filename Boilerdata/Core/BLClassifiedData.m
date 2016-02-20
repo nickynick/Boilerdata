@@ -9,16 +9,14 @@
 #import "BLClassifiedData.h"
 #import "BLDataItem.h"
 #import "BLSectionItem.h"
+#import "BLSectionsData.h"
 #import "BLDataSection.h"
 #import "BLDataUtils.h"
 #import "NSIndexPath+BLUtils.h"
 
 @interface BLClassifiedData ()
 
-@property (nonatomic, copy, readonly) BLDataItemClassificationBlock classificationBlock;
-@property (nonatomic, copy, readonly) BLSectionItemSortingBlock sectionSortingBlock;
-
-@property (nonatomic, strong, readonly) NSArray<id<BLDataSection>> *sections;
+@property (nonatomic, strong, readonly) id<BLData> unclassifiedData;
 
 @property (nonatomic, strong, readonly) NSDictionary<id<BLDataItemId>, NSIndexPath *> *classifiedIndexPaths;
 
@@ -32,28 +30,28 @@
 - (instancetype)initWithOriginalData:(id<BLData>)originalData
                  classificationBlock:(BLDataItemClassificationBlock)classificationBlock
                  sectionSortingBlock:(BLSectionItemSortingBlock)sectionSortingBlock {
-    self = [super initWithOriginalData:originalData];
+    self = [super initWithOriginalData:[self calculateSectionsDataWithOriginalData:originalData
+                                                               classificationBlock:classificationBlock
+                                                               sectionSortingBlock:sectionSortingBlock]];
     if (!self) return nil;
     
-    // TODO: assert that original data only has 0 or 1 section
+    _unclassifiedData = originalData;
     
-    _classificationBlock = [classificationBlock copy];
-    _sectionSortingBlock = [sectionSortingBlock copy];
-    
-    _sections = [self calculateSections];
     _classifiedIndexPaths = [self calculateClassifiedIndexPaths];
     
     return self;
 }
 
-#pragma mark - Classification
-
-- (NSArray<id<BLDataSection>> *)calculateSections {
+- (BLSectionsData *)calculateSectionsDataWithOriginalData:(id<BLData>)originalData
+                                      classificationBlock:(BLDataItemClassificationBlock)classificationBlock
+                                      sectionSortingBlock:(BLSectionItemSortingBlock)sectionSortingBlock {
+    // TODO: assert that original data only has 0 or 1 section
+    
     NSMutableOrderedSet<id<BLSectionItem>> *sectionItems = [NSMutableOrderedSet orderedSet];
     NSMutableDictionary<id<BLSectionItem>, NSMutableArray<id<BLDataItem>> *> *classifiedItems = [NSMutableDictionary dictionary];
     
-    [BLDataUtils(self.originalData) enumerateItemsWithBlock:^(id<BLDataItem> item, NSIndexPath *indexPath, BOOL *stop) {
-        id<BLSectionItem> sectionItem = self.classificationBlock(item);
+    [BLDataUtils(originalData) enumerateItemsWithBlock:^(id<BLDataItem> item, NSIndexPath *indexPath, BOOL *stop) {
+        id<BLSectionItem> sectionItem = classificationBlock(item);
         [sectionItems addObject:sectionItem];
         
         NSMutableArray<id<BLDataItem>> *items = classifiedItems[sectionItem];
@@ -65,7 +63,7 @@
         [items addObject:item];
     }];
     
-    NSArray<id<BLSectionItem>> *sortedSectionItems = [self sortSectionItems:sectionItems.array];
+    NSArray<id<BLSectionItem>> *sortedSectionItems = [self sortSectionItems:sectionItems.array withBlock:sectionSortingBlock];
     
     NSMutableArray<id<BLDataSection>> *sections = [NSMutableArray arrayWithCapacity:sectionItems.count];
     
@@ -75,15 +73,16 @@
         [sections addObject:section];
     }
     
-    return sections;
+    return [[BLSectionsData alloc] initWithSections:sections];
 }
 
-- (NSArray<id<BLSectionItem>> *)sortSectionItems:(NSArray<id<BLSectionItem>> *)sectionItems {
-    if (!self.sectionSortingBlock) {
+- (NSArray<id<BLSectionItem>> *)sortSectionItems:(NSArray<id<BLSectionItem>> *)sectionItems
+                                       withBlock:(BLSectionItemSortingBlock)block {
+    if (!block) {
         return sectionItems;
     }
     
-    NSArray<id<BLSectionItem>> *sortedSectionItems = self.sectionSortingBlock(sectionItems);
+    NSArray<id<BLSectionItem>> *sortedSectionItems = block(sectionItems);
     // TODO: check that all items are present
     
     return sortedSectionItems;
@@ -102,31 +101,15 @@
 
 #pragma mark - BLData
 
-- (NSInteger)numberOfSections {
-    return self.sections.count;
-}
-
-- (NSInteger)numberOfItemsInSection:(NSInteger)section {
-    return self.sections[section].items.count;
-}
-
-- (id<BLDataItem>)itemAtIndexPath:(NSIndexPath *)indexPath {
-    return self.sections[indexPath.bl_section].items[indexPath.bl_row];
-}
-
 - (NSIndexPath *)indexPathForItemWithId:(id<BLDataItemId>)itemId {
-    NSIndexPath *originalIndexPath = [super indexPathForItemWithId:itemId];
+    NSIndexPath *originalIndexPath = [self.unclassifiedData indexPathForItemWithId:itemId];
     return originalIndexPath ? [self originalIndexPathToMapped:originalIndexPath] : nil;
-}
-
-- (id<BLSectionItem>)itemForSection:(NSInteger)section {
-    return self.sections[section].sectionItem;
 }
 
 #pragma mark - BLIndexPathMapping
 
 - (BOOL)isIdentical {
-    return self.sections.count <= 1;
+    return [self numberOfSections] <= 1;
 }
 
 - (BOOL)isFull {
