@@ -84,6 +84,8 @@
 		01B697461C776F7A00B9AD6E /* NNArrayDiff+BLDataDiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B697441C776F7A00B9AD6E /* NNArrayDiff+BLDataDiff.m */; };
 		01B697491C77E23D00B9AD6E /* BLDataUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B697471C77E23D00B9AD6E /* BLDataUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01B6974A1C77E23D00B9AD6E /* BLDataUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B697481C77E23D00B9AD6E /* BLDataUtils.m */; };
+		01B6974E1C77EB4B00B9AD6E /* BLSectionsData.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B6974C1C77EB4B00B9AD6E /* BLSectionsData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01B6974F1C77EB4B00B9AD6E /* BLSectionsData.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B6974D1C77EB4B00B9AD6E /* BLSectionsData.m */; };
 		01D57A4B1C524FA9008E4EB5 /* Boilerdata.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D57A411C524FA9008E4EB5 /* Boilerdata.framework */; };
 		01D57A501C524FA9008E4EB5 /* BoilerdataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D57A4F1C524FA9008E4EB5 /* BoilerdataTests.m */; };
 		752095DF150F58C2E9DD3496 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D2C76DFF023523F7626A4C /* libPods.a */; };
@@ -177,6 +179,8 @@
 		01B697441C776F7A00B9AD6E /* NNArrayDiff+BLDataDiff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NNArrayDiff+BLDataDiff.m"; sourceTree = "<group>"; };
 		01B697471C77E23D00B9AD6E /* BLDataUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLDataUtils.h; sourceTree = "<group>"; };
 		01B697481C77E23D00B9AD6E /* BLDataUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLDataUtils.m; sourceTree = "<group>"; };
+		01B6974C1C77EB4B00B9AD6E /* BLSectionsData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLSectionsData.h; sourceTree = "<group>"; };
+		01B6974D1C77EB4B00B9AD6E /* BLSectionsData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLSectionsData.m; sourceTree = "<group>"; };
 		01D57A411C524FA9008E4EB5 /* Boilerdata.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Boilerdata.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		01D57A451C524FA9008E4EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01D57A4A1C524FA9008E4EB5 /* BoilerdataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoilerdataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -264,21 +268,12 @@
 			name = Internal;
 			sourceTree = "<group>";
 		};
-		01B696B11C74C4FA00B9AD6E /* Goodies */ = {
-			isa = PBXGroup;
-			children = (
-				01B696AF1C74C4DC00B9AD6E /* Internal */,
-				01B696681C74C4D400B9AD6E /* BLDataSection.h */,
-				01B696691C74C4D400B9AD6E /* BLDataSection.m */,
-			);
-			name = Goodies;
-			sourceTree = "<group>";
-		};
 		01B696B21C74C50900B9AD6E /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				01B696C71C74DCCD00B9AD6E /* Empty */,
 				01B696BD1C74C73900B9AD6E /* Array */,
+				01B6974B1C77EB3D00B9AD6E /* Sections */,
 				01B696C21C74CB6A00B9AD6E /* Proxy */,
 				01B696591C74C4D400B9AD6E /* BLData.h */,
 				01B696631C74C4D400B9AD6E /* BLDataItem.h */,
@@ -476,6 +471,17 @@
 			name = Internal;
 			sourceTree = "<group>";
 		};
+		01B6974B1C77EB3D00B9AD6E /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				01B6974C1C77EB4B00B9AD6E /* BLSectionsData.h */,
+				01B6974D1C77EB4B00B9AD6E /* BLSectionsData.m */,
+				01B696681C74C4D400B9AD6E /* BLDataSection.h */,
+				01B696691C74C4D400B9AD6E /* BLDataSection.m */,
+			);
+			name = Sections;
+			sourceTree = "<group>";
+		};
 		01D57A4E1C524FA9008E4EB5 /* BoilerdataTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -500,7 +506,7 @@
 				01B696B21C74C50900B9AD6E /* Data */,
 				01B696B61C74C5F300B9AD6E /* Data Providers */,
 				01B696B41C74C56500B9AD6E /* Data Diff */,
-				01B696B11C74C4FA00B9AD6E /* Goodies */,
+				01B696AF1C74C4DC00B9AD6E /* Internal */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -530,6 +536,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01B696D81C74F64400B9AD6E /* BLUIKitViewReloaderEngine.h in Headers */,
+				01B6974E1C77EB4B00B9AD6E /* BLSectionsData.h in Headers */,
 				01B696C01C74CB6600B9AD6E /* BLProxyData.h in Headers */,
 				01B6969F1C74C4D400B9AD6E /* BLMutableDataDiffChange.h in Headers */,
 				01B696811C74C4D400B9AD6E /* BLArrayData.h in Headers */,
@@ -737,6 +744,7 @@
 				01B696821C74C4D400B9AD6E /* BLArrayData.m in Sources */,
 				01B696A01C74C4D400B9AD6E /* BLMutableDataDiffChange.m in Sources */,
 				01B696961C74C4D400B9AD6E /* BLDataItemFilter.m in Sources */,
+				01B6974F1C77EB4B00B9AD6E /* BLSectionsData.m in Sources */,
 				01B6969C1C74C4D400B9AD6E /* BLFilterDataProvider.m in Sources */,
 				01B696A21C74C4D400B9AD6E /* BLNilDataEventProcessor.m in Sources */,
 				01B697461C776F7A00B9AD6E /* NNArrayDiff+BLDataDiff.m in Sources */,

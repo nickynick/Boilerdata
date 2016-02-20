@@ -25,6 +25,8 @@ FOUNDATION_EXPORT const unsigned char BoilerdataVersionString[];
 
 #import <Boilerdata/BLEmptyData.h>
 #import <Boilerdata/BLArrayData.h>
+#import <Boilerdata/BLSectionsData.h>
+#import <Boilerdata/BLDataSection.h>
 
 
 // Data Providers

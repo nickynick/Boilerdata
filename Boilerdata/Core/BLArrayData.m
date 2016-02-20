@@ -15,14 +15,14 @@
 #pragma mark - Init
 
 - (instancetype)init {
-    return [self initWithItems:@[]];
+    return [self initWithItems:nil];
 }
 
 - (instancetype)initWithItems:(NSArray<id<BLDataItem>> *)items {
     self = [super init];
     if (!self) return nil;
     
-    _items = [items copy];
+    _items = [items copy] ?: @[];
     
     return self;
 }
@@ -42,6 +42,8 @@
 }
 
 - (NSIndexPath *)indexPathForItemWithId:(id<BLDataItemId>)itemId {
+    // TODO: improve this
+    
     __block NSIndexPath *result = nil;
     
     [self.items enumerateObjectsUsingBlock:^(id<BLDataItem> item, NSUInteger idx, BOOL *stop) {

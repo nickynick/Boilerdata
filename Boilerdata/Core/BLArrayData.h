@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy, readonly) NSArray<id<BLDataItem>> *items;
 
-- (instancetype)initWithItems:(NSArray<id<BLDataItem>> *)items NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithItems:(nullable NSArray<id<BLDataItem>> *)items NS_DESIGNATED_INITIALIZER;
 
 @end
 
