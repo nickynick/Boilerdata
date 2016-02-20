@@ -16,6 +16,7 @@ static NSString * const kCellIdentifier = @"cell";
 @interface BLFilterDemoViewController () <BLDataObserver, UISearchResultsUpdating>
 
 @property (nonatomic, strong, readonly) BLArrayDataProvider *arrayDataProvider;
+@property (nonatomic, strong, readonly) BLClassificationDataProvider *classificationDataProvider;
 @property (nonatomic, strong, readonly) BLFilterDataProvider *filterDataProvider;
 
 @property (nonatomic, strong, readonly) NSArray<NSArray<NSString *> *> *itemsOptions;
@@ -42,7 +43,13 @@ static NSString * const kCellIdentifier = @"cell";
 - (void)setupData {
     _arrayDataProvider = [[BLArrayDataProvider alloc] init];
     
-    _filterDataProvider = [[BLFilterDataProvider alloc] initWithDataProvider:_arrayDataProvider];
+    _classificationDataProvider = [[BLClassificationDataProvider alloc] initWithDataProvider:_arrayDataProvider classificationBlock:^(NSString *dataItem) {
+        return [dataItem substringToIndex:1];
+    } sectionSortingBlock:^(NSArray<NSString *> *sectionItems) {
+        return [sectionItems sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    }];
+    
+    _filterDataProvider = [[BLFilterDataProvider alloc] initWithDataProvider:_classificationDataProvider];
     _filterDataProvider.observer = self;
     
     _itemsOptions = @[
@@ -93,6 +100,10 @@ static NSString * const kCellIdentifier = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier forIndexPath:indexPath];
     cell.textLabel.text = (NSString *) [self.filterDataProvider.data itemAtIndexPath:indexPath];
     return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return (NSString *) [self.filterDataProvider.data itemForSection:section];
 }
 
 #pragma mark - BLDataObserver 

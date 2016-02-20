@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <Boilerdata/Boilerdata.h>
 
-@interface NSString (BLDataItem) <BLDataItem, BLDataItemId>
+@interface NSString (BLDataItem) <BLDataItem, BLDataItemId, BLSectionItem>
 
 @end
