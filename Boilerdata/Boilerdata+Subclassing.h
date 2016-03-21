@@ -13,5 +13,6 @@
 
 #import <Boilerdata/BLAbstractDataProvider+Subclassing.h>
 #import <Boilerdata/BLChainDataProvider+Subclassing.h>
+#import <Boilerdata/BLBasicDataProvider+Subclassing.h>
 
 #import <Boilerdata/BLDataEventCallbacks.h>
