@@ -37,6 +37,7 @@ FOUNDATION_EXPORT const unsigned char BoilerdataVersionString[];
 #import <Boilerdata/BLDataEventProcessor.h>
 
 #import <Boilerdata/BLArrayDataProvider.h>
+#import <Boilerdata/BLSectionsDataProvider.h>
 #import <Boilerdata/BLFilterDataProvider.h>
 #import <Boilerdata/BLClassificationDataProvider.h>
 

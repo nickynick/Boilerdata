@@ -88,6 +88,8 @@
 		01B6974F1C77EB4B00B9AD6E /* BLSectionsData.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B6974D1C77EB4B00B9AD6E /* BLSectionsData.m */; };
 		01D57A4B1C524FA9008E4EB5 /* Boilerdata.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D57A411C524FA9008E4EB5 /* Boilerdata.framework */; };
 		01D57A501C524FA9008E4EB5 /* BoilerdataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D57A4F1C524FA9008E4EB5 /* BoilerdataTests.m */; };
+		0F5E5ECC1CA04C9C0025B114 /* BLSectionsDataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F5E5ECA1CA04C9C0025B114 /* BLSectionsDataProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0F5E5ECD1CA04C9C0025B114 /* BLSectionsDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5E5ECB1CA04C9C0025B114 /* BLSectionsDataProvider.m */; };
 		0F5E5ED61CA063C50025B114 /* BLBasicDataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F5E5ED41CA063C50025B114 /* BLBasicDataProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0F5E5ED71CA063C50025B114 /* BLBasicDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5E5ED51CA063C50025B114 /* BLBasicDataProvider.m */; };
 		0F5E5EDA1CA064560025B114 /* BLBasicDataProvider+Subclassing.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F5E5ED81CA064560025B114 /* BLBasicDataProvider+Subclassing.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -189,6 +191,8 @@
 		01D57A4A1C524FA9008E4EB5 /* BoilerdataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoilerdataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01D57A4F1C524FA9008E4EB5 /* BoilerdataTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoilerdataTests.m; sourceTree = "<group>"; };
 		01D57A511C524FA9008E4EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F5E5ECA1CA04C9C0025B114 /* BLSectionsDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLSectionsDataProvider.h; sourceTree = "<group>"; };
+		0F5E5ECB1CA04C9C0025B114 /* BLSectionsDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLSectionsDataProvider.m; sourceTree = "<group>"; };
 		0F5E5ED41CA063C50025B114 /* BLBasicDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLBasicDataProvider.h; sourceTree = "<group>"; };
 		0F5E5ED51CA063C50025B114 /* BLBasicDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLBasicDataProvider.m; sourceTree = "<group>"; };
 		0F5E5ED81CA064560025B114 /* BLBasicDataProvider+Subclassing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BLBasicDataProvider+Subclassing.h"; sourceTree = "<group>"; };
@@ -324,6 +328,7 @@
 				01B696B81C74C61F00B9AD6E /* Chain */,
 				0F5E5ED31CA063B40025B114 /* Basic */,
 				01B696BA1C74C67200B9AD6E /* Array */,
+				0F5E5EC91CA04C800025B114 /* Sections */,
 				01B696BB1C74C67700B9AD6E /* Filter */,
 				01B6973A1C765F9700B9AD6E /* Classification */,
 				01B696671C74C4D400B9AD6E /* BLDataProvider.h */,
@@ -518,6 +523,15 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		0F5E5EC91CA04C800025B114 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				0F5E5ECA1CA04C9C0025B114 /* BLSectionsDataProvider.h */,
+				0F5E5ECB1CA04C9C0025B114 /* BLSectionsDataProvider.m */,
+			);
+			name = Sections;
+			sourceTree = "<group>";
+		};
 		0F5E5ED31CA063B40025B114 /* Basic */ = {
 			isa = PBXGroup;
 			children = (
@@ -582,6 +596,7 @@
 				01B696931C74C4D400B9AD6E /* BLDataEventProcessor.h in Headers */,
 				01B696971C74C4D400B9AD6E /* BLDataObserver.h in Headers */,
 				01B6973C1C7686AF00B9AD6E /* BLIndexPathMapping.h in Headers */,
+				0F5E5ECC1CA04C9C0025B114 /* BLSectionsDataProvider.h in Headers */,
 				01B696831C74C4D400B9AD6E /* BLArrayDataProvider.h in Headers */,
 				01B697381C765F9300B9AD6E /* BLClassificationDataProvider.h in Headers */,
 				01B696951C74C4D400B9AD6E /* BLDataItemFilter.h in Headers */,
