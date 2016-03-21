@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Boilerdata"
-  s.version          = "0.3.0"
+  s.version          = "0.3.1"
   s.summary          = "A powerful and extensible toolkit aimed at bringing these nasty dynamic lists of data to UI."
 
   s.description      = 'A detailed description will be here soon. Someday.'
