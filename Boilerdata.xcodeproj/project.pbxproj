@@ -88,6 +88,9 @@
 		01B6974F1C77EB4B00B9AD6E /* BLSectionsData.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B6974D1C77EB4B00B9AD6E /* BLSectionsData.m */; };
 		01D57A4B1C524FA9008E4EB5 /* Boilerdata.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D57A411C524FA9008E4EB5 /* Boilerdata.framework */; };
 		01D57A501C524FA9008E4EB5 /* BoilerdataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D57A4F1C524FA9008E4EB5 /* BoilerdataTests.m */; };
+		0F5E5ED61CA063C50025B114 /* BLBasicDataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F5E5ED41CA063C50025B114 /* BLBasicDataProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0F5E5ED71CA063C50025B114 /* BLBasicDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5E5ED51CA063C50025B114 /* BLBasicDataProvider.m */; };
+		0F5E5EDA1CA064560025B114 /* BLBasicDataProvider+Subclassing.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F5E5ED81CA064560025B114 /* BLBasicDataProvider+Subclassing.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		752095DF150F58C2E9DD3496 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D2C76DFF023523F7626A4C /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -186,6 +189,9 @@
 		01D57A4A1C524FA9008E4EB5 /* BoilerdataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoilerdataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01D57A4F1C524FA9008E4EB5 /* BoilerdataTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoilerdataTests.m; sourceTree = "<group>"; };
 		01D57A511C524FA9008E4EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F5E5ED41CA063C50025B114 /* BLBasicDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLBasicDataProvider.h; sourceTree = "<group>"; };
+		0F5E5ED51CA063C50025B114 /* BLBasicDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLBasicDataProvider.m; sourceTree = "<group>"; };
+		0F5E5ED81CA064560025B114 /* BLBasicDataProvider+Subclassing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BLBasicDataProvider+Subclassing.h"; sourceTree = "<group>"; };
 		27229336A96FC966E90569F1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		35D2C76DFF023523F7626A4C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8EC2E52A39642AB63DCB70F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -316,6 +322,7 @@
 			children = (
 				01B696B71C74C60500B9AD6E /* Abstract */,
 				01B696B81C74C61F00B9AD6E /* Chain */,
+				0F5E5ED31CA063B40025B114 /* Basic */,
 				01B696BA1C74C67200B9AD6E /* Array */,
 				01B696BB1C74C67700B9AD6E /* Filter */,
 				01B6973A1C765F9700B9AD6E /* Classification */,
@@ -511,6 +518,16 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		0F5E5ED31CA063B40025B114 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				0F5E5ED41CA063C50025B114 /* BLBasicDataProvider.h */,
+				0F5E5ED51CA063C50025B114 /* BLBasicDataProvider.m */,
+				0F5E5ED81CA064560025B114 /* BLBasicDataProvider+Subclassing.h */,
+			);
+			name = Basic;
+			sourceTree = "<group>";
+		};
 		8CC07F72C0EDEC80F50278CA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -546,6 +563,7 @@
 				01B6969D1C74C4D400B9AD6E /* BLMutableDataDiff.h in Headers */,
 				01B6969B1C74C4D400B9AD6E /* BLFilterDataProvider.h in Headers */,
 				01B6972E1C76254E00B9AD6E /* Boilerdata+UIKit.h in Headers */,
+				0F5E5ED61CA063C50025B114 /* BLBasicDataProvider.h in Headers */,
 				01B697351C76332500B9AD6E /* BLSectionItem.h in Headers */,
 				01B697251C7623A300B9AD6E /* BLSearchIndexDataProvider.h in Headers */,
 				01B697401C77674700B9AD6E /* BLClassifiedData.h in Headers */,
@@ -567,6 +585,7 @@
 				01B696831C74C4D400B9AD6E /* BLArrayDataProvider.h in Headers */,
 				01B697381C765F9300B9AD6E /* BLClassificationDataProvider.h in Headers */,
 				01B696951C74C4D400B9AD6E /* BLDataItemFilter.h in Headers */,
+				0F5E5EDA1CA064560025B114 /* BLBasicDataProvider+Subclassing.h in Headers */,
 				01B6967E1C74C4D400B9AD6E /* BLAbstractDataProvider.h in Headers */,
 				01B6968B1C74C4D400B9AD6E /* BLDataDiff.h in Headers */,
 				01B697491C77E23D00B9AD6E /* BLDataUtils.h in Headers */,
@@ -734,6 +753,7 @@
 				01B696AC1C74C4D400B9AD6E /* NNSectionsDiffChange+BLDataDiffChange.m in Sources */,
 				01B696881C74C4D400B9AD6E /* BLChainDataProvider.m in Sources */,
 				01B696AA1C74C4D400B9AD6E /* NNSectionsDiff+BLDataDiff.m in Sources */,
+				0F5E5ED71CA063C50025B114 /* BLBasicDataProvider.m in Sources */,
 				01B6974A1C77E23D00B9AD6E /* BLDataUtils.m in Sources */,
 				01B696D51C74F64400B9AD6E /* BLUICollectionViewReloaderEngine.m in Sources */,
 				01B696DA1C74F64400B9AD6E /* BLUITableViewAnimations.m in Sources */,
@@ -742,6 +762,7 @@
 				01B6969E1C74C4D400B9AD6E /* BLMutableDataDiff.m in Sources */,
 				01B6968D1C74C4D400B9AD6E /* BLDataDiffCalculator.m in Sources */,
 				01B696821C74C4D400B9AD6E /* BLArrayData.m in Sources */,
+				0F5E5ECD1CA04C9C0025B114 /* BLSectionsDataProvider.m in Sources */,
 				01B696A01C74C4D400B9AD6E /* BLMutableDataDiffChange.m in Sources */,
 				01B696961C74C4D400B9AD6E /* BLDataItemFilter.m in Sources */,
 				01B6974F1C77EB4B00B9AD6E /* BLSectionsData.m in Sources */,

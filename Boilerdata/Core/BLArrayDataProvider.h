@@ -6,7 +6,7 @@
 //  Copyright © 2016 Pixty. All rights reserved.
 //
 
-#import "BLAbstractDataProvider.h"
+#import "BLBasicDataProvider.h"
 
 @protocol BLDataItem;
 @protocol BLDataItemId;
@@ -14,12 +14,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-typedef BOOL (^BLDataItemIsUpdatedBlock)(__kindof id<BLDataItem> oldItem, __kindof id<BLDataItem> newItem);
-
-
-@interface BLArrayDataProvider : BLAbstractDataProvider
-
-- (instancetype)initWithIsUpdatedBlock:(nullable BLDataItemIsUpdatedBlock)isUpdatedBlock NS_DESIGNATED_INITIALIZER;
+@interface BLArrayDataProvider : BLBasicDataProvider
 
 - (void)updateWithItems:(NSArray<id<BLDataItem>> *)items;
 
