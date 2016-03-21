@@ -18,14 +18,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly) NSArray<id<BLDataItem>> *items;
 
-@property (nonatomic, readonly) id<BLSectionItem> sectionItem;
+@property (nonatomic, nullable, readonly) id<BLSectionItem> sectionItem;
 
 @end
 
 
 @interface BLDataSection : NSObject <BLDataSection>
 
-- (instancetype)initWithItems:(NSArray<id<BLDataItem>> *)items sectionItem:(id<BLSectionItem>)sectionItem NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithItems:(NSArray<id<BLDataItem>> *)items sectionItem:(nullable id<BLSectionItem>)sectionItem NS_DESIGNATED_INITIALIZER;
 
 - (instancetype)init NS_UNAVAILABLE;
 
