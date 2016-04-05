@@ -23,10 +23,10 @@
         return [collation.sectionTitles objectAtIndex:sectionIndex];
         
     } sectionSortingBlock:^NSArray<id<BLSectionItem>> *(NSArray<id<BLSectionItem>> *sectionItems) {
-        NSOrderedSet<NSString *> *collactionTitles = [NSOrderedSet orderedSetWithArray:collation.sectionTitles];
+        NSOrderedSet<NSString *> *collationTitles = [NSOrderedSet orderedSetWithArray:collation.sectionTitles];
         
         return [sectionItems sortedArrayUsingComparator:^NSComparisonResult(NSString *obj1, NSString *obj2) {
-            return [@([collactionTitles indexOfObject:obj1]) compare:@([collactionTitles indexOfObject:obj2])];
+            return [@([collationTitles indexOfObject:obj1]) compare:@([collationTitles indexOfObject:obj2])];
         }];
     }];
 }
