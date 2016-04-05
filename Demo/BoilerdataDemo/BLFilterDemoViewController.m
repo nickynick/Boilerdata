@@ -16,7 +16,6 @@ static NSString * const kCellIdentifier = @"cell";
 @interface BLFilterDemoViewController () <BLDataObserver, UISearchResultsUpdating>
 
 @property (nonatomic, strong, readonly) BLArrayDataProvider *arrayDataProvider;
-@property (nonatomic, strong, readonly) BLClassificationDataProvider *classificationDataProvider;
 @property (nonatomic, strong, readonly) BLFilterDataProvider *filterDataProvider;
 
 @property (nonatomic, strong, readonly) NSArray<NSArray<NSString *> *> *itemsOptions;
@@ -43,13 +42,15 @@ static NSString * const kCellIdentifier = @"cell";
 - (void)setupData {
     _arrayDataProvider = [[BLArrayDataProvider alloc] init];
     
-    _classificationDataProvider = [[BLClassificationDataProvider alloc] initWithDataProvider:_arrayDataProvider classificationBlock:^(NSString *dataItem) {
-        return [dataItem substringToIndex:1];
-    } sectionSortingBlock:^(NSArray<NSString *> *sectionItems) {
-        return [sectionItems sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
-    }];
+    BLLocalizedIndexedCollationDataProvider *collationDataProvider =
+        [[BLLocalizedIndexedCollationDataProvider alloc] initWithDataProvider:_arrayDataProvider
+                                                             stringifierBlock:^NSString *(NSString *item){
+                                                                 return item;
+                                                             }];
     
-    _filterDataProvider = [[BLFilterDataProvider alloc] initWithDataProvider:_classificationDataProvider];
+    BLSearchIndexDataProvider *searchIndexDataProvider = [[BLSearchIndexDataProvider alloc] initWithDataProvider:collationDataProvider];
+    
+    _filterDataProvider = [[BLFilterDataProvider alloc] initWithDataProvider:searchIndexDataProvider];
     _filterDataProvider.observer = self;
     
     _itemsOptions = @[
@@ -104,6 +105,17 @@ static NSString * const kCellIdentifier = @"cell";
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return (NSString *) [self.filterDataProvider.data itemForSection:section];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
+    if ([title isEqualToString:UITableViewIndexSearch]) {
+        [self.tableView scrollRectToVisible:self.searchController.searchBar.frame animated:NO];
+    }
+    return [self.filterDataProvider.data sectionForSectionIndexTitleAtIndex:index];
+}
+
+- (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+    return [self.filterDataProvider.data sectionIndexTitles];
 }
 
 #pragma mark - BLDataObserver 
