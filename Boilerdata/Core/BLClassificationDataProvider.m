@@ -28,11 +28,11 @@
                  sectionSortingBlock:(BLSectionItemSortingBlock)sectionSortingBlock {
     self = [super init];
     if (!self) return nil;
-    
-    [self updateInnerDataProvider:dataProvider];
-    
+        
     _classificationBlock = [classificationBlock copy];
     _sectionSortingBlock = [sectionSortingBlock copy];
+    
+    [self updateInnerDataProvider:dataProvider];
     
     return self;
 }
