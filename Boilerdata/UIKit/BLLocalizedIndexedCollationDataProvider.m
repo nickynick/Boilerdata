@@ -17,7 +17,7 @@
 - (instancetype)initWithDataProvider:(id<BLDataProvider>)dataProvider stringifierBlock:(BLDataItemStringifierBlock)stringifierBlock {
     UILocalizedIndexedCollation *collation = [UILocalizedIndexedCollation currentCollation];
     
-    self = [super initWithDataProvider:dataProvider classificationBlock:^id<BLSectionItem>(id<BLDataItem> dataItem) {
+    return [super initWithDataProvider:dataProvider classificationBlock:^id<BLSectionItem>(id<BLDataItem> dataItem) {
         NSString *string = stringifierBlock(dataItem);
         NSUInteger sectionIndex = [collation sectionForObject:string collationStringSelector:@selector(self)];
         return [collation.sectionTitles objectAtIndex:sectionIndex];
@@ -29,10 +29,6 @@
             return [@([collactionTitles indexOfObject:obj1]) compare:@([collactionTitles indexOfObject:obj2])];
         }];
     }];
-    
-    if (!self) return nil;
-
-    return self;
 }
 
 #pragma mark - BLChainDataProvider
