@@ -16,3 +16,4 @@
 // Data Providers
 
 #import <Boilerdata/BLSearchIndexDataProvider.h>
+#import <Boilerdata/BLLocalizedIndexedCollationDataProvider.h>
