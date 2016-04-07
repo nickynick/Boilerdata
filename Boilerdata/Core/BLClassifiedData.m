@@ -117,13 +117,13 @@
 }
 
 - (NSIndexPath *)originalIndexPathToMapped:(NSIndexPath *)originalIndexPath {
-    id<BLDataItem> originalItem = [self.originalData itemAtIndexPath:originalIndexPath];
+    id<BLDataItem> originalItem = [self.unclassifiedData itemAtIndexPath:originalIndexPath];
     return self.classifiedIndexPaths[originalItem.itemId];
 }
 
 - (NSIndexPath *)mappedIndexPathToOriginal:(NSIndexPath *)mappedIndexPath {
     id<BLDataItem> item = [self itemAtIndexPath:mappedIndexPath];
-    return [self.originalData indexPathForItemWithId:item.itemId];
+    return [self.unclassifiedData indexPathForItemWithId:item.itemId];
 }
 
 @end
