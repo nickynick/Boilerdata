@@ -18,6 +18,8 @@ static NSString * const kCellIdentifier = @"cell";
 @property (nonatomic, strong, readonly) BLArrayDataProvider *arrayDataProvider;
 @property (nonatomic, strong, readonly) BLFilterDataProvider *filterDataProvider;
 
+@property (nonatomic, strong, readonly) BLSearchIndexDataProvider *topLevelDataProvider;
+
 @property (nonatomic, strong, readonly) NSArray<NSArray<NSString *> *> *itemsOptions;
 @property (nonatomic, assign) NSInteger currentItemsOption;
 
@@ -41,17 +43,18 @@ static NSString * const kCellIdentifier = @"cell";
 
 - (void)setupData {
     _arrayDataProvider = [[BLArrayDataProvider alloc] init];
+
+    _filterDataProvider = [[BLFilterDataProvider alloc] initWithDataProvider:_arrayDataProvider];
     
     BLLocalizedIndexedCollationDataProvider *collationDataProvider =
-        [[BLLocalizedIndexedCollationDataProvider alloc] initWithDataProvider:_arrayDataProvider
+        [[BLLocalizedIndexedCollationDataProvider alloc] initWithDataProvider:_filterDataProvider
                                                              stringifierBlock:^NSString *(NSString *item){
                                                                  return item;
                                                              }];
     
-    BLSearchIndexDataProvider *searchIndexDataProvider = [[BLSearchIndexDataProvider alloc] initWithDataProvider:collationDataProvider];
+    _topLevelDataProvider = [[BLSearchIndexDataProvider alloc] initWithDataProvider:collationDataProvider];
+    _topLevelDataProvider.observer = self;
     
-    _filterDataProvider = [[BLFilterDataProvider alloc] initWithDataProvider:searchIndexDataProvider];
-    _filterDataProvider.observer = self;
     
     _itemsOptions = @[
         @[ @"One", @"Two", @"Three", @"Four", @"Five", @"Six", @"Seven", @"Eight", @"Nine", @"Ten" ],
@@ -90,32 +93,32 @@ static NSString * const kCellIdentifier = @"cell";
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [self.filterDataProvider.data numberOfSections];
+    return [self.topLevelDataProvider.data numberOfSections];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.filterDataProvider.data numberOfItemsInSection:section];
+    return [self.topLevelDataProvider.data numberOfItemsInSection:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier forIndexPath:indexPath];
-    cell.textLabel.text = (NSString *) [self.filterDataProvider.data itemAtIndexPath:indexPath];
+    cell.textLabel.text = (NSString *) [self.topLevelDataProvider.data itemAtIndexPath:indexPath];
     return cell;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return (NSString *) [self.filterDataProvider.data itemForSection:section];
+    return (NSString *) [self.topLevelDataProvider.data itemForSection:section];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
     if ([title isEqualToString:UITableViewIndexSearch]) {
         [self.tableView scrollRectToVisible:self.searchController.searchBar.frame animated:NO];
     }
-    return [self.filterDataProvider.data sectionForSectionIndexTitleAtIndex:index];
+    return [self.topLevelDataProvider.data sectionForSectionIndexTitleAtIndex:index];
 }
 
 - (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-    return [self.filterDataProvider.data sectionIndexTitles];
+    return [self.topLevelDataProvider.data sectionIndexTitles];
 }
 
 #pragma mark - BLDataObserver 
