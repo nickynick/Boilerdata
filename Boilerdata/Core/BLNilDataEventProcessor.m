@@ -19,7 +19,7 @@
     return instance;
 }
 
-- (void)applyEvent:(BLDataEvent *)event withDataUpdateBlock:(void (^)())dataUpdateBlock completion:(void (^)())completion {
+- (void)applyEvent:(BLDataEvent *)event withDataUpdateBlock:(void (^)(void))dataUpdateBlock completion:(void (^)(void))completion {
     dataUpdateBlock();
     completion();
 }

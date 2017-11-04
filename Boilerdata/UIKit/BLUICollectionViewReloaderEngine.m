@@ -44,7 +44,7 @@
     [self.collectionView reloadData];
 }
 
-- (void)performUpdates:(void (^)())updates completion:(void (^)())completion {
+- (void)performUpdates:(void (^)(void))updates completion:(void (^)(void))completion {
     self.reloader = [[NNCollectionViewReloader alloc] initWithCollectionView:self.collectionView cellCustomReloadBlock:self.cellUpdateBlock];
     
     [self.reloader performUpdates:updates completion:^{

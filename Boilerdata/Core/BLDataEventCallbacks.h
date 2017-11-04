@@ -15,12 +15,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BLDataEventCallbacks : NSObject
 
-@property (nonatomic, copy, nullable) void (^willProcessBlock)();
+@property (nonatomic, copy, nullable) void (^willProcessBlock)(id<BLDataEventProcessor>);
 
-@property (nonatomic, copy, nullable) void (^willUpdateDataBlock)();
-@property (nonatomic, copy, nullable) void (^didUpdateDataBlock)();
+@property (nonatomic, copy, nullable) void (^willUpdateDataBlock)(void);
+@property (nonatomic, copy, nullable) void (^didUpdateDataBlock)(void);
 
-@property (nonatomic, copy, nullable) void (^completionBlock)();
+@property (nonatomic, copy, nullable) void (^completionBlock)(void);
 
 @end
 

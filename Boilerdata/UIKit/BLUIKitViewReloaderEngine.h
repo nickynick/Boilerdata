@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)reloadData;
 
-- (void)performUpdates:(void (^)())updates completion:(void (^)())completion;
+- (void)performUpdates:(void (^)(void))updates completion:(void (^)(void))completion;
 
 - (void)insertSections:(NSIndexSet *)sections;
 - (void)deleteSections:(NSIndexSet *)sections;

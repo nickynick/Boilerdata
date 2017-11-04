@@ -33,7 +33,7 @@
 
 #pragma mark - NNDiffReloader
 
-- (void)performUpdates:(void (^)())updates withOptions:(NNDiffReloadOptions *)options completion:(void (^)())completion {
+- (void)performUpdates:(void (^)(void))updates withOptions:(NNDiffReloadOptions *)options completion:(void (^)(void))completion {
     self.reloader = [[NNCollectionViewReloader alloc] initWithCollectionView:self.collectionView
                                                        cellCustomReloadBlock:options.cellUpdateBlock];
     

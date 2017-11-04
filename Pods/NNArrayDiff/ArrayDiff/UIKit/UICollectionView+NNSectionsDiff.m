@@ -17,7 +17,7 @@
 
 - (void)reloadWithSectionsDiff:(NNSectionsDiff *)sectionsDiff
                        options:(NNDiffReloadOptions *)options
-                    completion:(void (^)())completion
+                    completion:(void (^)(void))completion
 {
     if (!options) {
         options = [[NNDiffReloadOptions alloc] init];

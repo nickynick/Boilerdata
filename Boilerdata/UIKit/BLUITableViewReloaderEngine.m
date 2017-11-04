@@ -48,7 +48,7 @@
     [self.tableView reloadData];
 }
 
-- (void)performUpdates:(void (^)())updates completion:(void (^)())completion {
+- (void)performUpdates:(void (^)(void))updates completion:(void (^)(void))completion {
     self.reloader = [[NNTableViewReloader alloc] initWithTableView:self.tableView cellCustomReloadBlock:self.cellUpdateBlock];
     
     [self.reloader performUpdates:updates completion:^{

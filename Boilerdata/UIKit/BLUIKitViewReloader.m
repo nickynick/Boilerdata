@@ -59,7 +59,7 @@
 
 #pragma mark - BLDataEventProcessor
 
-- (void)applyEvent:(BLDataEvent *)event withDataUpdateBlock:(void (^)())dataUpdateBlock completion:(void (^)())completion {
+- (void)applyEvent:(BLDataEvent *)event withDataUpdateBlock:(void (^)(void))dataUpdateBlock completion:(void (^)(void))completion {
     if ([self shouldUseReloadDataForEvent:event]) {
         dataUpdateBlock();
         // TODO: we need a callback here

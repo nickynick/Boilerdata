@@ -19,11 +19,11 @@
 - (void)reloadWithSectionsDiff:(NNSectionsDiff *)sectionsDiff
                        options:(NNDiffReloadOptions *)options
                      animation:(UITableViewRowAnimation)animation
-                    completion:(void (^)())completion;
+                    completion:(void (^)(void))completion;
 
 - (void)reloadWithSectionsDiff:(NNSectionsDiff *)sectionsDiff
                        options:(NNDiffReloadOptions *)options
                     animations:(NNTableViewDiffReloadAnimations *)animations
-                    completion:(void (^)())completion;
+                    completion:(void (^)(void))completion;
 
 @end

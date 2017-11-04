@@ -14,14 +14,14 @@
 
 - (void)reloadWithSectionsDiff:(NNSectionsDiff *)diff
                        options:(NNDiffReloadOptions *)options
-                    completion:(void (^)())completion;
+                    completion:(void (^)(void))completion;
 
 @end
 
 
 @interface NNDiffReloader (Abstract)
 
-- (void)performUpdates:(void (^)())updates withOptions:(NNDiffReloadOptions *)options completion:(void (^)())completion;
+- (void)performUpdates:(void (^)(void))updates withOptions:(NNDiffReloadOptions *)options completion:(void (^)(void))completion;
 
 - (void)insertSections:(NSIndexSet *)sections;
 - (void)deleteSections:(NSIndexSet *)sections;

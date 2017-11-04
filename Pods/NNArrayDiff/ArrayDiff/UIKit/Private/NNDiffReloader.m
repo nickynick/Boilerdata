@@ -15,7 +15,7 @@
 
 - (void)reloadWithSectionsDiff:(NNSectionsDiff *)diff
                        options:(NNDiffReloadOptions *)options
-                    completion:(void (^)())completion
+                    completion:(void (^)(void))completion
 {
     NSParameterAssert(diff != nil);
     NSParameterAssert(options != nil);
@@ -62,7 +62,7 @@
                                    reason:[NSString stringWithFormat:@"You must override %@ in a subclass.", NSStringFromSelector(_cmd)] \
                                  userInfo:nil]
 
-- (void)performUpdates:(void (^)())updates withOptions:(NNDiffReloadOptions *)options completion:(void (^)())completion { methodNotImplemented(); }
+- (void)performUpdates:(void (^)(void))updates withOptions:(NNDiffReloadOptions *)options completion:(void (^)(void))completion { methodNotImplemented(); }
 
 - (void)insertSections:(NSIndexSet *)sections { methodNotImplemented(); }
 - (void)deleteSections:(NSIndexSet *)sections { methodNotImplemented(); }
